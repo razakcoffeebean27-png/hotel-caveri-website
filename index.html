@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hotel Caveri Inn | Comfortable Stay & Hospitality</title>
+
+  <meta name="description"
+        content="Discover Hotel Caveri Inn for a comfortable stay, convenient location and welcoming hospitality. Explore rooms, facilities, dining and nearby attractions.">
+
+  <meta name="keywords"
+        content="Hotel Caveri Inn, hotel accommodation, hotel rooms, comfortable stay, hospitality, hotel near restaurants and cafes">
+
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Hotel Caveri Inn">
+  <meta property="og:description"
+        content="A comfortable stay with warm hospitality at Hotel Caveri Inn.">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #252525;
+      background: #f8f7f4;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e8e5df;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #2d2a26;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #8a7658;
+      margin-top: -2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+    }
+
+    nav a {
+      color: #444;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #8a7658;
+    }
+
+    .nav-button {
+      background: #2d2a26;
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 2px;
+    }
+
+    .nav-button:hover {
+      background: #8a7658;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 680px;
+      position: relative;
+
+      /*
+       TEMPORARY IMAGE
+       Replace this URL later with your actual hotel photograph.
+      */
+      background:
+        linear-gradient(rgba(25,22,18,0.38), rgba(25,22,18,0.55)),
+        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      padding: 40px 25px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      margin-bottom: 20px;
+      color: #eee5d8;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(45px, 8vw, 82px);
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 17px;
+      color: #f5f5f5;
+    }
+
+    .hero-buttons {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 27px;
+      border: 1px solid white;
+      color: white;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: 0.25s ease;
+    }
+
+    .button.primary {
+      background: white;
+      color: #2d2a26;
+    }
+
+    .button:hover {
+      background: #8a7658;
+      border-color: #8a7658;
+      color: white;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 95px 25px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 55px;
+    }
+
+    .section-heading .small-title {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      color: #8a7658;
+      margin-bottom: 13px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: 43px;
+      font-weight: 500;
+      color: #292723;
+      margin-bottom: 17px;
+    }
+
+    .section-heading p {
+      color: #6c6964;
+      font-size: 15px;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      background: #f8f7f4;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .intro-image {
+      min-height: 510px;
+      background:
+        linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.08)),
+        url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    .intro-text .small-title {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      color: #8a7658;
+      margin-bottom: 15px;
+    }
+
+    .intro-text h2 {
+      font-family: Georgia, serif;
+      font-size: 43px;
+      line-height: 1.15;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .intro-text p {
+      color: #68645f;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #6e5c43;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #8a7658;
+      padding-bottom: 4px;
+    }
+
+    /* =========================
+       ROOMS
+    ========================= */
+
+    .rooms {
+      background: white;
+    }
+
+    .room-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .room-card {
+      background: #f8f7f4;
+      overflow: hidden;
+    }
+
+    .room-image {
+      height: 270px;
+      overflow: hidden;
+    }
+
+    .room-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .room-card:hover .room-image img {
+      transform: scale(1.04);
+    }
+
+    .room-content {
+      padding: 25px;
+    }
+
+    .room-content h3 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .room-content p {
+      color: #6c6964;
+      font-size: 14px;
+    }
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .features {
+      background: #2d2a26;
+      color: white;
+    }
+
+    .features .section-heading h2 {
+      color: white;
+    }
+
+    .features .section-heading p {
+      color: #c7c3bd;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 28px 15px;
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .feature-icon {
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #bdb9b2;
+      font-size: 13px;
+    }
+
+    /* =========================
+       DINING
+    ========================= */
+
+    .dining {
+      background: #f8f7f4;
+    }
+
+    .dining-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .dining-image {
+      min-height: 450px;
+      background:
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85")
+        center/cover;
+    }
+
+    .dining-content h2 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .dining-content p {
+      color: #68645f;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery {
+      background: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 220px;
+      gap: 8px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-item.large {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    /* =========================
+       LOCATION
+    ========================= */
+
+    .location {
+      background: #f8f7f4;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: stretch;
+    }
+
+    .location-content {
+      padding: 20px 0;
+    }
+
+    .location-content h2 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .location-content p {
+      color: #68645f;
+      margin-bottom: 18px;
+    }
+
+    .contact-details {
+      margin-top: 30px;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #8a7658;
+      margin-bottom: 4px;
+    }
+
+    .map-placeholder {
+      min-height: 420px;
+      background: #ddd8cf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .map-placeholder h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .map-placeholder p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq {
+      background: white;
+    }
+
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      border-bottom: 1px solid #e3e0da;
+      padding: 20px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-family: Georgia, serif;
+      font-size: 19px;
+      color: #302d29;
+    }
+
+    details p {
+      padding-top: 13px;
+      color: #6c6964;
+      font-size: 14px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 80px 25px;
+      background:
+        linear-gradient(rgba(35,31,25,0.78), rgba(35,31,25,0.78)),
+        url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: Georgia, serif;
+      font-size: 45px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: auto;
+      color: #e6e1da;
+      font-size: 15px;
+    }
+
+    .cta .hero-buttons {
+      margin-top: 28px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #211f1c;
+      color: #aaa59e;
+      padding: 55px 25px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 40px;
+    }
+
+    .footer-logo {
+      font-family: Georgia, serif;
+      color: white;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer h4 {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 10px;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: auto;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 11px;
+      color: #77736e;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      background: #25D366;
+      color: white;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-container {
+        padding: 15px 18px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a:not(.nav-button) {
+        display: none;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .intro-grid,
+      .dining-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .room-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+      }
+
+      .gallery-item.large {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .intro-image {
+        min-height: 380px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .nav-button {
+        padding: 9px 12px;
+        font-size: 10px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .section-heading h2,
+      .intro-text h2,
+      .dining-content h2,
+      .location-content h2 {
+        font-size: 34px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .gallery-grid {
+        grid-auto-rows: 220px;
+      }
+
+      .cta h2 {
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+  <div class="nav-container">
+
+    <a href="#home" class="logo">
+      Hotel Caveri Inn
+      <span>Hospitality & Stay</span>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#contact" class="nav-button">Enquire</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      Welcome to Hotel Caveri Inn
+    </div>
+
+    <h1>Stay. Relax. Experience.</h1>
+
+    <p>
+      A comfortable stay designed around warm hospitality,
+      convenience and a welcoming guest experience.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#rooms" class="button primary">
+        Explore Rooms
+      </a>
+
+      <a href="#contact" class="button">
+        Contact Us
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="intro" id="about">
+
+  <div class="container">
+
+    <div class="intro-grid">
+
+      <div class="intro-image"></div>
+
+      <div class="intro-text">
+
+        <div class="small-title">
+          About Hotel Caveri Inn
+        </div>
+
+        <h2>
+          A comfortable place to stay, connect and unwind.
+        </h2>
+
+        <p>
+          Hotel Caveri Inn welcomes guests looking for a comfortable
+          and convenient stay with a focus on warm hospitality.
+        </p>
+
+        <p>
+          Whether you are visiting for business, leisure or a short
+          stay, our aim is to provide a pleasant environment where
+          guests can relax and enjoy their time.
+        </p>
+
+        <a href="#contact" class="text-link">
+          Make an Enquiry
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ROOMS
+========================= -->
+
+<section class="rooms" id="rooms">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="small-title">
+        Accommodation
+      </div>
+
+      <h2>Rooms Designed for Comfort</h2>
+
+      <p>
+        Explore comfortable accommodation options at Hotel Caveri Inn.
+        Room details, photographs and facilities can be updated here
+        according to your actual room categories.
+      </p>
+
+    </div>
+
+
+    <div class="room-grid">
+
+      <div class="room-card">
+
+        <div class="room-image">
+          <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85"
+               alt="Hotel room at Hotel Caveri Inn">
+        </div>
+
+        <div class="room-content">
+          <h3>Comfort Room</h3>
+
+          <p>
+            A comfortable accommodation option for guests
+            looking for a relaxing stay.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="room-card">
+
+        <div class="room-image">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85"
+               alt="Hotel accommodation">
+        </div>
+
+        <div class="room-content">
+          <h3>Deluxe Room</h3>
+
+          <p>
+            A refined room option offering a comfortable
+            environment for your stay.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="room-card">
+
+        <div class="room-image">
+          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85"
+               alt="Hotel bedroom">
+        </div>
+
+        <div class="room-content">
+          <h3>Premium Stay</h3>
+
+          <p>
+            A welcoming accommodation choice for guests
+            seeking additional comfort.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FACILITIES
+========================= -->
+
+<section class="features" id="facilities">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="small-title">
+        Guest Experience
+      </div>
+
+      <h2>Designed Around Your Stay</h2>
+
+      <p>
+        Essential facilities and services can be highlighted here
+        based on the amenities available at Hotel Caveri Inn.
+      </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <div class="feature">
+        <div class="feature-icon">⌂</div>
+        <h3>Comfortable Stay</h3>
+        <p>
+          A welcoming environment designed for a pleasant stay.
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">◉</div>
+        <h3>Convenient Location</h3>
+        <p>
+          Convenient access to nearby places and local attractions.
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">◌</div>
+        <h3>Guest Service</h3>
+        <p>
+          Friendly assistance focused on making your stay comfortable.
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">✦</div>
+        <h3>Warm Hospitality</h3>
+        <p>
+          A hospitality experience centered around every guest.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     DINING
+========================= -->
+
+<section class="dining">
+
+  <div class="container">
+
+    <div class="dining-grid">
+
+      <div class="dining-image"></div>
+
+      <div class="dining-content">
+
+        <div class="small-title">
+          Dining & Local Experiences
+        </div>
+
+        <h2>
+          Discover Dining Around Your Stay
+        </h2>
+
+        <p>
+          Explore restaurants, cafés and local dining options
+          conveniently located around Hotel Caveri Inn.
+        </p>
+
+        <p>
+          This section can later be updated with the actual
+          restaurants, cafés and dining facilities available
+          at or near the hotel.
+        </p>
+
+        <a href="#location" class="text-link">
+          Explore Location
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery" id="gallery">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="small-title">
+        Hotel Gallery
+      </div>
+
+      <h2>A Glimpse of Hotel Caveri Inn</h2>
+
+      <p>
+        Hotel photographs can be added here to showcase rooms,
+        interiors, exterior spaces and the guest experience.
+      </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item large">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85"
+             alt="Hotel exterior">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
+             alt="Hotel interior">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1000&q=85"
+             alt="Hotel room">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85"
+             alt="Hotel accommodation">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+             alt="Restaurant and dining">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     LOCATION
+========================= -->
+
+<section class="location" id="location">
+
+  <div class="container">
+
+    <div class="location-grid">
+
+      <div class="location-content">
+
+        <div class="small-title">
+          Find Us
+        </div>
+
+        <h2>
+          Conveniently Located
+        </h2>
+
+        <p>
+          Hotel Caveri Inn is positioned to provide guests with
+          convenient access to nearby restaurants, cafés and
+          local points of interest.
+        </p>
+
+        <div class="contact-details">
+
+          <div class="contact-item">
+            <strong>Address</strong>
+            <p>
+              [Add official hotel address here]
+            </p>
+          </div>
+
+          <div class="contact-item">
+            <strong>Phone</strong>
+            <p>
+              [Add official hotel phone number]
+            </p>
+          </div>
+
+          <div class="contact-item">
+            <strong>Email</strong>
+            <p>
+              [Add official hotel email]
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="map-placeholder">
+
+        <div>
+
+          <h3>Hotel Caveri Inn</h3>
+
+          <p>
+            Google Maps location will be added here.
+          </p>
+
+          <br>
+
+          <a href="#contact" class="text-link">
+            Get Directions
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FAQ / AEO
+========================= -->
+
+<section class="faq">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="small-title">
+        Frequently Asked Questions
+      </div>
+
+      <h2>Hotel Caveri Inn FAQ</h2>
+
+      <p>
+        Helpful information for guests planning a stay.
+      </p>
+
+    </div>
+
+
+    <div class="faq-list">
+
+      <details>
+        <summary>
+          Where is Hotel Caveri Inn located?
+        </summary>
+
+        <p>
+          Hotel Caveri Inn is located at
+          [add official hotel address here].
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          What type of accommodation does Hotel Caveri Inn offer?
+        </summary>
+
+        <p>
+          Hotel Caveri Inn offers comfortable accommodation
+          options for guests. Room categories and facilities
+          can be updated here based on the hotel's current offerings.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          How can I contact Hotel Caveri Inn?
+        </summary>
+
+        <p>
+          Guests can contact Hotel Caveri Inn through the
+          official phone number or email listed on this website.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Are restaurants and cafés available nearby?
+        </summary>
+
+        <p>
+          Yes. Nearby restaurants and cafés can be highlighted
+          here with accurate names and locations.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          How can I make a booking enquiry?
+        </summary>
+
+        <p>
+          Contact Hotel Caveri Inn directly using the official
+          contact details provided on this website.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CALL TO ACTION
+========================= -->
+
+<section class="cta" id="contact">
+
+  <h2>Plan Your Stay</h2>
+
+  <p>
+    Looking for a comfortable place to stay?
+    Contact Hotel Caveri Inn for availability and booking enquiries.
+  </p>
+
+  <div class="hero-buttons">
+
+    <!-- Replace the phone number below with the hotel's WhatsApp number -->
+
+    <a href="https://wa.me/XXXXXXXXXXX"
+       class="button primary">
+      WhatsApp Enquiry
+    </a>
+
+    <a href="tel:XXXXXXXXXX"
+       class="button">
+      Call Hotel
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+
+      <div class="footer-logo">
+        Hotel Caveri Inn
+      </div>
+
+      <p>
+        A welcoming stay focused on comfort,
+        convenience and hospitality.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>Explore</h4>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+      </div>
+
+    </div>
+
+
+    <div>
+
+      <h4>Contact</h4>
+
+      <p>
+        [Hotel Address]
+      </p>
+
+      <p>
+        [Phone Number]
+      </p>
+
+      <p>
+        [Email Address]
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 Hotel Caveri Inn. All rights reserved.
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP BUTTON
+========================= -->
+
+<a class="whatsapp"
+   href="https://wa.me/XXXXXXXXXXX"
+   aria-label="Contact Hotel Caveri Inn on WhatsApp">
+  ☎
+</a>
+
+
+</body>
+</html>
