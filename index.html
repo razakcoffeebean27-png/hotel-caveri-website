@@ -7,16 +7,14 @@
 
 <title>Hotel Caveri Inn | Hotel in Madikeri, Coorg</title>
 
-<meta name="description"
-content="Hotel Caveri Inn in Madikeri, Coorg, Karnataka, opposite Rajaseat Garden. Comfortable rooms, family accommodation, Wi-Fi, parking, 24-hour reception, room service and travel desk assistance.">
+<meta name="description" content="Hotel Caveri Inn in Madikeri, Coorg, Karnataka, opposite Rajaseat Garden. Comfortable rooms, family accommodation, Wi-Fi, parking, 24-hour reception, room service and travel desk assistance.">
 
-<meta name="keywords"
-content="Hotel Caveri Inn, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, hotel near Raja's Seat, Madikeri accommodation, Coorg hotel, family hotel Madikeri, budget hotel Madikeri, stay in Madikeri">
+<meta name="keywords" content="Hotel Caveri Inn, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, hotel near Raja's Seat, Madikeri accommodation, Coorg hotel, family hotel Madikeri, budget hotel Madikeri, stay in Madikeri">
 
 <meta name="robots" content="index, follow">
 
 <meta property="og:title" content="Hotel Caveri Inn | Madikeri, Coorg">
-<meta property="og:description" content="Comfortable accommodation opposite Rajaseat Garden in Stuart Hill, Madikeri, Coorg.">
+<meta property="og:description" content="Comfortable accommodation in Madikeri, Coorg, opposite Rajaseat Garden.">
 <meta property="og:type" content="website">
 
 <style>
@@ -33,9 +31,9 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #292622;
-    background: #faf9f6;
-    line-height: 1.7;
+    background: #faf8f3;
+    color: #2f261f;
+    line-height: 1.6;
 }
 
 a {
@@ -43,10 +41,9 @@ a {
     color: inherit;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+img {
+    max-width: 100%;
+    display: block;
 }
 
 /* =========================
@@ -54,128 +51,216 @@ a {
 ========================= */
 
 header {
-    background: #ffffff;
-    border-bottom: 1px solid #e8e4dc;
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #e6dfd5;
+    backdrop-filter: blur(10px);
 }
 
 .navbar {
-    min-height: 82px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    align-items: center;
 }
 
 .logo {
     font-family: Georgia, serif;
-    font-size: 27px;
+    font-size: 25px;
     font-weight: bold;
-    letter-spacing: 0.5px;
+    color: #4a3020;
 }
 
 .logo span {
     display: block;
     font-family: Arial, sans-serif;
     font-size: 10px;
-    letter-spacing: 4px;
-    color: #96794e;
-    margin-top: -3px;
+    letter-spacing: 3px;
+    color: #9b7844;
+    margin-top: 2px;
 }
 
-nav {
+.nav-links {
     display: flex;
+    gap: 26px;
     align-items: center;
-    gap: 28px;
 }
 
-nav a {
+.nav-links a {
     font-size: 14px;
-    color: #514d47;
+    color: #4b4037;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #96794e;
-}
-
-.nav-button {
-    background: #292622;
-    color: white !important;
-    padding: 10px 20px;
-    border-radius: 2px;
-}
-
-.nav-button:hover {
-    background: #96794e;
+.nav-links a:hover {
+    color: #9b7844;
 }
 
 /* =========================
-   HERO
+   HERO SLIDESHOW
 ========================= */
 
 .hero {
-    min-height: 650px;
-
-    background:
-        linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.48)),
-        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-
+    position: relative;
+    min-height: 680px;
+    overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
 }
 
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.48)
+        );
+    z-index: 1;
+}
+
 .hero-content {
-    width: 90%;
+    position: relative;
+    z-index: 2;
     max-width: 850px;
-    margin: auto;
+    padding: 40px 25px;
 }
 
 .hero-small {
-    font-size: 12px;
-    letter-spacing: 5px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 18px;
+    color: #f2d69a;
 }
 
 .hero h1 {
     font-family: Georgia, serif;
-    font-size: 64px;
-    line-height: 1.1;
+    font-size: clamp(42px, 7vw, 78px);
+    line-height: 1.05;
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 18px;
     max-width: 700px;
-    margin: auto auto 30px;
+    margin: auto;
+    font-size: 17px;
+    color: #f5f3ef;
 }
 
-.button {
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
     display: inline-block;
-    padding: 13px 28px;
-    margin: 5px;
-    border: 1px solid white;
-    color: white;
+    padding: 13px 25px;
+    border-radius: 2px;
     font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.button-dark {
-    background: #292622;
-    border-color: #292622;
+.btn-primary {
+    background: #a17b42;
+    color: white;
 }
 
-.button-light {
-    background: transparent;
+.btn-primary:hover {
+    background: #876332;
 }
 
-.button:hover {
-    background: #96794e;
-    border-color: #96794e;
+.btn-light {
+    border: 1px solid rgba(255,255,255,0.8);
+    color: white;
+    background: rgba(0,0,0,0.15);
+}
+
+.btn-light:hover {
+    background: white;
+    color: #4a3020;
+}
+
+/* SLIDESHOW CONTROLS */
+
+.slide-arrow {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(0,0,0,0.25);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.slide-arrow:hover {
+    background: rgba(0,0,0,0.55);
+}
+
+.prev {
+    left: 25px;
+}
+
+.next {
+    right: 25px;
+}
+
+.slide-dots {
+    position: absolute;
+    z-index: 3;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 9px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+
+.dot.active {
+    background: white;
 }
 
 /* =========================
@@ -183,31 +268,39 @@ nav a:hover {
 ========================= */
 
 section {
-    padding: 90px 0;
+    padding: 85px 25px;
 }
 
-.section-label {
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-heading {
     text-align: center;
-    color: #96794e;
-    font-size: 11px;
-    letter-spacing: 4px;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.section-heading span {
+    display: block;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    letter-spacing: 3px;
+    color: #9b7844;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-.section-title {
-    text-align: center;
+.section-heading h2 {
     font-family: Georgia, serif;
-    font-size: 42px;
-    font-weight: normal;
-    margin-bottom: 18px;
+    font-size: 38px;
+    color: #3b2b20;
+    margin-bottom: 15px;
 }
 
-.section-text {
-    max-width: 760px;
-    margin: 0 auto 45px;
-    text-align: center;
-    color: #6b665f;
+.section-heading p {
+    color: #756b62;
 }
 
 /* =========================
@@ -215,35 +308,50 @@ section {
 ========================= */
 
 .about {
-    background: #ffffff;
+    background: #fff;
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 55px;
     align-items: center;
 }
 
 .about-image {
-    min-height: 450px;
-
-    background:
-        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
-        url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85")
-        center/cover no-repeat;
+    height: 500px;
+    overflow: hidden;
 }
 
-.about-content h2 {
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text h2 {
     font-family: Georgia, serif;
-    font-size: 38px;
-    font-weight: normal;
+    font-size: 39px;
+    color: #3b2b20;
     margin-bottom: 20px;
 }
 
-.about-content p {
-    color: #68635c;
-    margin-bottom: 16px;
+.about-text p {
+    color: #665d55;
+    margin-bottom: 18px;
+}
+
+.location-highlight {
+    margin-top: 25px;
+    padding: 18px 20px;
+    background: #f5f0e8;
+    border-left: 3px solid #a17b42;
+}
+
+.location-highlight strong {
+    display: block;
+    color: #4a3020;
+    margin-bottom: 5px;
 }
 
 /* =========================
@@ -251,44 +359,38 @@ section {
 ========================= */
 
 .rooms {
-    background: #f4f1eb;
+    background: #f5f1ea;
 }
 
-.rooms-grid {
+.room-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 }
 
 .room-card {
     background: white;
-    border: 1px solid #e7e2da;
-    padding: 30px;
-    transition: 0.25s ease;
+    padding: 25px 20px;
+    min-height: 145px;
+    border: 1px solid #e8e0d5;
+    transition: 0.3s;
 }
 
 .room-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-}
-
-.room-number {
-    color: #96794e;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+    box-shadow: 0 12px 30px rgba(70,50,30,0.08);
 }
 
 .room-card h3 {
     font-family: Georgia, serif;
-    font-size: 24px;
-    font-weight: normal;
-    margin-bottom: 12px;
+    color: #4a3020;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .room-card p {
-    color: #6b665f;
-    font-size: 14px;
+    color: #777067;
+    font-size: 13px;
 }
 
 /* =========================
@@ -296,10 +398,10 @@ section {
 ========================= */
 
 .facilities {
-    background: #ffffff;
+    background: #fff;
 }
 
-.facilities-grid {
+.facility-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
@@ -307,44 +409,25 @@ section {
 
 .facility {
     text-align: center;
-    border: 1px solid #e6e1d9;
-    padding: 30px 15px;
-    background: #faf9f6;
+    padding: 30px 18px;
+    background: #faf8f3;
+    border: 1px solid #ece5db;
 }
 
 .facility-icon {
-    font-size: 23px;
+    font-size: 25px;
     margin-bottom: 12px;
-    color: #96794e;
 }
 
 .facility h3 {
     font-size: 15px;
-    font-weight: normal;
+    color: #4a3020;
+    margin-bottom: 6px;
 }
 
-/* =========================
-   DINING
-========================= */
-
-.dining {
-    background: #292622;
-    color: white;
-    text-align: center;
-}
-
-.dining .section-label {
-    color: #c7a66d;
-}
-
-.dining .section-title {
-    color: white;
-}
-
-.dining p {
-    max-width: 720px;
-    margin: auto;
-    color: #d6d1ca;
+.facility p {
+    font-size: 12px;
+    color: #777067;
 }
 
 /* =========================
@@ -352,29 +435,62 @@ section {
 ========================= */
 
 .gallery {
-    background: #f4f1eb;
+    background: #f5f1ea;
 }
 
-.gallery-placeholder {
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
-.photo-box {
-    min-height: 220px;
-    background: #e5e1da;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #77716a;
-    font-size: 14px;
+.gallery-item {
+    height: 310px;
+    overflow: hidden;
+    position: relative;
 }
 
-.photo-box.large {
+.gallery-item.large {
     grid-column: span 2;
-    min-height: 350px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* =========================
+   DINING
+========================= */
+
+.dining {
+    background: #fff;
+}
+
+.dining-box {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    padding: 45px;
+    background: #f5f0e8;
+    border: 1px solid #e8dfd2;
+}
+
+.dining-box h3 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: #4a3020;
+    margin-bottom: 12px;
+}
+
+.dining-box p {
+    color: #6e665e;
 }
 
 /* =========================
@@ -382,25 +498,35 @@ section {
 ========================= */
 
 .location {
-    background: white;
+    background: #3b2b20;
+    color: white;
+}
+
+.location .section-heading h2 {
+    color: white;
+}
+
+.location .section-heading p {
+    color: #d8cec2;
 }
 
 .location-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 40px;
 }
 
 .info-box {
-    padding: 35px;
-    background: #f4f1eb;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.04);
 }
 
 .info-box h3 {
     font-family: Georgia, serif;
-    font-size: 26px;
-    font-weight: normal;
-    margin-bottom: 18px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #f0d49b;
 }
 
 .info-row {
@@ -409,11 +535,15 @@ section {
 
 .info-row strong {
     display: block;
-    color: #292622;
+    color: #f0d49b;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
 }
 
-.info-row span {
-    color: #68635c;
+.info-row p {
+    color: #eee8e1;
 }
 
 /* =========================
@@ -421,40 +551,31 @@ section {
 ========================= */
 
 .contact {
-    background: #f4f1eb;
+    background: #faf8f3;
     text-align: center;
 }
 
-.contact-box {
-    max-width: 800px;
-    margin: auto;
-}
-
-.contact-box h2 {
-    font-family: Georgia, serif;
-    font-size: 40px;
-    font-weight: normal;
-}
-
-.contact-box p {
-    color: #68635c;
-    margin: 15px 0 25px;
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .contact-button {
-    display: inline-block;
-    background: #292622;
-    color: white;
-    padding: 14px 30px;
-    margin: 5px;
-}
-
-.contact-button.whatsapp {
-    background: #3b7d4f;
+    min-width: 150px;
+    padding: 14px 20px;
+    border: 1px solid #d9cdbd;
+    background: white;
+    color: #4a3020;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .contact-button:hover {
-    opacity: 0.85;
+    background: #4a3020;
+    color: white;
 }
 
 /* =========================
@@ -462,41 +583,20 @@ section {
 ========================= */
 
 footer {
-    background: #1f1d1a;
-    color: #c8c3bc;
-    padding: 40px 0 25px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 35px;
-}
-
-.footer-logo {
-    font-family: Georgia, serif;
-    color: white;
-    font-size: 25px;
-    margin-bottom: 12px;
-}
-
-.footer-column h3 {
-    color: white;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.footer-column p {
-    font-size: 13px;
-    margin-bottom: 7px;
-}
-
-.copyright {
-    border-top: 1px solid #37332e;
-    padding-top: 20px;
+    background: #241b15;
+    color: #bdb4ab;
     text-align: center;
+    padding: 28px 20px;
+}
+
+footer strong {
+    color: white;
+    font-family: Georgia, serif;
+}
+
+footer p {
     font-size: 12px;
+    margin-top: 8px;
 }
 
 /* =========================
@@ -505,30 +605,19 @@ footer {
 
 @media (max-width: 900px) {
 
-    .navbar {
-        padding: 15px 0;
-        flex-direction: column;
+    .nav-links {
+        gap: 13px;
     }
 
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    .nav-links a {
+        font-size: 12px;
     }
 
-    .hero {
-        min-height: 580px;
-    }
-
-    .hero h1 {
-        font-size: 44px;
-    }
-
-    .rooms-grid {
+    .room-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .facilities-grid {
+    .facility-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -537,47 +626,79 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-item.large {
+        grid-column: span 2;
     }
 }
 
 @media (max-width: 600px) {
 
-    .container {
-        width: 92%;
+    .navbar {
+        padding: 15px;
     }
 
-    section {
-        padding: 65px 0;
+    .logo {
+        font-size: 20px;
+    }
+
+    .logo span {
+        font-size: 8px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 620px;
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 43px;
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 14px;
     }
 
-    .section-title {
-        font-size: 34px;
+    .prev {
+        left: 12px;
     }
 
-    .rooms-grid {
+    .next {
+        right: 12px;
+    }
+
+    section {
+        padding: 65px 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .about-image {
+        height: 380px;
+    }
+
+    .room-grid,
+    .facility-grid,
+    .gallery-grid {
         grid-template-columns: 1fr;
     }
 
-    .facilities-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .gallery-placeholder {
-        grid-template-columns: 1fr;
-    }
-
-    .photo-box.large {
+    .gallery-item,
+    .gallery-item.large {
         grid-column: span 1;
+        height: 280px;
+    }
+
+    .dining-box {
+        padding: 30px 20px;
     }
 }
 
@@ -591,26 +712,24 @@ footer {
 ========================= -->
 
 <header>
-
-<div class="container navbar">
+<nav class="navbar">
 
 <a href="#home" class="logo">
     Hotel Caveri Inn
-    <span>HOSPITALITY & STAY</span>
+    <span>MADIKERI • COORG</span>
 </a>
 
-<nav>
+<div class="nav-links">
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#rooms">Rooms</a>
     <a href="#facilities">Facilities</a>
     <a href="#gallery">Gallery</a>
     <a href="#location">Location</a>
-    <a href="#contact" class="nav-button">Enquire</a>
-</nav>
-
+    <a href="#enquire">Enquire</a>
 </div>
 
+</nav>
 </header>
 
 
@@ -618,33 +737,85 @@ footer {
      HERO
 ========================= -->
 
-<section id="home" class="hero">
+<section class="hero" id="home">
+
+<div class="hero-slides">
+
+    <img
+    class="hero-slide active"
+    src="images/caveri-inn-exterior-day.jpeg"
+    alt="Hotel Caveri Inn exterior in Madikeri">
+
+    <img
+    class="hero-slide"
+    src="images/caveri-inn-exterior.jpeg"
+    alt="Hotel Caveri Inn property exterior">
+
+    <img
+    class="hero-slide"
+    src="images/caveri-inn-front.jpeg"
+    alt="Hotel Caveri Inn front view">
+
+    <img
+    class="hero-slide"
+    src="images/caveri-inn-interior-2.jpeg"
+    alt="Hotel Caveri Inn interior">
+
+    <img
+    class="hero-slide"
+    src="images/caveri-inn-interior.jpeg"
+    alt="Hotel Caveri Inn interior accommodation">
+
+</div>
+
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
 <div class="hero-small">
-    Welcome to Madikeri
+Welcome to Madikeri
 </div>
 
-<h1>
-    Hotel Caveri Inn
-</h1>
+<h1>Hotel Caveri Inn</h1>
 
 <p>
-    Comfortable accommodation in Stuart Hill, Madikeri,
-    with convenient access to Rajaseat Garden and the attractions of Coorg.
+A comfortable stay in the heart of Madikeri, Coorg,
+opposite Rajaseat Garden.
 </p>
 
-<a href="#rooms" class="button button-dark">
-    Explore Rooms
+<div class="hero-buttons">
+
+<a href="#rooms" class="btn btn-primary">
+Explore Rooms
 </a>
 
 <a href="https://wa.me/919916442929"
-   class="button"
-   target="_blank"
-   rel="noopener">
-    WhatsApp Us
+target="_blank"
+class="btn btn-light">
+WhatsApp Us
 </a>
+
+</div>
+
+</div>
+
+
+<button class="slide-arrow prev" onclick="changeSlide(-1)">
+&#10094;
+</button>
+
+<button class="slide-arrow next" onclick="changeSlide(1)">
+&#10095;
+</button>
+
+
+<div class="slide-dots">
+
+<span class="dot active" onclick="showSlide(0)"></span>
+<span class="dot" onclick="showSlide(1)"></span>
+<span class="dot" onclick="showSlide(2)"></span>
+<span class="dot" onclick="showSlide(3)"></span>
+<span class="dot" onclick="showSlide(4)"></span>
 
 </div>
 
@@ -655,46 +826,44 @@ footer {
      ABOUT
 ========================= -->
 
-<section id="about" class="about">
+<section class="about" id="about">
 
 <div class="container">
-
-<div class="section-label">
-    About Hotel Caveri Inn
-</div>
 
 <div class="about-grid">
 
 <div class="about-image">
+
+<img
+src="images/caveri-inn-exterior.jpeg"
+alt="Hotel Caveri Inn in Madikeri, Coorg">
+
 </div>
 
-<div class="about-content">
+<div class="about-text">
 
-<h2>
-    A Comfortable Stay in the Heart of Madikeri
-</h2>
+<h2>Stay in the Heart of Madikeri</h2>
 
 <p>
-    Hotel Caveri Inn is located opposite Rajaseat Garden,
-    Stuart Hill, Madikeri, Karnataka.
+Hotel Caveri Inn is located in Stuart Hill, Madikeri,
+offering a convenient base for exploring Coorg and its
+surrounding attractions.
 </p>
 
 <p>
-    The hotel offers a range of accommodation options suitable
-    for individual travellers, couples, families and groups visiting Coorg.
+Situated opposite Rajaseat Garden, the property provides
+comfortable accommodation for travellers, families and
+groups visiting Madikeri.
 </p>
 
-<p>
-    With convenient access to nearby restaurants and cafés,
-    Hotel Caveri Inn provides a practical base for exploring Madikeri
-    and the surrounding attractions of Coorg.
-</p>
+<div class="location-highlight">
 
-<p>
-    Guests can also make use of the hotel's travel desk,
-    Wi-Fi, car parking, express check-in, 24-hour reception
-    and room service.
-</p>
+<strong>Hotel Location</strong>
+
+Opposite Rajaseat Garden, Stuart Hill,
+Madikeri, Karnataka 571201, India.
+
+</div>
 
 </div>
 
@@ -709,95 +878,63 @@ footer {
      ROOMS
 ========================= -->
 
-<section id="rooms" class="rooms">
+<section class="rooms" id="rooms">
 
 <div class="container">
 
-<div class="section-label">
-    Accommodation
-</div>
+<div class="section-heading">
 
-<h2 class="section-title">
-    Rooms & Accommodation
-</h2>
+<span>Accommodation</span>
 
-<p class="section-text">
-    Choose from a range of accommodation options designed
-    for individual travellers, couples, families and larger groups.
+<h2>Rooms & Accommodation</h2>
+
+<p>
+Choose from a range of accommodation options suitable
+for couples, families and groups.
 </p>
 
-<div class="rooms-grid">
+</div>
+
+<div class="room-grid">
 
 <div class="room-card">
-    <div class="room-number">01</div>
-    <h3>Budget Room</h3>
-    <p>
-        A practical accommodation option for travellers
-        looking for a comfortable and convenient stay in Madikeri.
-    </p>
+<h3>Budget Room</h3>
+<p>Comfortable accommodation for travellers looking for a practical stay.</p>
 </div>
 
 <div class="room-card">
-    <div class="room-number">02</div>
-    <h3>Standard Room</h3>
-    <p>
-        A comfortable room option suitable for guests
-        looking for a relaxed stay in Coorg.
-    </p>
+<h3>Standard Room</h3>
+<p>A convenient accommodation option for a comfortable stay in Madikeri.</p>
 </div>
 
 <div class="room-card">
-    <div class="room-number">03</div>
-    <h3>Deluxe Double Room</h3>
-    <p>
-        A double accommodation option for guests travelling
-        as a couple or two guests.
-    </p>
+<h3>Deluxe Double Room</h3>
+<p>Double accommodation designed for a comfortable stay.</p>
 </div>
 
 <div class="room-card">
-    <div class="room-number">04</div>
-    <h3>Classic Triple Room</h3>
-    <p>
-        An accommodation option designed for three guests
-        travelling together.
-    </p>
+<h3>Classic Triple Room</h3>
+<p>Suitable for guests travelling together and looking for triple accommodation.</p>
 </div>
 
 <div class="room-card">
-    <div class="room-number">05</div>
-    <h3>05 Bedded Family Room</h3>
-    <p>
-        A family accommodation option suitable for
-        groups of up to five guests.
-    </p>
+<h3>05 Bedded Family Room</h3>
+<p>Family accommodation with space for up to five guests.</p>
 </div>
 
 <div class="room-card">
-    <div class="room-number">06</div>
-    <h3>06 Bedded Family Room</h3>
-    <p>
-        A larger accommodation option suitable for
-        families and groups of up to six guests.
-    </p>
+<h3>06 Bedded Family Room</h3>
+<p>Family accommodation suitable for larger groups.</p>
 </div>
 
 <div class="room-card">
-    <div class="room-number">07</div>
-    <h3>07 Bedded Family Room</h3>
-    <p>
-        A spacious group accommodation option for
-        larger families and travelling groups.
-    </p>
+<h3>07 Bedded Family Room</h3>
+<p>Spacious group accommodation for families and travelling groups.</p>
 </div>
 
 <div class="room-card">
-    <div class="room-number">08</div>
-    <h3>10 Bedded Dormitory Room</h3>
-    <p>
-        A dormitory accommodation option suitable for
-        larger groups and group travel.
-    </p>
+<h3>10 Bedded Dormitory Room</h3>
+<p>A practical accommodation option for larger groups.</p>
 </div>
 
 </div>
@@ -811,57 +948,134 @@ footer {
      FACILITIES
 ========================= -->
 
-<section id="facilities" class="facilities">
+<section class="facilities" id="facilities">
 
 <div class="container">
 
-<div class="section-label">
-    Hotel Facilities
-</div>
+<div class="section-heading">
 
-<h2 class="section-title">
-    Facilities & Services
-</h2>
+<span>Hotel Facilities</span>
 
-<p class="section-text">
-    Essential services and conveniences for a smooth and comfortable stay.
+<h2>Comfort & Convenience</h2>
+
+<p>
+Essential facilities to make your stay at Hotel Caveri Inn
+convenient and comfortable.
 </p>
 
-<div class="facilities-grid">
+</div>
+
+<div class="facility-grid">
 
 <div class="facility">
-    <div class="facility-icon">✓</div>
-    <h3>Express Check-in</h3>
+<div class="facility-icon">✓</div>
+<h3>Express Check-in</h3>
+<p>Quick and convenient arrival experience.</p>
 </div>
 
 <div class="facility">
-    <div class="facility-icon">24</div>
-    <h3>24-Hour Reception</h3>
+<div class="facility-icon">24</div>
+<h3>24-Hour Reception</h3>
+<p>Reception assistance available around the clock.</p>
 </div>
 
 <div class="facility">
-    <div class="facility-icon">✦</div>
-    <h3>Room Service</h3>
+<div class="facility-icon">⌂</div>
+<h3>Room Service</h3>
+<p>Convenient in-house room service.</p>
 </div>
 
 <div class="facility">
-    <div class="facility-icon">✈</div>
-    <h3>Travel Desk</h3>
+<div class="facility-icon">✦</div>
+<h3>Travel Desk</h3>
+<p>Travel assistance for your Coorg visit.</p>
 </div>
 
 <div class="facility">
-    <div class="facility-icon">P</div>
-    <h3>Car Parking</h3>
+<div class="facility-icon">P</div>
+<h3>Car Parking</h3>
+<p>Parking facility available for guests.</p>
 </div>
 
 <div class="facility">
-    <div class="facility-icon">Wi</div>
-    <h3>Wi-Fi</h3>
+<div class="facility-icon">Wi</div>
+<h3>Wi-Fi</h3>
+<p>Wi-Fi connectivity for guests.</p>
 </div>
 
 <div class="facility">
-    <div class="facility-icon">+</div>
-    <h3>Free Toiletries</h3>
+<div class="facility-icon">+</div>
+<h3>Free Toiletries</h3>
+<p>Essential complimentary toiletries.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery" id="gallery">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Property Gallery</span>
+
+<h2>Explore Hotel Caveri Inn</h2>
+
+<p>
+Take a look at the property and interiors of Hotel Caveri Inn.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item large">
+
+<img
+src="images/caveri-inn-exterior-day.jpeg"
+alt="Hotel Caveri Inn exterior during the day">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/caveri-inn-exterior.jpeg"
+alt="Hotel Caveri Inn exterior">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/caveri-inn-front.jpeg"
+alt="Hotel Caveri Inn front view">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/caveri-inn-interior-2.jpeg"
+alt="Hotel Caveri Inn interior">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/caveri-inn-interior.jpeg"
+alt="Hotel Caveri Inn interior accommodation">
+
 </div>
 
 </div>
@@ -879,67 +1093,23 @@ footer {
 
 <div class="container">
 
-<div class="section-label">
-    Dining Nearby
+<div class="section-heading">
+
+<span>Dining</span>
+
+<h2>Restaurants & Cafés Nearby</h2>
+
 </div>
 
-<h2 class="section-title">
-    Restaurants & Cafés Around Coorg
-</h2>
+<div class="dining-box">
+
+<h3>Explore Local Dining</h3>
 
 <p>
-    Hotel Caveri Inn is conveniently located near restaurants
-    and cafés in Coorg, making it easy for guests to explore
-    local dining options during their stay.
+Guests can explore a variety of restaurants and cafés
+near Hotel Caveri Inn in Madikeri, offering convenient
+dining options during their stay in Coorg.
 </p>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     GALLERY
-========================= -->
-
-<section id="gallery" class="gallery">
-
-<div class="container">
-
-<div class="section-label">
-    Hotel Gallery
-</div>
-
-<h2 class="section-title">
-    A Glimpse of Hotel Caveri Inn
-</h2>
-
-<p class="section-text">
-    Explore Hotel Caveri Inn and its surroundings.
-    Property photographs will be added to this gallery.
-</p>
-
-<div class="gallery-placeholder">
-
-<div class="photo-box large">
-    Hotel Exterior — Photo to be added
-</div>
-
-<div class="photo-box">
-    Guest Room — Photo to be added
-</div>
-
-<div class="photo-box">
-    Guest Room — Photo to be added
-</div>
-
-<div class="photo-box">
-    Lobby / Common Area — Photo to be added
-</div>
-
-<div class="photo-box">
-    Hotel Facilities — Photo to be added
-</div>
 
 </div>
 
@@ -952,78 +1122,48 @@ footer {
      LOCATION
 ========================= -->
 
-<section id="location" class="location">
+<section class="location" id="location">
 
 <div class="container">
 
-<div class="section-label">
-    Location
-</div>
+<div class="section-heading">
 
-<h2 class="section-title">
-    Find Hotel Caveri Inn
-</h2>
+<span>Find Us</span>
+
+<h2>Location & Stay Information</h2>
+
+<p>
+Conveniently located in Stuart Hill, Madikeri,
+opposite Rajaseat Garden.
+</p>
+
+</div>
 
 <div class="location-grid">
 
 <div class="info-box">
 
-<h3>
-    Hotel Information
-</h3>
+<h3>Hotel Caveri Inn</h3>
 
 <div class="info-row">
 
 <strong>Address</strong>
 
-<span>
+<p>
 Opposite Rajaseat Garden,<br>
 Stuart Hill, Madikeri,<br>
 Karnataka 571201, India
-</span>
+</p>
 
 </div>
-
-<div class="info-row">
-
-<strong>Check-in</strong>
-
-<span>
-12:00 PM
-</span>
-
-</div>
-
-<div class="info-row">
-
-<strong>Check-out</strong>
-
-<span>
-11:00 AM
-</span>
-
-</div>
-
-</div>
-
-
-<div class="info-box">
-
-<h3>
-    Contact
-</h3>
 
 <div class="info-row">
 
 <strong>Phone / WhatsApp</strong>
 
-<span>
-
-<a href="tel:+919916442929">
+<p>
 +91 9916442929
-</a>
-
-</span>
+</p>
 
 </div>
 
@@ -1031,13 +1171,36 @@ Karnataka 571201, India
 
 <strong>Email</strong>
 
-<span>
-
-<a href="mailto:razakcoffeebean27@gmail.com">
+<p>
 razakcoffeebean27@gmail.com
-</a>
+</p>
 
-</span>
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>Check-in & Check-out</h3>
+
+<div class="info-row">
+
+<strong>Check-in</strong>
+
+<p>
+12:00 PM
+</p>
+
+</div>
+
+<div class="info-row">
+
+<strong>Check-out</strong>
+
+<p>
+11:00 AM
+</p>
 
 </div>
 
@@ -1045,9 +1208,9 @@ razakcoffeebean27@gmail.com
 
 <strong>Booking & Enquiries</strong>
 
-<span>
-Contact us directly by phone or WhatsApp.
-</span>
+<p>
++91 9916442929
+</p>
 
 </div>
 
@@ -1064,40 +1227,42 @@ Contact us directly by phone or WhatsApp.
      CONTACT
 ========================= -->
 
-<section id="contact" class="contact">
+<section class="contact" id="enquire">
 
 <div class="container">
 
-<div class="contact-box">
+<div class="section-heading">
 
-<div class="section-label">
-    Reservations & Enquiries
-</div>
+<span>Reservations & Enquiries</span>
 
-<h2>
-    Plan Your Stay at Hotel Caveri Inn
-</h2>
+<h2>Plan Your Stay</h2>
 
 <p>
-    Contact us directly for room availability,
-    accommodation enquiries and bookings.
+Contact Hotel Caveri Inn for room availability,
+booking enquiries and travel assistance.
 </p>
 
-<a href="tel:+919916442929"
-   class="contact-button">
-    Call +91 9916442929
+</div>
+
+<div class="contact-buttons">
+
+<a
+href="tel:+919916442929"
+class="contact-button">
+Call Us
 </a>
 
-<a href="https://wa.me/919916442929"
-   class="contact-button whatsapp"
-   target="_blank"
-   rel="noopener">
-    WhatsApp Us
+<a
+href="https://wa.me/919916442929"
+target="_blank"
+class="contact-button">
+WhatsApp
 </a>
 
-<a href="mailto:razakcoffeebean27@gmail.com"
-   class="contact-button">
-    Email Us
+<a
+href="mailto:razakcoffeebean27@gmail.com"
+class="contact-button">
+Email Us
 </a>
 
 </div>
@@ -1113,71 +1278,70 @@ Contact us directly by phone or WhatsApp.
 
 <footer>
 
-<div class="container">
-
-<div class="footer-grid">
-
-<div class="footer-column">
-
-<div class="footer-logo">
-    Hotel Caveri Inn
-</div>
-
 <p>
-    Comfortable accommodation in Stuart Hill,
-    Madikeri, Coorg, Karnataka.
-</p>
-
-</div>
-
-
-<div class="footer-column">
-
-<h3>
-    Quick Links
-</h3>
-
-<p><a href="#home">Home</a></p>
-<p><a href="#about">About</a></p>
-<p><a href="#rooms">Rooms</a></p>
-<p><a href="#facilities">Facilities</a></p>
-<p><a href="#location">Location</a></p>
-
-</div>
-
-
-<div class="footer-column">
-
-<h3>
-    Contact
-</h3>
-
-<p>
-    +91 9916442929
+<strong>Hotel Caveri Inn</strong>
 </p>
 
 <p>
-    razakcoffeebean27@gmail.com
+Opposite Rajaseat Garden, Stuart Hill, Madikeri,
+Karnataka 571201, India
 </p>
 
 <p>
-    Madikeri, Karnataka 571201
-</p>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-
 © 2026 Hotel Caveri Inn. All rights reserved.
-
-</div>
-
-</div>
+</p>
 
 </footer>
+
+
+<!-- =========================
+     SLIDESHOW JAVASCRIPT
+========================= -->
+
+<script>
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+
+    if (index >= slides.length) {
+        index = 0;
+    }
+
+    if (index < 0) {
+        index = slides.length - 1;
+    }
+
+    slides.forEach(function(slide) {
+        slide.classList.remove("active");
+    });
+
+    dots.forEach(function(dot) {
+        dot.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+    currentSlide = index;
+}
+
+function changeSlide(direction) {
+
+    showSlide(currentSlide + direction);
+
+}
+
+setInterval(function() {
+
+    showSlide(currentSlide + 1);
+
+}, 5000);
+
+</script>
 
 </body>
 </html>
