@@ -312,17 +312,17 @@ section {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
 }
 
 .room-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 32px rgba(70,50,30,0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(70,50,30,0.13);
 }
 
 .room-thumb {
     position: relative;
-    height: 195px;
+    height: 205px;
     overflow: hidden;
     background: #e9e2d7;
 }
@@ -331,11 +331,11 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .room-card:hover .room-thumb img {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 .photo-badge {
@@ -385,153 +385,140 @@ section {
 }
 
 /* =========================
-   ROOM PHOTO LIGHTBOX MODAL
+   PURE PHOTO LIGHTBOX (NO DIALOGUE BOX)
 ========================= */
 
-.lightbox {
-    display: none;
+.photo-viewer {
     position: fixed;
     inset: 0;
     z-index: 2000;
-    background: rgba(20, 15, 11, 0.94);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.lightbox.open {
-    display: flex;
-}
-
-.lightbox-inner {
-    position: relative;
-    width: 100%;
-    max-width: 960px;
-    background: #241b15;
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 22px;
-    color: white;
-}
-
-.lightbox-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    gap: 15px;
-}
-
-.lightbox-title h3 {
-    font-family: Georgia, serif;
-    font-size: 22px;
-    color: #f2d69a;
-}
-
-.lightbox-title span {
-    font-size: 12px;
-    color: #cfc5ba;
-}
-
-.lightbox-close {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white;
-    width: 38px;
-    height: 38px;
-    font-size: 22px;
-    cursor: pointer;
-    line-height: 1;
-    transition: 0.2s;
-}
-
-.lightbox-close:hover {
-    background: #a17b42;
-    border-color: #a17b42;
-}
-
-.lightbox-stage {
-    position: relative;
-    height: 460px;
-    background: #140f0b;
+    background: rgba(12, 9, 7, 0.92);
+    backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
-.lightbox-stage img {
-    max-width: 100%;
-    max-height: 100%;
+.photo-viewer.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.viewer-image-wrap {
+    position: relative;
+    max-width: 90vw;
+    max-height: 86vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.92);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.photo-viewer.open .viewer-image-wrap {
+    transform: scale(1);
+}
+
+.viewer-image-wrap img {
+    max-width: 90vw;
+    max-height: 86vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+    transition: opacity 0.28s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.lb-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.viewer-image-wrap img.switching {
+    opacity: 0;
+    transform: scale(0.96);
+}
+
+.viewer-close {
+    position: fixed;
+    top: 22px;
+    right: 26px;
+    z-index: 2010;
     width: 44px;
     height: 44px;
-    border: 1px solid rgba(255,255,255,0.4);
-    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.viewer-close:hover {
+    background: #a17b42;
+    border-color: #a17b42;
+    transform: rotate(90deg);
+}
+
+.viewer-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2010;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.45);
     color: white;
     font-size: 22px;
     cursor: pointer;
-    border-radius: 50%;
-    transition: 0.2s;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.lb-arrow:hover {
+.viewer-arrow:hover {
     background: #a17b42;
     border-color: #a17b42;
+    transform: translateY(-50%) scale(1.08);
 }
 
-.lb-prev {
-    left: 14px;
+.viewer-prev {
+    left: 24px;
 }
 
-.lb-next {
-    right: 14px;
+.viewer-next {
+    right: 24px;
 }
 
-.lightbox-thumbs {
+.viewer-dots {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2010;
     display: flex;
-    gap: 10px;
-    margin-top: 14px;
-    overflow-x: auto;
-    padding-bottom: 6px;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.45);
 }
 
-.lightbox-thumbs img {
-    width: 76px;
-    height: 54px;
-    object-fit: cover;
+.viewer-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
-    opacity: 0.5;
-    border: 2px solid transparent;
-    flex-shrink: 0;
-    transition: 0.2s;
+    transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.lightbox-thumbs img.active,
-.lightbox-thumbs img:hover {
-    opacity: 1;
-    border-color: #f2d69a;
-}
-
-.lightbox-footer {
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.12);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.lightbox-footer p {
-    font-size: 13px;
-    color: #d8cec2;
+.viewer-dot.active,
+.viewer-dot:hover {
+    background: #f2d69a;
+    transform: scale(1.3);
 }
 
 /* =========================
@@ -774,10 +761,6 @@ footer p {
     .gallery-item.large {
         grid-column: span 2;
     }
-
-    .lightbox-stage {
-        height: 360px;
-    }
 }
 
 @media (max-width: 600px) {
@@ -838,12 +821,25 @@ footer p {
         padding: 30px 20px;
     }
 
-    .lightbox-inner {
-        padding: 15px;
+    .viewer-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 
-    .lightbox-stage {
-        height: 260px;
+    .viewer-prev {
+        left: 10px;
+    }
+
+    .viewer-next {
+        right: 10px;
+    }
+
+    .viewer-close {
+        top: 14px;
+        right: 14px;
+        width: 38px;
+        height: 38px;
     }
 }
 
@@ -990,15 +986,12 @@ Madikeri, Karnataka 571201, India.
 <h2>Rooms & Accommodation</h2>
 
 <p>
-Click on any room category below to view interior photos
-and accommodation details.
+Click on any room category below to view interior photos.
 </p>
 
 </div>
 
-<div class="room-grid" id="roomGrid">
-    <!-- Room cards with cover photos are populated automatically from ROOM_DATA -->
-</div>
+<div class="room-grid" id="roomGrid"></div>
 
 </div>
 
@@ -1006,34 +999,19 @@ and accommodation details.
 
 
 <!-- =========================
-     ROOM LIGHTBOX MODAL
+     PURE PHOTO VIEWER
 ========================= -->
 
-<div class="lightbox" id="roomLightbox" onclick="closeLightboxOnBackdrop(event)">
-    <div class="lightbox-inner">
-        <div class="lightbox-header">
-            <div class="lightbox-title">
-                <h3 id="lbRoomTitle">Room Name</h3>
-                <span id="lbPhotoCounter">Photo 1 of 10</span>
-            </div>
-            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close gallery">&times;</button>
-        </div>
+<div class="photo-viewer" id="photoViewer" onclick="closeViewerOnBackdrop(event)">
+    <button class="viewer-close" onclick="closeViewer()" aria-label="Close">&times;</button>
+    <button class="viewer-arrow viewer-prev" onclick="stepViewer(-1)" aria-label="Previous">&#10094;</button>
 
-        <div class="lightbox-stage">
-            <button class="lb-arrow lb-prev" onclick="stepLightbox(-1)" aria-label="Previous photo">&#10094;</button>
-            <img id="lbMainImage" src="" alt="Room interior photo">
-            <button class="lb-arrow lb-next" onclick="stepLightbox(1)" aria-label="Next photo">&#10095;</button>
-        </div>
-
-        <div class="lightbox-thumbs" id="lbThumbs"></div>
-
-        <div class="lightbox-footer">
-            <p id="lbRoomDesc"></p>
-            <a id="lbWhatsappBtn" href="https://wa.me/919916442929" target="_blank" class="btn btn-primary">
-                Enquire on WhatsApp
-            </a>
-        </div>
+    <div class="viewer-image-wrap">
+        <img id="viewerImg" src="" alt="Room interior">
     </div>
+
+    <button class="viewer-arrow viewer-next" onclick="stepViewer(1)" aria-label="Next">&#10095;</button>
+    <div class="viewer-dots" id="viewerDots"></div>
 </div>
 
 
@@ -1388,7 +1366,7 @@ Karnataka 571201, India
 
 
 <!-- =========================
-     ROOM GALLERIES & LIGHTBOX JAVASCRIPT
+     ROOM GALLERIES & PURE PHOTO VIEWER JS
 ========================= -->
 
 <script>
@@ -1411,16 +1389,16 @@ const ROOM_DATA = [
         title: "Standard Room",
         desc: "A convenient accommodation option for a comfortable stay in Madikeri.",
         photos: [
-            "Standard Room/Standard Room Interior 01.png",
-            "Standard Room/Standard Room Interior 02.png",
-            "Standard Room/Standard Room Interior 03.png",
-            "Standard Room/Standard Room Interior 04.png",
-            "Standard Room/Standard Room Interior 05.png",
-            "Standard Room/Standard Room Interior 06.png",
-            "Standard Room/Standard Room Interior 07.png",
-            "Standard Room/Standard Room Interior 08.png",
-            "Standard Room/Standard Room Interior 09.png",
-            "Standard Room/Standard Room Interior 10.png"
+            "Standard Room Interior 01.png",
+            "Standard Room Interior 02.png",
+            "Standard Room Interior 03.png",
+            "Standard Room Interior 04.png",
+            "Standard Room Interior 05.png",
+            "Standard Room Interior 06.png",
+            "Standard Room Interior 07.png",
+            "Standard Room Interior 08.png",
+            "Standard Room Interior 09.png",
+            "Standard Room Interior 10.png"
         ]
     },
     {
@@ -1512,13 +1490,14 @@ const ROOM_DATA = [
 
 let activeRoomIndex = 0;
 let activePhotoIndex = 0;
+let touchStartX = 0;
 
 function renderRoomCards() {
     const grid = document.getElementById("roomGrid");
     grid.innerHTML = ROOM_DATA.map((room, idx) => `
-        <div class="room-card" onclick="openLightbox(${idx})">
+        <div class="room-card" onclick="openViewer(${idx})">
             <div class="room-thumb">
-                <img src="${encodeURI(room.photos[0])}" alt="${room.title} at Hotel Caveri Inn">
+                <img src="${encodeURI(room.photos[0])}" alt="${room.title}">
                 <span class="photo-badge">+${room.photos.length} Photos</span>
             </div>
             <div class="room-card-body">
@@ -1526,78 +1505,95 @@ function renderRoomCards() {
                     <h3>${room.title}</h3>
                     <p>${room.desc}</p>
                 </div>
-                <span class="view-photos-link">View Room Photos &rarr;</span>
+                <span class="view-photos-link">View Photos &rarr;</span>
             </div>
         </div>
     `).join("");
 }
 
-function openLightbox(roomIdx) {
+function openViewer(roomIdx) {
     activeRoomIndex = roomIdx;
     activePhotoIndex = 0;
     const room = ROOM_DATA[roomIdx];
 
-    document.getElementById("lbRoomTitle").textContent = room.title;
-    document.getElementById("lbRoomDesc").textContent = room.desc;
-
-    const msg = encodeURIComponent(`Hello Hotel Caveri Inn, I would like to enquire about availability for the ${room.title}.`);
-    document.getElementById("lbWhatsappBtn").href = `https://wa.me/919916442929?text=${msg}`;
-
-    const thumbsContainer = document.getElementById("lbThumbs");
-    thumbsContainer.innerHTML = room.photos.map((src, i) => `
-        <img src="${encodeURI(src)}" alt="${room.title} photo ${i + 1}" onclick="selectLightboxPhoto(${i})" id="lbThumb_${i}">
+    const dotsContainer = document.getElementById("viewerDots");
+    dotsContainer.innerHTML = room.photos.map((_, i) => `
+        <span class="viewer-dot" onclick="selectViewerPhoto(${i})" id="vDot_${i}"></span>
     `).join("");
 
-    updateLightboxPhoto();
-    document.getElementById("roomLightbox").classList.add("open");
+    const img = document.getElementById("viewerImg");
+    img.src = encodeURI(room.photos[0]);
+    updateViewerDots();
+
+    document.getElementById("photoViewer").classList.add("open");
     document.body.style.overflow = "hidden";
 }
 
-function updateLightboxPhoto() {
+function updateViewerDots() {
     const room = ROOM_DATA[activeRoomIndex];
-    const total = room.photos.length;
-
-    document.getElementById("lbMainImage").src = encodeURI(room.photos[activePhotoIndex]);
-    document.getElementById("lbPhotoCounter").textContent = `Photo ${activePhotoIndex + 1} of ${total}`;
-
     room.photos.forEach((_, i) => {
-        const thumb = document.getElementById(`lbThumb_${i}`);
-        if (thumb) {
-            thumb.classList.toggle("active", i === activePhotoIndex);
+        const dot = document.getElementById(`vDot_${i}`);
+        if (dot) {
+            dot.classList.toggle("active", i === activePhotoIndex);
         }
     });
 }
 
-function stepLightbox(direction) {
+function animatePhotoChange(newIndex) {
+    const room = ROOM_DATA[activeRoomIndex];
+    const img = document.getElementById("viewerImg");
+    img.classList.add("switching");
+
+    setTimeout(() => {
+        activePhotoIndex = newIndex;
+        img.src = encodeURI(room.photos[activePhotoIndex]);
+        updateViewerDots();
+        img.classList.remove("switching");
+    }, 180);
+}
+
+function stepViewer(direction) {
     const total = ROOM_DATA[activeRoomIndex].photos.length;
-    activePhotoIndex = (activePhotoIndex + direction + total) % total;
-    updateLightboxPhoto();
+    const nextIdx = (activePhotoIndex + direction + total) % total;
+    animatePhotoChange(nextIdx);
 }
 
-function selectLightboxPhoto(index) {
-    activePhotoIndex = index;
-    updateLightboxPhoto();
+function selectViewerPhoto(index) {
+    if (index === activePhotoIndex) return;
+    animatePhotoChange(index);
 }
 
-function closeLightbox() {
-    document.getElementById("roomLightbox").classList.remove("open");
+function closeViewer() {
+    document.getElementById("photoViewer").classList.remove("open");
     document.body.style.overflow = "";
 }
 
-function closeLightboxOnBackdrop(event) {
-    if (event.target.id === "roomLightbox") {
-        closeLightbox();
+function closeViewerOnBackdrop(event) {
+    if (event.target.id === "photoViewer" || event.target.classList.contains("viewer-image-wrap")) {
+        closeViewer();
     }
 }
 
 document.addEventListener("keydown", function(e) {
-    const lightbox = document.getElementById("roomLightbox");
-    if (!lightbox.classList.contains("open")) return;
+    const viewer = document.getElementById("photoViewer");
+    if (!viewer.classList.contains("open")) return;
 
-    if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowRight") stepLightbox(1);
-    if (e.key === "ArrowLeft") stepLightbox(-1);
+    if (e.key === "Escape") closeViewer();
+    if (e.key === "ArrowRight") stepViewer(1);
+    if (e.key === "ArrowLeft") stepViewer(-1);
 });
+
+const viewerEl = document.getElementById("photoViewer");
+viewerEl.addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+viewerEl.addEventListener("touchend", e => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(diff) > 40) {
+        stepViewer(diff < 0 ? 1 : -1);
+    }
+}, { passive: true });
 
 renderRoomCards();
 
