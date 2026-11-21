@@ -101,7 +101,7 @@ header {
 }
 
 /* =========================
-   HERO SLIDESHOW
+   HERO (SINGLE IMAGE)
 ========================= */
 
 .hero {
@@ -115,34 +115,22 @@ header {
     color: white;
 }
 
-.hero-slides {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
-
-.hero-slide {
+.hero-bg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-}
-
-.hero-slide.active {
-    opacity: 1;
+    z-index: 0;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.45),
-            rgba(0,0,0,0.48)
-        );
+    background: linear-gradient(
+        rgba(0,0,0,0.48),
+        rgba(0,0,0,0.52)
+    );
     z-index: 1;
 }
 
@@ -163,8 +151,8 @@ header {
 
 .hero h1 {
     font-family: Georgia, serif;
-    font-size: clamp(42px, 7vw, 78px);
-    line-height: 1.05;
+    font-size: clamp(38px, 6.5vw, 72px);
+    line-height: 1.08;
     margin-bottom: 20px;
 }
 
@@ -210,57 +198,6 @@ header {
 .btn-light:hover {
     background: white;
     color: #4a3020;
-}
-
-/* SLIDESHOW CONTROLS */
-
-.slide-arrow {
-    position: absolute;
-    z-index: 3;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    border: 1px solid rgba(255,255,255,0.6);
-    background: rgba(0,0,0,0.25);
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 25px;
-}
-
-.slide-arrow:hover {
-    background: rgba(0,0,0,0.55);
-}
-
-.prev {
-    left: 25px;
-}
-
-.next {
-    right: 25px;
-}
-
-.slide-dots {
-    position: absolute;
-    z-index: 3;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 9px;
-}
-
-.dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    cursor: pointer;
-}
-
-.dot.active {
-    background: white;
 }
 
 /* =========================
@@ -355,7 +292,7 @@ section {
 }
 
 /* =========================
-   ROOMS
+   ROOMS & GALLERY CARDS
 ========================= */
 
 .rooms {
@@ -365,32 +302,236 @@ section {
 .room-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    gap: 20px;
 }
 
 .room-card {
     background: white;
-    padding: 25px 20px;
-    min-height: 145px;
     border: 1px solid #e8e0d5;
-    transition: 0.3s;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .room-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(70,50,30,0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(70,50,30,0.12);
+}
+
+.room-thumb {
+    position: relative;
+    height: 195px;
+    overflow: hidden;
+    background: #e9e2d7;
+}
+
+.room-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.room-card:hover .room-thumb img {
+    transform: scale(1.06);
+}
+
+.photo-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(36, 27, 21, 0.85);
+    color: #f2d69a;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 10px;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+}
+
+.room-card-body {
+    padding: 20px 18px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .room-card h3 {
     font-family: Georgia, serif;
     color: #4a3020;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .room-card p {
     color: #777067;
     font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.view-photos-link {
+    font-size: 12px;
+    font-weight: bold;
+    color: #9b7844;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.room-card:hover .view-photos-link {
+    color: #4a3020;
+}
+
+/* =========================
+   ROOM PHOTO LIGHTBOX MODAL
+========================= */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(20, 15, 11, 0.94);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-inner {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    background: #241b15;
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 22px;
+    color: white;
+}
+
+.lightbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 15px;
+}
+
+.lightbox-title h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: #f2d69a;
+}
+
+.lightbox-title span {
+    font-size: 12px;
+    color: #cfc5ba;
+}
+
+.lightbox-close {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    transition: 0.2s;
+}
+
+.lightbox-close:hover {
+    background: #a17b42;
+    border-color: #a17b42;
+}
+
+.lightbox-stage {
+    position: relative;
+    height: 460px;
+    background: #140f0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lightbox-stage img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.lb-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.lb-arrow:hover {
+    background: #a17b42;
+    border-color: #a17b42;
+}
+
+.lb-prev {
+    left: 14px;
+}
+
+.lb-next {
+    right: 14px;
+}
+
+.lightbox-thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+}
+
+.lightbox-thumbs img {
+    width: 76px;
+    height: 54px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 2px solid transparent;
+    flex-shrink: 0;
+    transition: 0.2s;
+}
+
+.lightbox-thumbs img.active,
+.lightbox-thumbs img:hover {
+    opacity: 1;
+    border-color: #f2d69a;
+}
+
+.lightbox-footer {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.lightbox-footer p {
+    font-size: 13px;
+    color: #d8cec2;
 }
 
 /* =========================
@@ -633,6 +774,10 @@ footer p {
     .gallery-item.large {
         grid-column: span 2;
     }
+
+    .lightbox-stage {
+        height: 360px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -658,19 +803,11 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 43px;
+        font-size: 38px;
     }
 
     .hero p {
         font-size: 14px;
-    }
-
-    .prev {
-        left: 12px;
-    }
-
-    .next {
-        right: 12px;
     }
 
     section {
@@ -699,6 +836,14 @@ footer p {
 
     .dining-box {
         padding: 30px 20px;
+    }
+
+    .lightbox-inner {
+        padding: 15px;
+    }
+
+    .lightbox-stage {
+        height: 260px;
     }
 }
 
@@ -734,49 +879,25 @@ footer p {
 
 
 <!-- =========================
-     HERO
+     HERO (SINGLE IMAGE)
 ========================= -->
 
 <section class="hero" id="home">
 
-<div class="hero-slides">
-
-    <img
-    class="hero-slide active"
+<img
+    class="hero-bg"
     src="images/caveri-inn-exterior-day.jpeg"
     alt="Hotel Caveri Inn exterior in Madikeri">
-
-    <img
-    class="hero-slide"
-    src="images/caveri-inn-exterior.jpeg"
-    alt="Hotel Caveri Inn property exterior">
-
-    <img
-    class="hero-slide"
-    src="images/caveri-inn-front.jpeg"
-    alt="Hotel Caveri Inn front view">
-
-    <img
-    class="hero-slide"
-    src="images/caveri-inn-interior-2.jpeg"
-    alt="Hotel Caveri Inn interior">
-
-    <img
-    class="hero-slide"
-    src="images/caveri-inn-interior.jpeg"
-    alt="Hotel Caveri Inn interior accommodation">
-
-</div>
 
 <div class="hero-overlay"></div>
 
 <div class="hero-content">
 
 <div class="hero-small">
-Welcome to Madikeri
+Madikeri • Coorg
 </div>
 
-<h1>Hotel Caveri Inn</h1>
+<h1>Welcome to Hotel Caveri Inn</h1>
 
 <p>
 A comfortable stay in the heart of Madikeri, Coorg,
@@ -796,26 +917,6 @@ WhatsApp Us
 </a>
 
 </div>
-
-</div>
-
-
-<button class="slide-arrow prev" onclick="changeSlide(-1)">
-&#10094;
-</button>
-
-<button class="slide-arrow next" onclick="changeSlide(1)">
-&#10095;
-</button>
-
-
-<div class="slide-dots">
-
-<span class="dot active" onclick="showSlide(0)"></span>
-<span class="dot" onclick="showSlide(1)"></span>
-<span class="dot" onclick="showSlide(2)"></span>
-<span class="dot" onclick="showSlide(3)"></span>
-<span class="dot" onclick="showSlide(4)"></span>
 
 </div>
 
@@ -889,59 +990,51 @@ Madikeri, Karnataka 571201, India.
 <h2>Rooms & Accommodation</h2>
 
 <p>
-Choose from a range of accommodation options suitable
-for couples, families and groups.
+Click on any room category below to view interior photos
+and accommodation details.
 </p>
 
 </div>
 
-<div class="room-grid">
-
-<div class="room-card">
-<h3>Budget Room</h3>
-<p>Comfortable accommodation for travellers looking for a practical stay.</p>
-</div>
-
-<div class="room-card">
-<h3>Standard Room</h3>
-<p>A convenient accommodation option for a comfortable stay in Madikeri.</p>
-</div>
-
-<div class="room-card">
-<h3>Deluxe Double Room</h3>
-<p>Double accommodation designed for a comfortable stay.</p>
-</div>
-
-<div class="room-card">
-<h3>Classic Triple Room</h3>
-<p>Suitable for guests travelling together and looking for triple accommodation.</p>
-</div>
-
-<div class="room-card">
-<h3>05 Bedded Family Room</h3>
-<p>Family accommodation with space for up to five guests.</p>
-</div>
-
-<div class="room-card">
-<h3>06 Bedded Family Room</h3>
-<p>Family accommodation suitable for larger groups.</p>
-</div>
-
-<div class="room-card">
-<h3>07 Bedded Family Room</h3>
-<p>Spacious group accommodation for families and travelling groups.</p>
-</div>
-
-<div class="room-card">
-<h3>10 Bedded Dormitory Room</h3>
-<p>A practical accommodation option for larger groups.</p>
-</div>
-
+<div class="room-grid" id="roomGrid">
+    <!-- Room cards with cover photos are populated automatically from ROOM_DATA -->
 </div>
 
 </div>
 
 </section>
+
+
+<!-- =========================
+     ROOM LIGHTBOX MODAL
+========================= -->
+
+<div class="lightbox" id="roomLightbox" onclick="closeLightboxOnBackdrop(event)">
+    <div class="lightbox-inner">
+        <div class="lightbox-header">
+            <div class="lightbox-title">
+                <h3 id="lbRoomTitle">Room Name</h3>
+                <span id="lbPhotoCounter">Photo 1 of 10</span>
+            </div>
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close gallery">&times;</button>
+        </div>
+
+        <div class="lightbox-stage">
+            <button class="lb-arrow lb-prev" onclick="stepLightbox(-1)" aria-label="Previous photo">&#10094;</button>
+            <img id="lbMainImage" src="" alt="Room interior photo">
+            <button class="lb-arrow lb-next" onclick="stepLightbox(1)" aria-label="Next photo">&#10095;</button>
+        </div>
+
+        <div class="lightbox-thumbs" id="lbThumbs"></div>
+
+        <div class="lightbox-footer">
+            <p id="lbRoomDesc"></p>
+            <a id="lbWhatsappBtn" href="https://wa.me/919916442929" target="_blank" class="btn btn-primary">
+                Enquire on WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
 
 
 <!-- =========================
@@ -1295,51 +1388,218 @@ Karnataka 571201, India
 
 
 <!-- =========================
-     SLIDESHOW JAVASCRIPT
+     ROOM GALLERIES & LIGHTBOX JAVASCRIPT
 ========================= -->
 
 <script>
 
-let currentSlide = 0;
-
-const slides = document.querySelectorAll(".hero-slide");
-const dots = document.querySelectorAll(".dot");
-
-function showSlide(index) {
-
-    if (index >= slides.length) {
-        index = 0;
+const ROOM_DATA = [
+    {
+        title: "Budget Room",
+        desc: "Comfortable accommodation for travellers looking for a practical stay.",
+        photos: [
+            "Budget Room/Budget Room Interior.png",
+            "Budget Room/Budget Room Interior 02.png",
+            "Budget Room/Budget Room Interior 03.png",
+            "Budget Room/Budget Room Interior 04.png",
+            "Budget Room/Budget Room Interior 05.png",
+            "Budget Room/Budget Room Interior 06.png",
+            "Budget Room/Budget Room Interior 07.png"
+        ]
+    },
+    {
+        title: "Standard Room",
+        desc: "A convenient accommodation option for a comfortable stay in Madikeri.",
+        photos: [
+            "Standard Room/Standard Room Interior 01.png",
+            "Standard Room/Standard Room Interior 02.png",
+            "Standard Room/Standard Room Interior 03.png",
+            "Standard Room/Standard Room Interior 04.png",
+            "Standard Room/Standard Room Interior 05.png",
+            "Standard Room/Standard Room Interior 06.png",
+            "Standard Room/Standard Room Interior 07.png",
+            "Standard Room/Standard Room Interior 08.png",
+            "Standard Room/Standard Room Interior 09.png",
+            "Standard Room/Standard Room Interior 10.png"
+        ]
+    },
+    {
+        title: "Deluxe Double Room",
+        desc: "Double accommodation designed for a comfortable stay.",
+        photos: [
+            "Deluxe Double/Deluxe Doube Room Interior 01.png",
+            "Deluxe Double/Deluxe Doube Room Interior 02.png",
+            "Deluxe Double/Deluxe Doube Room Interior 03.png",
+            "Deluxe Double/Deluxe Doube Room Interior 04.png",
+            "Deluxe Double/Deluxe Doube Room Interior 05.png",
+            "Deluxe Double/Deluxe Doube Room Interior 06.png",
+            "Deluxe Double/Deluxe Doube Room Interior 07.png",
+            "Deluxe Double/Deluxe Doube Room Interior 08.png",
+            "Deluxe Double/Deluxe Doube Room Interior 09.png"
+        ]
+    },
+    {
+        title: "Classic Triple Room",
+        desc: "Suitable for guests travelling together and looking for triple accommodation.",
+        photos: [
+            "Classic Triple Room/Classic triple Room interior 01.png",
+            "Classic Triple Room/Classic Triple Room 02.png",
+            "Classic Triple Room/Classic Triple Room 03.png",
+            "Classic Triple Room/Classic Triple Room 04.png",
+            "Classic Triple Room/Classic Triple Room 05.png",
+            "Classic Triple Room/Classic Triple Room 06.png",
+            "Classic Triple Room/Classic Triple Room 07.png",
+            "Classic Triple Room/Classic Triple Room 08.png",
+            "Classic Triple Room/Classic Triple Room 09.png",
+            "Classic Triple Room/Classic Triple Room 10.png",
+            "Classic Triple Room/Classic Triple Room 11.png"
+        ]
+    },
+    {
+        title: "05 Bedded Family Room",
+        desc: "Family accommodation with space for up to five guests.",
+        photos: [
+            "05 Bedded Room/05 Bedded Room 02.png",
+            "05 Bedded Room/05 Bedded Room 03.png"
+        ]
+    },
+    {
+        title: "06 Bedded Family Room",
+        desc: "Family accommodation suitable for larger groups.",
+        photos: [
+            "06 Bedded Room/06 Bedded Room 01.png",
+            "06 Bedded Room/06 Bedded Room 02.png",
+            "06 Bedded Room/06 Bedded Room 03.png",
+            "06 Bedded Room/06 Bedded Room 04.png",
+            "06 Bedded Room/06 Bedded Room 05.png",
+            "06 Bedded Room/06 Bedded Room 06.png",
+            "06 Bedded Room/06 Bedded Room 07.png",
+            "06 Bedded Room/06 Bedded Room 08.png",
+            "06 Bedded Room/06 Bedded Room 09.png",
+            "06 Bedded Room/06 Bedded Room 10.png",
+            "06 Bedded Room/06 Bedded Room 11 pano.png",
+            "06 Bedded Room/06 Bedded Room 12 pano.png"
+        ]
+    },
+    {
+        title: "07 Bedded Family Room",
+        desc: "Spacious group accommodation for families and travelling groups.",
+        photos: [
+            "07 Bedded Room/07 Bedded Room 01.png",
+            "07 Bedded Room/07 Bedded Room 02.png",
+            "07 Bedded Room/07 Bedded Room 03.png"
+        ]
+    },
+    {
+        title: "10 Bedded Dormitory Room",
+        desc: "A practical accommodation option for larger groups.",
+        photos: [
+            "10 Bedded Room/10 Bedded Dormitory room 01.png",
+            "10 Bedded Room/10 Bedded Dormitory room 02.png",
+            "10 Bedded Room/10 Bedded Dormitory room 03.png",
+            "10 Bedded Room/10 Bedded Dormitory room 04.png",
+            "10 Bedded Room/10 Bedded Dormitory room 05.png",
+            "10 Bedded Room/10 Bedded Dormitory room 06.png",
+            "10 Bedded Room/10 Bedded Dormitory room 07.png",
+            "10 Bedded Room/10 Bedded Dormitory room 08.png",
+            "10 Bedded Room/10 Bedded Dormitory room 09.png",
+            "10 Bedded Room/10 Bedded Dormitory room 10.png",
+            "10 Bedded Room/10 Bedded Dormitory room 11.png",
+            "10 Bedded Room/10 Bedded Dormitory room 12 pano.png"
+        ]
     }
+];
 
-    if (index < 0) {
-        index = slides.length - 1;
-    }
+let activeRoomIndex = 0;
+let activePhotoIndex = 0;
 
-    slides.forEach(function(slide) {
-        slide.classList.remove("active");
-    });
-
-    dots.forEach(function(dot) {
-        dot.classList.remove("active");
-    });
-
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");
-
-    currentSlide = index;
+function renderRoomCards() {
+    const grid = document.getElementById("roomGrid");
+    grid.innerHTML = ROOM_DATA.map((room, idx) => `
+        <div class="room-card" onclick="openLightbox(${idx})">
+            <div class="room-thumb">
+                <img src="${encodeURI(room.photos[0])}" alt="${room.title} at Hotel Caveri Inn">
+                <span class="photo-badge">+${room.photos.length} Photos</span>
+            </div>
+            <div class="room-card-body">
+                <div>
+                    <h3>${room.title}</h3>
+                    <p>${room.desc}</p>
+                </div>
+                <span class="view-photos-link">View Room Photos &rarr;</span>
+            </div>
+        </div>
+    `).join("");
 }
 
-function changeSlide(direction) {
+function openLightbox(roomIdx) {
+    activeRoomIndex = roomIdx;
+    activePhotoIndex = 0;
+    const room = ROOM_DATA[roomIdx];
 
-    showSlide(currentSlide + direction);
+    document.getElementById("lbRoomTitle").textContent = room.title;
+    document.getElementById("lbRoomDesc").textContent = room.desc;
 
+    const msg = encodeURIComponent(`Hello Hotel Caveri Inn, I would like to enquire about availability for the ${room.title}.`);
+    document.getElementById("lbWhatsappBtn").href = `https://wa.me/919916442929?text=${msg}`;
+
+    const thumbsContainer = document.getElementById("lbThumbs");
+    thumbsContainer.innerHTML = room.photos.map((src, i) => `
+        <img src="${encodeURI(src)}" alt="${room.title} photo ${i + 1}" onclick="selectLightboxPhoto(${i})" id="lbThumb_${i}">
+    `).join("");
+
+    updateLightboxPhoto();
+    document.getElementById("roomLightbox").classList.add("open");
+    document.body.style.overflow = "hidden";
 }
 
-setInterval(function() {
+function updateLightboxPhoto() {
+    const room = ROOM_DATA[activeRoomIndex];
+    const total = room.photos.length;
 
-    showSlide(currentSlide + 1);
+    document.getElementById("lbMainImage").src = encodeURI(room.photos[activePhotoIndex]);
+    document.getElementById("lbPhotoCounter").textContent = `Photo ${activePhotoIndex + 1} of ${total}`;
 
-}, 5000);
+    room.photos.forEach((_, i) => {
+        const thumb = document.getElementById(`lbThumb_${i}`);
+        if (thumb) {
+            thumb.classList.toggle("active", i === activePhotoIndex);
+        }
+    });
+}
+
+function stepLightbox(direction) {
+    const total = ROOM_DATA[activeRoomIndex].photos.length;
+    activePhotoIndex = (activePhotoIndex + direction + total) % total;
+    updateLightboxPhoto();
+}
+
+function selectLightboxPhoto(index) {
+    activePhotoIndex = index;
+    updateLightboxPhoto();
+}
+
+function closeLightbox() {
+    document.getElementById("roomLightbox").classList.remove("open");
+    document.body.style.overflow = "";
+}
+
+function closeLightboxOnBackdrop(event) {
+    if (event.target.id === "roomLightbox") {
+        closeLightbox();
+    }
+}
+
+document.addEventListener("keydown", function(e) {
+    const lightbox = document.getElementById("roomLightbox");
+    if (!lightbox.classList.contains("open")) return;
+
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") stepLightbox(1);
+    if (e.key === "ArrowLeft") stepLightbox(-1);
+});
+
+renderRoomCards();
 
 </script>
 
