@@ -9,7 +9,7 @@
 
 <meta name="description" content="Hotel Caveri Inn in Madikeri, Coorg, Karnataka, opposite Rajaseat Garden. Comfortable rooms, family accommodation, Wi-Fi, parking, 24-hour reception, room service and travel desk assistance.">
 
-<meta name="keywords" content="Hotel Caveri Inn, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, hotel near Raja's Seat, Madikeri accommodation, Coorg hotel, family hotel Madikeri, budget hotel Madikeri, stay in Madikeri">
+<meta name="keywords" content="Hotel Caveri Inn, Hotel Cauvery Inn, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, hotel near Raja's Seat, Madikeri accommodation, Coorg hotel, family hotel Madikeri, budget hotel Madikeri, stay in Madikeri">
 
 <meta name="robots" content="index, follow">
 
@@ -47,7 +47,7 @@ img {
 }
 
 /* =========================
-   HEADER
+   HEADER & LEFT 3-LINE MENU
 ========================= */
 
 header {
@@ -62,31 +62,85 @@ header {
 .navbar {
     max-width: 1200px;
     margin: auto;
-    padding: 18px 25px;
+    padding: 14px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
 }
 
-.logo {
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-toggle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #e2d8ca;
+    background: #faf8f3;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: background 0.25s ease, border-color 0.25s ease;
+    flex-shrink: 0;
+}
+
+.menu-toggle:hover {
+    background: #f0e7d8;
+    border-color: #9b7844;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #4a3020;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #140c08;
+    border: 2px solid #9b7844;
+    flex-shrink: 0;
+}
+
+.logo-text {
     font-family: Georgia, serif;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     color: #4a3020;
+    line-height: 1.1;
 }
 
-.logo span {
+.logo-text span {
     display: block;
     font-family: Arial, sans-serif;
     font-size: 10px;
     letter-spacing: 3px;
     color: #9b7844;
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .nav-links {
     display: flex;
-    gap: 26px;
+    gap: 22px;
     align-items: center;
 }
 
@@ -101,7 +155,143 @@ header {
 }
 
 /* =========================
-   HERO (SINGLE IMAGE)
+   LEFT SLIDE-OUT DRAWER MENU
+========================= */
+
+.drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    background: rgba(20, 14, 10, 0.55);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.side-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 290px;
+    max-width: 82vw;
+    z-index: 1600;
+    background: #241b15;
+    color: #faf8f3;
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 12px 0 40px rgba(0, 0, 0, 0.45);
+}
+
+.side-drawer.open {
+    transform: translateX(0);
+}
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.drawer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.drawer-brand img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #f2d69a;
+}
+
+.drawer-brand strong {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #f2d69a;
+    display: block;
+}
+
+.drawer-brand small {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #cfc5ba;
+}
+
+.drawer-close {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    transition: 0.2s;
+}
+
+.drawer-close:hover {
+    background: #a17b42;
+    border-color: #a17b42;
+}
+
+.drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 22px;
+}
+
+.drawer-nav a {
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: 15px;
+    color: #efe9e1;
+    transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.drawer-nav a:hover {
+    background: rgba(242, 214, 154, 0.12);
+    color: #f2d69a;
+    padding-left: 20px;
+}
+
+.drawer-footer {
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 12px;
+    color: #bdb4ab;
+}
+
+.drawer-footer a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #a17b42;
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    width: 100%;
+    text-align: center;
+}
+
+/* =========================
+   HERO (COORG FRONT PAGE)
 ========================= */
 
 .hero {
@@ -121,6 +311,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     z-index: 0;
 }
 
@@ -128,8 +319,8 @@ header {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        rgba(0,0,0,0.48),
-        rgba(0,0,0,0.52)
+        rgba(18, 13, 9, 0.42),
+        rgba(18, 13, 9, 0.56)
     );
     z-index: 1;
 }
@@ -154,6 +345,7 @@ header {
     font-size: clamp(38px, 6.5vw, 72px);
     line-height: 1.08;
     margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.35);
 }
 
 .hero p {
@@ -161,6 +353,7 @@ header {
     margin: auto;
     font-size: 17px;
     color: #f5f3ef;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
 }
 
 .hero-buttons {
@@ -190,9 +383,9 @@ header {
 }
 
 .btn-light {
-    border: 1px solid rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.85);
     color: white;
-    background: rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.22);
 }
 
 .btn-light:hover {
@@ -240,6 +433,10 @@ section {
     color: #756b62;
 }
 
+.zoomable-photo {
+    cursor: zoom-in;
+}
+
 /* =========================
    ABOUT
 ========================= */
@@ -264,6 +461,11 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
 }
 
 .about-text h2 {
@@ -385,7 +587,7 @@ section {
 }
 
 /* =========================
-   PURE PHOTO LIGHTBOX (NO DIALOGUE BOX)
+   PURE PHOTO VIEWER (NO DIALOGUE BOX)
 ========================= */
 
 .photo-viewer {
@@ -506,6 +708,10 @@ section {
     background: rgba(0, 0, 0, 0.45);
 }
 
+.viewer-dots.hidden {
+    display: none;
+}
+
 .viewer-dot {
     width: 8px;
     height: 8px;
@@ -522,7 +728,7 @@ section {
 }
 
 /* =========================
-   FACILITIES
+   FACILITIES (ALL 18 ITEMS)
 ========================= */
 
 .facilities {
@@ -531,31 +737,50 @@ section {
 
 .facility-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
 .facility {
-    text-align: center;
-    padding: 30px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 22px 20px;
     background: #faf8f3;
     border: 1px solid #ece5db;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.facility:hover {
+    transform: translateY(-3px);
+    border-color: #cbb595;
+    box-shadow: 0 10px 24px rgba(70, 50, 30, 0.06);
 }
 
 .facility-icon {
-    font-size: 25px;
-    margin-bottom: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f0e7d8;
+    color: #876332;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.facility h3 {
+.facility-info h3 {
     font-size: 15px;
     color: #4a3020;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
-.facility p {
-    font-size: 12px;
+.facility-info p {
+    font-size: 12.5px;
     color: #777067;
+    line-height: 1.45;
 }
 
 /* =========================
@@ -614,11 +839,13 @@ section {
     font-family: Georgia, serif;
     font-size: 28px;
     color: #4a3020;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .dining-box p {
     color: #6e665e;
+    font-size: 16px;
+    line-height: 1.75;
 }
 
 /* =========================
@@ -734,11 +961,7 @@ footer p {
 @media (max-width: 900px) {
 
     .nav-links {
-        gap: 13px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
+        display: none;
     }
 
     .room-grid {
@@ -766,23 +989,24 @@ footer p {
 @media (max-width: 600px) {
 
     .navbar {
-        padding: 15px;
+        padding: 12px 15px;
     }
 
-    .logo {
-        font-size: 20px;
+    .logo-img {
+        width: 44px;
+        height: 44px;
     }
 
-    .logo span {
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-text span {
         font-size: 8px;
     }
 
-    .nav-links {
-        display: none;
-    }
-
     .hero {
-        min-height: 620px;
+        min-height: 600px;
     }
 
     .hero h1 {
@@ -849,16 +1073,65 @@ footer p {
 <body>
 
 <!-- =========================
+     LEFT SLIDE-OUT DRAWER MENU
+========================= -->
+
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
+
+<aside class="side-drawer" id="sideDrawer" aria-label="Site Navigation">
+    <div>
+        <div class="drawer-header">
+            <div class="drawer-brand">
+                <img src="New Logo Cavery INN.png" alt="Hotel Caveri Inn Logo">
+                <div>
+                    <strong>Hotel Caveri Inn</strong>
+                    <small>MADIKERI • COORG</small>
+                </div>
+            </div>
+            <button class="drawer-close" onclick="closeDrawer()" aria-label="Close menu">&times;</button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="#home" onclick="closeDrawer()">Home</a>
+            <a href="#about" onclick="closeDrawer()">About Us</a>
+            <a href="#rooms" onclick="closeDrawer()">Rooms & Accommodation</a>
+            <a href="#facilities" onclick="closeDrawer()">Facilities & Services</a>
+            <a href="#gallery" onclick="closeDrawer()">Property Gallery</a>
+            <a href="#dining" onclick="closeDrawer()">Restaurants & Cafés</a>
+            <a href="#location" onclick="closeDrawer()">Location & Timings</a>
+            <a href="#enquire" onclick="closeDrawer()">Enquire & Book</a>
+        </nav>
+    </div>
+
+    <div class="drawer-footer">
+        <p>Opposite Rajaseat Garden, Stuart Hill, Madikeri</p>
+        <a href="https://wa.me/919916442929" target="_blank">WhatsApp Us</a>
+    </div>
+</aside>
+
+
+<!-- =========================
      HEADER
 ========================= -->
 
 <header>
 <nav class="navbar">
 
-<a href="#home" class="logo">
-    Hotel Caveri Inn
-    <span>MADIKERI • COORG</span>
-</a>
+<div class="nav-left">
+    <button class="menu-toggle" onclick="openDrawer()" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <a href="#home" class="logo-brand">
+        <img src="New Logo Cavery INN.png" alt="Hotel Caveri Inn Logo" class="logo-img">
+        <div class="logo-text">
+            Hotel Caveri Inn
+            <span>MADIKERI • COORG</span>
+        </div>
+    </a>
+</div>
 
 <div class="nav-links">
     <a href="#home">Home</a>
@@ -866,6 +1139,7 @@ footer p {
     <a href="#rooms">Rooms</a>
     <a href="#facilities">Facilities</a>
     <a href="#gallery">Gallery</a>
+    <a href="#dining">Dining</a>
     <a href="#location">Location</a>
     <a href="#enquire">Enquire</a>
 </div>
@@ -875,15 +1149,15 @@ footer p {
 
 
 <!-- =========================
-     HERO (SINGLE IMAGE)
+     HERO (COORG FRONT PAGE)
 ========================= -->
 
 <section class="hero" id="home">
 
 <img
     class="hero-bg"
-    src="images/caveri-inn-exterior-day.jpeg"
-    alt="Hotel Caveri Inn exterior in Madikeri">
+    src="Coorg Front page.png"
+    alt="Misty hills and coffee plantations of Coorg near Hotel Caveri Inn">
 
 <div class="hero-overlay"></div>
 
@@ -932,6 +1206,8 @@ WhatsApp Us
 <div class="about-image">
 
 <img
+class="zoomable-photo"
+onclick="openSinglePhoto('images/caveri-inn-exterior.jpeg')"
 src="images/caveri-inn-exterior.jpeg"
 alt="Hotel Caveri Inn in Madikeri, Coorg">
 
@@ -986,7 +1262,7 @@ Madikeri, Karnataka 571201, India.
 <h2>Rooms & Accommodation</h2>
 
 <p>
-Click on any room category below to view interior photos.
+Tap on any room category below to preview interior photos.
 </p>
 
 </div>
@@ -999,24 +1275,24 @@ Click on any room category below to view interior photos.
 
 
 <!-- =========================
-     PURE PHOTO VIEWER
+     PURE PHOTO VIEWER (ANY IMAGE)
 ========================= -->
 
 <div class="photo-viewer" id="photoViewer" onclick="closeViewerOnBackdrop(event)">
     <button class="viewer-close" onclick="closeViewer()" aria-label="Close">&times;</button>
-    <button class="viewer-arrow viewer-prev" onclick="stepViewer(-1)" aria-label="Previous">&#10094;</button>
+    <button class="viewer-arrow viewer-prev" id="viewerPrev" onclick="stepViewer(-1)" aria-label="Previous">&#10094;</button>
 
     <div class="viewer-image-wrap">
-        <img id="viewerImg" src="" alt="Room interior">
+        <img id="viewerImg" src="" alt="Preview">
     </div>
 
-    <button class="viewer-arrow viewer-next" onclick="stepViewer(1)" aria-label="Next">&#10095;</button>
+    <button class="viewer-arrow viewer-next" id="viewerNext" onclick="stepViewer(1)" aria-label="Next">&#10095;</button>
     <div class="viewer-dots" id="viewerDots"></div>
 </div>
 
 
 <!-- =========================
-     FACILITIES
+     FACILITIES (18 SERVICES)
 ========================= -->
 
 <section class="facilities" id="facilities">
@@ -1030,8 +1306,8 @@ Click on any room category below to view interior photos.
 <h2>Comfort & Convenience</h2>
 
 <p>
-Essential facilities to make your stay at Hotel Caveri Inn
-convenient and comfortable.
+Essential facilities and local travel services to make your stay
+at Hotel Caveri Inn convenient and memorable.
 </p>
 
 </div>
@@ -1039,45 +1315,147 @@ convenient and comfortable.
 <div class="facility-grid">
 
 <div class="facility">
-<div class="facility-icon">✓</div>
-<h3>Express Check-in</h3>
-<p>Quick and convenient arrival experience.</p>
+    <div class="facility-icon">✓</div>
+    <div class="facility-info">
+        <h3>Express Check-in</h3>
+        <p>Quick and convenient arrival experience.</p>
+    </div>
 </div>
 
 <div class="facility">
-<div class="facility-icon">24</div>
-<h3>24-Hour Reception</h3>
-<p>Reception assistance available around the clock.</p>
+    <div class="facility-icon">24</div>
+    <div class="facility-info">
+        <h3>24-Hour Reception</h3>
+        <p>Front-desk assistance available around the clock.</p>
+    </div>
 </div>
 
 <div class="facility">
-<div class="facility-icon">⌂</div>
-<h3>Room Service</h3>
-<p>Convenient in-house room service.</p>
+    <div class="facility-icon">⌂</div>
+    <div class="facility-info">
+        <h3>Room Service</h3>
+        <p>Convenient in-house room service for guests.</p>
+    </div>
 </div>
 
 <div class="facility">
-<div class="facility-icon">✦</div>
-<h3>Travel Desk</h3>
-<p>Travel assistance for your Coorg visit.</p>
+    <div class="facility-icon">✦</div>
+    <div class="facility-info">
+        <h3>Travel Desk</h3>
+        <p>Sightseeing and local itinerary assistance for Coorg.</p>
+    </div>
 </div>
 
 <div class="facility">
-<div class="facility-icon">P</div>
-<h3>Car Parking</h3>
-<p>Parking facility available for guests.</p>
+    <div class="facility-icon">P</div>
+    <div class="facility-info">
+        <h3>Car Parking</h3>
+        <p>Dedicated parking facility available for guests.</p>
+    </div>
 </div>
 
 <div class="facility">
-<div class="facility-icon">Wi</div>
-<h3>Wi-Fi</h3>
-<p>Wi-Fi connectivity for guests.</p>
+    <div class="facility-icon">Wi</div>
+    <div class="facility-info">
+        <h3>Wi-Fi</h3>
+        <p>Complimentary Wi-Fi connectivity across the property.</p>
+    </div>
 </div>
 
 <div class="facility">
-<div class="facility-icon">+</div>
-<h3>Free Toiletries</h3>
-<p>Essential complimentary toiletries.</p>
+    <div class="facility-icon">+</div>
+    <div class="facility-info">
+        <h3>Free Toiletries</h3>
+        <p>Essential complimentary bathroom toiletries provided.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">✧</div>
+    <div class="facility-info">
+        <h3>Daily Housekeeping</h3>
+        <p>Regular room cleaning and fresh linen service.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">♨</div>
+    <div class="facility-info">
+        <h3>Hot Water</h3>
+        <p>Hot water facility for a comfortable hill-station stay.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">⚡</div>
+    <div class="facility-info">
+        <h3>Power Backup</h3>
+        <p>Uninterrupted electricity backup for guest comfort.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">❖</div>
+    <div class="facility-info">
+        <h3>Laundry Service</h3>
+        <p>On-request washing and laundry care during your stay.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">⇄</div>
+    <div class="facility-info">
+        <h3>Taxi Assistance</h3>
+        <p>Outstation cab and local sightseeing taxi arrangements.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">▣</div>
+    <div class="facility-info">
+        <h3>Luggage Storage</h3>
+        <p>Safe baggage holding before check-in or after check-out.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">✚</div>
+    <div class="facility-info">
+        <h3>Doctor on Call</h3>
+        <p>Prompt medical assistance arranged whenever needed.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">▲</div>
+    <div class="facility-info">
+        <h3>Mandalpatti Jeep Safari Booking</h3>
+        <p>Guided 4x4 off-road jeep safari trips to Mandalpatti peak.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">❀</div>
+    <div class="facility-info">
+        <h3>Authentic Coorg Spices Shopping</h3>
+        <p>Guidance to buy fresh estate spices, coffee, and homemade chocolates.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">➔</div>
+    <div class="facility-info">
+        <h3>Auto Taxi Service</h3>
+        <p>Quick local auto-rickshaw rides around Madikeri town.</p>
+    </div>
+</div>
+
+<div class="facility">
+    <div class="facility-icon">⚙</div>
+    <div class="facility-info">
+        <h3>Bike Rentals</h3>
+        <p>Two-wheeler rental assistance to explore Coorg at your own pace.</p>
+    </div>
 </div>
 
 </div>
@@ -1102,7 +1480,7 @@ convenient and comfortable.
 <h2>Explore Hotel Caveri Inn</h2>
 
 <p>
-Take a look at the property and interiors of Hotel Caveri Inn.
+Tap any photo to preview it full screen.
 </p>
 
 </div>
@@ -1112,6 +1490,8 @@ Take a look at the property and interiors of Hotel Caveri Inn.
 <div class="gallery-item large">
 
 <img
+class="zoomable-photo"
+onclick="openPropertyGallery(0)"
 src="images/caveri-inn-exterior-day.jpeg"
 alt="Hotel Caveri Inn exterior during the day">
 
@@ -1120,6 +1500,8 @@ alt="Hotel Caveri Inn exterior during the day">
 <div class="gallery-item">
 
 <img
+class="zoomable-photo"
+onclick="openPropertyGallery(1)"
 src="images/caveri-inn-exterior.jpeg"
 alt="Hotel Caveri Inn exterior">
 
@@ -1128,6 +1510,8 @@ alt="Hotel Caveri Inn exterior">
 <div class="gallery-item">
 
 <img
+class="zoomable-photo"
+onclick="openPropertyGallery(2)"
 src="images/caveri-inn-front.jpeg"
 alt="Hotel Caveri Inn front view">
 
@@ -1136,6 +1520,8 @@ alt="Hotel Caveri Inn front view">
 <div class="gallery-item">
 
 <img
+class="zoomable-photo"
+onclick="openPropertyGallery(3)"
 src="images/caveri-inn-interior-2.jpeg"
 alt="Hotel Caveri Inn interior">
 
@@ -1144,6 +1530,8 @@ alt="Hotel Caveri Inn interior">
 <div class="gallery-item">
 
 <img
+class="zoomable-photo"
+onclick="openPropertyGallery(4)"
 src="images/caveri-inn-interior.jpeg"
 alt="Hotel Caveri Inn interior accommodation">
 
@@ -1160,7 +1548,7 @@ alt="Hotel Caveri Inn interior accommodation">
      DINING
 ========================= -->
 
-<section class="dining">
+<section class="dining" id="dining">
 
 <div class="container">
 
@@ -1177,9 +1565,7 @@ alt="Hotel Caveri Inn interior accommodation">
 <h3>Explore Local Dining</h3>
 
 <p>
-Guests can explore a variety of restaurants and cafés
-near Hotel Caveri Inn in Madikeri, offering convenient
-dining options during their stay in Coorg.
+Explore some of Madikeri's popular restaurants and cafés, offering local Coorg delicacies, authentic regional cuisine, freshly brewed coffee, and more, all within easy reach of Hotel Caveri Inn.
 </p>
 
 </div>
@@ -1366,10 +1752,32 @@ Karnataka 571201, India
 
 
 <!-- =========================
-     ROOM GALLERIES & PURE PHOTO VIEWER JS
+     DRAWER MENU & PHOTO VIEWER JS
 ========================= -->
 
 <script>
+
+/* LEFT 3-LINE DRAWER NAVIGATION */
+function openDrawer() {
+    document.getElementById("sideDrawer").classList.add("open");
+    document.getElementById("drawerBackdrop").classList.add("open");
+    document.body.style.overflow = "hidden";
+}
+
+function closeDrawer() {
+    document.getElementById("sideDrawer").classList.remove("open");
+    document.getElementById("drawerBackdrop").classList.remove("open");
+    document.body.style.overflow = "";
+}
+
+/* ROOM & PROPERTY IMAGE DATA */
+const PROPERTY_PHOTOS = [
+    "images/caveri-inn-exterior-day.jpeg",
+    "images/caveri-inn-exterior.jpeg",
+    "images/caveri-inn-front.jpeg",
+    "images/caveri-inn-interior-2.jpeg",
+    "images/caveri-inn-interior.jpeg"
+];
 
 const ROOM_DATA = [
     {
@@ -1488,14 +1896,14 @@ const ROOM_DATA = [
     }
 ];
 
-let activeRoomIndex = 0;
+let activePhotoList = [];
 let activePhotoIndex = 0;
 let touchStartX = 0;
 
 function renderRoomCards() {
     const grid = document.getElementById("roomGrid");
     grid.innerHTML = ROOM_DATA.map((room, idx) => `
-        <div class="room-card" onclick="openViewer(${idx})">
+        <div class="room-card" onclick="openRoomViewer(${idx})">
             <div class="room-thumb">
                 <img src="${encodeURI(room.photos[0])}" alt="${room.title}">
                 <span class="photo-badge">+${room.photos.length} Photos</span>
@@ -1511,27 +1919,49 @@ function renderRoomCards() {
     `).join("");
 }
 
-function openViewer(roomIdx) {
-    activeRoomIndex = roomIdx;
-    activePhotoIndex = 0;
-    const room = ROOM_DATA[roomIdx];
+function openPhotoList(photos, startIndex) {
+    activePhotoList = photos;
+    activePhotoIndex = startIndex || 0;
 
+    const prevBtn = document.getElementById("viewerPrev");
+    const nextBtn = document.getElementById("viewerNext");
     const dotsContainer = document.getElementById("viewerDots");
-    dotsContainer.innerHTML = room.photos.map((_, i) => `
-        <span class="viewer-dot" onclick="selectViewerPhoto(${i})" id="vDot_${i}"></span>
-    `).join("");
+
+    if (photos.length <= 1) {
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+        dotsContainer.classList.add("hidden");
+    } else {
+        prevBtn.style.display = "";
+        nextBtn.style.display = "";
+        dotsContainer.classList.remove("hidden");
+        dotsContainer.innerHTML = photos.map((_, i) => `
+            <span class="viewer-dot" onclick="selectViewerPhoto(${i})" id="vDot_${i}"></span>
+        `).join("");
+    }
 
     const img = document.getElementById("viewerImg");
-    img.src = encodeURI(room.photos[0]);
+    img.src = encodeURI(activePhotoList[activePhotoIndex]);
     updateViewerDots();
 
     document.getElementById("photoViewer").classList.add("open");
     document.body.style.overflow = "hidden";
 }
 
+function openRoomViewer(roomIdx) {
+    openPhotoList(ROOM_DATA[roomIdx].photos, 0);
+}
+
+function openPropertyGallery(startIndex) {
+    openPhotoList(PROPERTY_PHOTOS, startIndex);
+}
+
+function openSinglePhoto(src) {
+    openPhotoList([src], 0);
+}
+
 function updateViewerDots() {
-    const room = ROOM_DATA[activeRoomIndex];
-    room.photos.forEach((_, i) => {
+    activePhotoList.forEach((_, i) => {
         const dot = document.getElementById(`vDot_${i}`);
         if (dot) {
             dot.classList.toggle("active", i === activePhotoIndex);
@@ -1540,20 +1970,20 @@ function updateViewerDots() {
 }
 
 function animatePhotoChange(newIndex) {
-    const room = ROOM_DATA[activeRoomIndex];
     const img = document.getElementById("viewerImg");
     img.classList.add("switching");
 
     setTimeout(() => {
         activePhotoIndex = newIndex;
-        img.src = encodeURI(room.photos[activePhotoIndex]);
+        img.src = encodeURI(activePhotoList[activePhotoIndex]);
         updateViewerDots();
         img.classList.remove("switching");
     }, 180);
 }
 
 function stepViewer(direction) {
-    const total = ROOM_DATA[activeRoomIndex].photos.length;
+    if (activePhotoList.length <= 1) return;
+    const total = activePhotoList.length;
     const nextIdx = (activePhotoIndex + direction + total) % total;
     animatePhotoChange(nextIdx);
 }
@@ -1575,10 +2005,15 @@ function closeViewerOnBackdrop(event) {
 }
 
 document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        closeDrawer();
+        closeViewer();
+        return;
+    }
+
     const viewer = document.getElementById("photoViewer");
     if (!viewer.classList.contains("open")) return;
 
-    if (e.key === "Escape") closeViewer();
     if (e.key === "ArrowRight") stepViewer(1);
     if (e.key === "ArrowLeft") stepViewer(-1);
 });
