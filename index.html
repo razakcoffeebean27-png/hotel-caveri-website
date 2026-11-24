@@ -9,7 +9,7 @@
 
 <meta name="description" content="Hotel Caveri Inn in Madikeri, Coorg, Karnataka, opposite Rajaseat Garden. Ideal for solo travellers, families, business visits, corporate bookings, wedding bookings, and student group bookings.">
 
-<meta name="keywords" content="Hotel Caveri Inn, Hotel Cauvery Inn, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, hotel near Raja's Seat, Madikeri accommodation, Coorg hotel, family hotel Madikeri, corporate booking Madikeri, wedding stay Madikeri, student group stay Coorg">
+<meta name="keywords" content="Hotel Caveri Inn, Hotel Cauvery Inn, Coffee Bean Coorg, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, Coorg sightseeing itinerary, Madikeri restaurants, Coorg spices shopping">
 
 <meta name="robots" content="index, follow">
 
@@ -60,7 +60,7 @@ header {
 }
 
 .navbar {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: auto;
     padding: 14px 25px;
     display: flex;
@@ -146,14 +146,15 @@ header {
 
 .nav-links {
     display: flex;
-    gap: 22px;
+    gap: 18px;
     align-items: center;
 }
 
 .nav-links a {
-    font-size: 14px;
+    font-size: 13.5px;
     color: #4b4037;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -190,10 +191,11 @@ header {
     z-index: 1600;
     background: #241b15;
     color: #faf8f3;
-    padding: 26px 24px;
+    padding: 24px 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: auto;
     transform: translateX(-100%);
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: 12px 0 40px rgba(0, 0, 0, 0.45);
@@ -207,7 +209,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
@@ -259,14 +261,14 @@ header {
 .drawer-nav {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    margin-top: 22px;
+    gap: 4px;
+    margin-top: 16px;
 }
 
 .drawer-nav a {
-    padding: 12px 14px;
+    padding: 10px 14px;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 14.5px;
     color: #efe9e1;
     transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
 }
@@ -278,7 +280,8 @@ header {
 }
 
 .drawer-footer {
-    padding-top: 18px;
+    padding-top: 16px;
+    margin-top: 16px;
     border-top: 1px solid rgba(255,255,255,0.12);
     font-size: 12px;
     color: #bdb4ab;
@@ -414,8 +417,8 @@ section {
 
 .section-heading {
     text-align: center;
-    max-width: 750px;
-    margin: 0 auto 50px;
+    max-width: 760px;
+    margin: 0 auto 48px;
 }
 
 .section-heading span {
@@ -902,7 +905,7 @@ section {
     border-radius: 20px;
 }
 
-.dining-filters {
+.filter-bar {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -946,13 +949,18 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dining-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(70, 50, 30, 0.08);
     border-color: #cbb595;
+}
+
+.dining-card.featured-cake {
+    background: #fdf8f0;
+    border-color: #d7be96;
 }
 
 .dining-card-top {
@@ -978,6 +986,11 @@ section {
     color: #4a3020;
     padding: 4px 9px;
     border-radius: 2px;
+}
+
+.dining-dist-badge.free-deliv {
+    background: #4a3020;
+    color: #f2d69a;
 }
 
 .dining-card h3 {
@@ -1024,6 +1037,22 @@ section {
     text-decoration: underline;
 }
 
+.insta-link {
+    font-size: 12px;
+    font-weight: bold;
+    color: #b8295b;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: opacity 0.2s ease;
+}
+
+.insta-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
 .dining-concierge {
     margin-top: 34px;
     padding: 22px 26px;
@@ -1044,6 +1073,231 @@ section {
 
 .dining-concierge strong {
     color: #f2d69a;
+}
+
+/* =========================
+   COORG SIGHTSEEING ITINERARY
+========================= */
+
+.sightseeing {
+    background: #f5f1ea;
+}
+
+.day-summary-banner {
+    background: #fff;
+    border: 1px solid #e5dccf;
+    border-left: 4px solid #4a3020;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.day-summary-banner h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    color: #3b2b20;
+}
+
+.day-summary-banner span {
+    font-size: 12.5px;
+    font-weight: bold;
+    color: #9b7844;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sightseeing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.sight-card {
+    background: #fff;
+    border: 1px solid #e8e0d5;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(70, 50, 30, 0.08);
+    border-color: #cbb595;
+}
+
+.sight-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.sight-day-tag {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9b7844;
+}
+
+.sight-time-badge {
+    font-size: 11px;
+    font-weight: bold;
+    background: #f5f0e8;
+    color: #4a3020;
+    padding: 4px 9px;
+    border-radius: 2px;
+}
+
+.sight-card h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    color: #3b2b20;
+    margin-bottom: 8px;
+}
+
+.sight-card p {
+    font-size: 13px;
+    color: #6e665e;
+    margin-bottom: 16px;
+}
+
+.sight-card-footer {
+    padding-top: 12px;
+    border-top: 1px solid #eee6da;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.sight-highlight {
+    font-size: 11.5px;
+    color: #777067;
+    font-weight: bold;
+}
+
+/* =========================
+   SHOPPING SHOWCASE (COFFEE BEAN)
+========================= */
+
+.shopping {
+    background: #fff;
+}
+
+.coffee-bean-card {
+    background: linear-gradient(135deg, #2b1e16 0%, #3e2b20 100%);
+    color: #faf8f3;
+    border-radius: 6px;
+    padding: 42px 38px;
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 36px;
+    align-items: center;
+    box-shadow: 0 18px 42px rgba(47, 38, 31, 0.16);
+}
+
+.own-store-badge {
+    display: inline-block;
+    background: rgba(242, 214, 154, 0.16);
+    border: 1px solid rgba(242, 214, 154, 0.45);
+    color: #f2d69a;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.coffee-bean-info h3 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.coffee-bean-info p {
+    color: #e2d8cc;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.store-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 26px;
+}
+
+.store-item-tag {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #f2d69a;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 13px;
+    border-radius: 2px;
+}
+
+.store-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.coffee-bean-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(242, 214, 154, 0.25);
+    padding: 28px 24px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.coffee-bean-box .store-monogram {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #a17b42;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    border: 2px solid #f2d69a;
+}
+
+.coffee-bean-box h4 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: #f2d69a;
+    margin-bottom: 8px;
+}
+
+.coffee-bean-box p {
+    font-size: 13px;
+    color: #d8cec2;
+    margin-bottom: 14px;
+}
+
+.coffee-bean-box small {
+    display: block;
+    font-size: 11.5px;
+    color: #f2d69a;
+    letter-spacing: 0.5px;
 }
 
 /* =========================
@@ -1275,23 +1529,27 @@ footer p {
    MOBILE
 ========================= */
 
-@media (max-width: 900px) {
-
+@media (max-width: 1024px) {
     .nav-links {
         display: none;
     }
+}
+
+@media (max-width: 900px) {
 
     .room-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .facility-grid,
-    .dining-grid {
+    .dining-grid,
+    .sightseeing-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .about-grid,
-    .location-grid {
+    .location-grid,
+    .coffee-bean-card {
         grid-template-columns: 1fr;
     }
 
@@ -1346,7 +1604,8 @@ footer p {
     .room-grid,
     .facility-grid,
     .gallery-grid,
-    .dining-grid {
+    .dining-grid,
+    .sightseeing-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1354,6 +1613,14 @@ footer p {
     .gallery-item.large {
         grid-column: span 1;
         height: 280px;
+    }
+
+    .coffee-bean-card {
+        padding: 28px 22px;
+    }
+
+    .coffee-bean-info h3 {
+        font-size: 28px;
     }
 
     .map-wrapper iframe {
@@ -1413,6 +1680,8 @@ footer p {
             <a href="#facilities" onclick="closeDrawer()">Facilities & Services</a>
             <a href="#gallery" onclick="closeDrawer()">Property Gallery</a>
             <a href="#dining" onclick="closeDrawer()">Restaurants & Cafés</a>
+            <a href="#sightseeing" onclick="closeDrawer()">Coorg Sightseeing (Day 1–3)</a>
+            <a href="#shopping" onclick="closeDrawer()">Shopping • Coffee Bean</a>
             <a href="#location" onclick="closeDrawer()">Location & Google Map</a>
             <a href="#enquire" onclick="closeDrawer()">Enquire & Book</a>
         </nav>
@@ -1453,8 +1722,9 @@ footer p {
     <a href="#about">About</a>
     <a href="#rooms">Rooms</a>
     <a href="#facilities">Facilities</a>
-    <a href="#gallery">Gallery</a>
     <a href="#dining">Dining</a>
+    <a href="#sightseeing">Sightseeing</a>
+    <a href="#shopping">Shopping</a>
     <a href="#location">Location</a>
     <a href="#enquire">Enquire</a>
 </div>
@@ -1764,7 +2034,7 @@ at Hotel Caveri Inn convenient and memorable.
     <div class="facility-icon">❀</div>
     <div class="facility-info">
         <h3>Authentic Coorg Spices Shopping</h3>
-        <p>Guidance to buy fresh estate spices, coffee, and homemade chocolates.</p>
+        <p>Visit our in-house store Coffee Bean for fresh estate spices, coffee &amp; chocolates.</p>
     </div>
 </div>
 
@@ -1885,7 +2155,7 @@ alt="Hotel Caveri Inn interior accommodation">
 <h2>Restaurants & Cafés Nearby</h2>
 
 <p>
-Explore some of Madikeri's popular restaurants and cafés, offering local Coorg delicacies, authentic regional cuisine, freshly brewed coffee, and more, all within easy reach of Hotel Caveri Inn.
+Explore some of Madikeri's popular restaurants and cafés, offering local Coorg delicacies, authentic regional cuisine, freshly brewed coffee, and homemade cakes delivered to your room.
 </p>
 
 </div>
@@ -1897,17 +2167,19 @@ Explore some of Madikeri's popular restaurants and cafés, offering local Coorg 
         <span class="must-try-pill">Pandi Curry &amp; Akki Roti</span>
         <span class="must-try-pill">Bamboo Shoot Curry</span>
         <span class="must-try-pill">Estate Filter Coffee</span>
-        <span class="must-try-pill">Noolputtu &amp; Kadambuttu</span>
-        <span class="must-try-pill">Homemade Coorg Chocolates</span>
+        <span class="must-try-pill">Fresh Seafood &amp; Fish Curry</span>
+        <span class="must-try-pill">Homemade Cheesecakes</span>
     </div>
 </div>
 
 <!-- Category Filter Buttons -->
-<div class="dining-filters" id="diningFilters">
+<div class="filter-bar" id="diningFilters">
     <button class="filter-btn active" onclick="filterDining('all', this)">All Spots</button>
     <button class="filter-btn" onclick="filterDining('coorg', this)">Authentic Coorg</button>
     <button class="filter-btn" onclick="filterDining('cafe', this)">Coffee &amp; Cafés</button>
-    <button class="filter-btn" onclick="filterDining('veg', this)">Family &amp; Pure Veg</button>
+    <button class="filter-btn" onclick="filterDining('veg', this)">Family &amp; Veg</button>
+    <button class="filter-btn" onclick="filterDining('nonveg', this)">Family Non-Veg</button>
+    <button class="filter-btn" onclick="filterDining('cakes', this)">Pastries &amp; Cakes</button>
 </div>
 
 <!-- Filtered Dining Cards -->
@@ -1917,6 +2189,114 @@ Explore some of Madikeri's popular restaurants and cafés, offering local Coorg 
 <div class="dining-concierge">
     <p><strong>Need local food recommendations or an auto/taxi?</strong> Ask our 24-hour front desk for directions and reservations.</p>
     <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20could%20you%20recommend%20a%20nearby%20restaurant%20or%20arrange%20an%20auto/taxi?" target="_blank" class="btn btn-primary">Ask Front Desk on WhatsApp</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COORG SIGHTSEEING ITINERARY (DAY 1, DAY 2, DAY 3)
+========================= -->
+
+<section class="sightseeing" id="sightseeing">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Explore Coorg</span>
+
+<h2>Coorg Sightseeing Guide</h2>
+
+<p>
+Plan your Coorg trip effortlessly with our curated day-wise sightseeing routes starting from Hotel Caveri Inn, Madikeri.
+</p>
+
+</div>
+
+<!-- Day Filter Tabs -->
+<div class="filter-bar" id="sightseeingFilters">
+    <button class="filter-btn active" onclick="filterSightseeing('day1', this)">Day 01 • Kushalnagar</button>
+    <button class="filter-btn" onclick="filterSightseeing('day2', this)">Day 02 • Madikeri</button>
+    <button class="filter-btn" onclick="filterSightseeing('day3', this)">Day 03 • South Coorg</button>
+    <button class="filter-btn" onclick="filterSightseeing('optional', this)">Optional &amp; Trekking</button>
+</div>
+
+<div class="day-summary-banner" id="daySummaryBanner">
+    <h3 id="dayBannerTitle">Day 01 — Kushalnagar Circuit</h3>
+    <span id="dayBannerMeta">5 Attractions • Elephant Camp, Monastery &amp; Reservoirs</span>
+</div>
+
+<div class="sightseeing-grid" id="sightseeingGrid"></div>
+
+<div class="dining-concierge">
+    <p><strong>Want a private cab or Mandalpatti 4x4 Jeep Safari?</strong> Our Travel Desk arranges full-day sightseeing packages right from the hotel.</p>
+    <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20I%20would%20like%20to%20enquire%20about%20a%20Coorg%20sightseeing%20cab%20/%20Jeep%20safari." target="_blank" class="btn btn-primary">Book Sightseeing Cab</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SHOPPING SHOWCASE: COFFEE BEAN
+========================= -->
+
+<section class="shopping" id="shopping">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Authentic Coorg Shopping</span>
+
+<h2>Shop at Coffee Bean</h2>
+
+<p>
+Take the authentic flavours and aroma of Coorg back home from our very own store in Madikeri.
+</p>
+
+</div>
+
+<div class="coffee-bean-card">
+
+    <div class="coffee-bean-info">
+        <span class="own-store-badge">Owned &amp; Operated by Hotel Caveri Inn</span>
+        <h3>Coffee Bean • Madikeri</h3>
+        <p>
+            Looking for genuine estate-grown Coorg coffee, aromatic spices, or fresh homemade chocolates? Visit <strong>Coffee Bean</strong>—our own flagship store in Madikeri—for handpicked local produce at honest local prices.
+        </p>
+
+        <div class="store-items">
+            <span class="store-item-tag">Roasted Coorg Filter Coffee</span>
+            <span class="store-item-tag">Black Pepper &amp; Cardamom</span>
+            <span class="store-item-tag">Homemade Coorg Chocolates</span>
+            <span class="store-item-tag">Pure Forest Honey</span>
+            <span class="store-item-tag">Coorg Spices &amp; Oils</span>
+        </div>
+
+        <div class="store-actions">
+            <a href="https://maps.app.goo.gl/u6HhwxAZSvAPVYYk6" target="_blank" rel="noopener" class="btn btn-primary">
+                Get Directions to Coffee Bean &rarr;
+            </a>
+            <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20I%20would%20like%20to%20visit%20your%20Coffee%20Bean%20store%20for%20Coorg%20coffee%20and%20spices." target="_blank" class="btn btn-light">
+                Ask Front Desk
+            </a>
+        </div>
+    </div>
+
+    <div class="coffee-bean-box">
+        <div class="store-monogram">CB</div>
+        <h4>Coffee Bean Store</h4>
+        <p>
+            Freshly ground Arabica &amp; Robusta blends, farm-direct spices, and souvenir gift packs curated by our family for hotel guests and visitors.
+        </p>
+        <small>★ Guest Favorite for Authentic Coorg Souvenirs</small>
+    </div>
+
 </div>
 
 </div>
@@ -2149,7 +2529,7 @@ Karnataka 571201, India
 
 
 <!-- =========================
-     DRAWER MENU, DINING & PHOTO VIEWER JS
+     DRAWER, DINING, SIGHTSEEING & PHOTO VIEWER JS
 ========================= -->
 
 <script>
@@ -2174,61 +2554,148 @@ function closeDrawer() {
     document.body.style.overflow = "";
 }
 
-/* INTERACTIVE DINING GUIDE DATA */
+/* CUSTOM DINING SPOTS */
 const DINING_SPOTS = [
+    /* Authentic Coorg */
     {
         name: "Tiger Tiger",
         category: "coorg",
         categoryLabel: "Authentic Coorg",
-        distance: "2 min walk • Raja Seat Rd",
-        desc: "Popular local dining spot right on Raja's Seat Road serving traditional Kodava curries, grilled specialties, and coastal flavors.",
+        distance: "Raja Seat Road",
+        desc: "Popular restaurant near Raja's Seat serving authentic Kodava delicacies, traditional curries, and local Coorg specialties.",
         specialty: "Kodava Curries & Grills",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Tiger+Tiger+Restaurant+Raja+Seat+Road+Madikeri"
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Tiger+Tiger+Restaurant+Madikeri",
+        isInsta: false
     },
     {
         name: "Coorg Cuisine",
         category: "coorg",
         categoryLabel: "Authentic Coorg",
-        distance: "5 min drive • Stuart Hill",
-        desc: "Renowned in Madikeri for homestyle Kodava meals including Pandi Curry, Akki Roti, Bamboo Shoot Curry, and Noolputtu.",
+        distance: "Madikeri Town",
+        desc: "Well-known local spot famous for homestyle Kodava meals including Pandi Curry, Akki Roti, Bamboo Shoot Curry, and Noolputtu.",
         specialty: "Traditional Kodava Thali",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Coorg+Cuisine+Restaurant+Madikeri"
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Coorg+Cuisine+Restaurant+Madikeri",
+        isInsta: false
     },
+    {
+        name: "Hotel Church Side",
+        category: "coorg",
+        categoryLabel: "Authentic Coorg",
+        distance: "Madikeri",
+        desc: "Classic local eatery loved for authentic Coorg-style preparations, hearty regional meals, and traditional flavors.",
+        specialty: "Local Coorg Dishes",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Church+Side+Madikeri",
+        isInsta: false
+    },
+
+    /* Coffee & Cafés */
     {
         name: "Big Cup Cafe",
         category: "cafe",
         categoryLabel: "Coffee & Cafés",
-        distance: "6 min drive • Madikeri",
-        desc: "Cozy hillside café overlooking scenic valleys, known for freshly roasted Coorg estate coffee, burgers, waffles, and desserts.",
-        specialty: "Coorg Estate Coffee & Waffles",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Big+Cup+Cafe+Madikeri"
+        distance: "Madikeri",
+        desc: "Scenic hillside café overlooking misty Coorg valleys, serving freshly brewed estate coffee, waffles, burgers, and snacks.",
+        specialty: "Estate Coffee & Waffles",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Big+Cup+Cafe+Madikeri",
+        isInsta: false
     },
     {
-        name: "Beans N Brews (Raintree)",
+        name: "Agasthya Cafe",
         category: "cafe",
         categoryLabel: "Coffee & Cafés",
-        distance: "4 min drive • Madikeri",
-        desc: "Relaxed coffee lounge serving aromatic filter coffee, espresso blends, fresh bakes, and evening snacks.",
-        specialty: "Jaggery Coffee & Pastries",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Beans+N+Brews+Madikeri"
+        distance: "Madikeri",
+        desc: "Cozy café spot in Madikeri offering fresh filter coffee, cold brews, quick bites, and relaxed evening vibes.",
+        specialty: "Filter Coffee & Café Bites",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Agasthya+Cafe+Madikeri",
+        isInsta: false
     },
     {
-        name: "Raintree Restaurants",
+        name: "Beans n Brews Raintree",
+        category: "cafe",
+        categoryLabel: "Coffee & Cafés",
+        distance: "Madikeri",
+        desc: "Warm coffee lounge serving aromatic Coorg coffee blends, espresso drinks, pastries, and light refreshments.",
+        specialty: "Coorg Brews & Bakes",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Beans+n+Brews+Raintree+Madikeri",
+        isInsta: false
+    },
+
+    /* Family & Veg */
+    {
+        name: "Udupi Garden",
         category: "veg",
-        categoryLabel: "Family & Pure Veg",
-        distance: "4 min drive • Madikeri",
-        desc: "Family-friendly dining offering a wide menu of North Indian, South Indian, and local Coorg dishes in a comfortable setting.",
-        specialty: "Family Dining & Multi-Cuisine",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Raintree+Restaurants+Madikeri"
+        categoryLabel: "Family & Veg",
+        distance: "Madikeri",
+        desc: "Family-friendly vegetarian restaurant serving fresh South Indian tiffin, crispy dosas, North Indian dishes, and thalis.",
+        specialty: "South Indian & Veg Thali",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Udupi+Garden+Madikeri",
+        isInsta: false
+    },
+    {
+        name: "Ambica Uphar",
+        category: "veg",
+        categoryLabel: "Family & Veg",
+        distance: "Madikeri",
+        desc: "Popular vegetarian eatery in Madikeri known for hot breakfast items, idli-vada, masala dosa, and strong filter coffee.",
+        specialty: "Pure Veg Breakfast & Meals",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Ambica+Uphar+Madikeri",
+        isInsta: false
     },
     {
         name: "Paakashala Madikeri",
         category: "veg",
-        categoryLabel: "Family & Pure Veg",
-        distance: "5 min drive • Town Center",
-        desc: "Pure vegetarian restaurant serving crispy dosas, South Indian meals, North Indian platters, and fresh filter coffee.",
-        specialty: "Pure Veg South Indian Meals",
-        mapUrl: "https://www.google.com/maps/search/?api=1&query=Paakashala+Madikeri"
+        categoryLabel: "Family & Veg",
+        distance: "Madikeri",
+        desc: "Spacious pure vegetarian family restaurant offering authentic Karnataka meals, North Indian platters, and fresh sweets.",
+        specialty: "Pure Veg Family Dining",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Paakashala+Madikeri",
+        isInsta: false
+    },
+
+    /* Family Non-Veg */
+    {
+        name: "Hotel Greenland",
+        category: "nonveg",
+        categoryLabel: "Family Non-Veg",
+        distance: "Madikeri",
+        desc: "Well-known family restaurant in Madikeri serving flavorful non-vegetarian curries, biryanis, tandoori, and coastal dishes.",
+        specialty: "Biryanis & Non-Veg Meals",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Greenland+Madikeri",
+        isInsta: false
+    },
+    {
+        name: "Fish Curry Rice",
+        category: "nonveg",
+        categoryLabel: "Family Non-Veg",
+        distance: "Madikeri",
+        desc: "Favorite destination for seafood lovers offering fresh coastal fish fry, fish curry rice meals, and traditional non-veg platters.",
+        specialty: "Seafood & Fish Thali",
+        linkText: "Directions →",
+        linkUrl: "https://www.google.com/maps/search/?api=1&query=Fish+Curry+Rice+Madikeri",
+        isInsta: false
+    },
+
+    /* Pastries & Cakes */
+    {
+        name: "Whips & Frost",
+        category: "cakes",
+        categoryLabel: "Pastries & Cakes",
+        distance: "Free Delivery to Hotel",
+        desc: "Madikeri's top homemade bakery loved by locals! Order fresh cheesecakes, pastries, custom birthday/anniversary cakes, and desserts with free delivery right to Hotel Caveri Inn.",
+        specialty: "Cheesecakes, Pastries & Custom Cakes",
+        linkText: "Order on Instagram →",
+        linkUrl: "https://www.instagram.com/whip_and_frost_?cnvx=cDdhZzV6ODdyY2Y4",
+        isInsta: true
     }
 ];
 
@@ -2239,19 +2706,19 @@ function renderDining(filterCategory) {
         : DINING_SPOTS.filter(spot => spot.category === filterCategory);
 
     grid.innerHTML = filtered.map(spot => `
-        <div class="dining-card">
+        <div class="dining-card ${spot.isInsta ? 'featured-cake' : ''}">
             <div>
                 <div class="dining-card-top">
                     <span class="dining-cat-tag">${spot.categoryLabel}</span>
-                    <span class="dining-dist-badge">${spot.distance}</span>
+                    <span class="dining-dist-badge ${spot.isInsta ? 'free-deliv' : ''}">${spot.distance}</span>
                 </div>
                 <h3>${spot.name}</h3>
                 <p>${spot.desc}</p>
             </div>
             <div class="dining-card-footer">
-                <span class="dining-specialty">Try: ${spot.specialty}</span>
-                <a href="${spot.mapUrl}" target="_blank" rel="noopener" class="directions-link">
-                    Directions &rarr;
+                <span class="dining-specialty">${spot.specialty}</span>
+                <a href="${spot.linkUrl}" target="_blank" rel="noopener" class="${spot.isInsta ? 'insta-link' : 'directions-link'}">
+                    ${spot.linkText}
                 </a>
             </div>
         </div>
@@ -2259,9 +2726,261 @@ function renderDining(filterCategory) {
 }
 
 function filterDining(category, btnEl) {
-    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll("#diningFilters .filter-btn").forEach(btn => btn.classList.remove("active"));
     if (btnEl) btnEl.classList.add("active");
     renderDining(category);
+}
+
+/* COORG SIGHTSEEING ITINERARY DATA */
+const SIGHTSEEING_DATA = {
+    day1: {
+        title: "Day 01 — Kushalnagar Circuit",
+        meta: "5 Attractions • Elephant Camp, Monastery & Scenic Reservoirs",
+        places: [
+            {
+                name: "Dubare Forest (Elephant Camp)",
+                tag: "Day 01 • Kushalnagar",
+                badge: "8:00 AM – 12:00 PM",
+                desc: "Famous riverfront forest camp along the Cauvery River offering elephant interaction, river rafting, and coracle boating.",
+                highlight: "Elephant Activities, Rafting & Boating",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Dubare+Elephant+Camp+Coorg"
+            },
+            {
+                name: "Chiklihole Reservoir",
+                tag: "Day 01 • Kushalnagar",
+                badge: "Scenic Dam",
+                desc: "A peaceful, semi-circular reservoir surrounded by lush green forests—ideal for quiet nature photography away from crowds.",
+                highlight: "Serene Forest Reservoir",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Chiklihole+Dam+Coorg"
+            },
+            {
+                name: "Harangi Dam",
+                tag: "Day 01 • Kushalnagar",
+                badge: "Reservoir & Garden",
+                desc: "Major masonry dam built across the Harangi tributary with landscaped gardens and panoramic water views.",
+                highlight: "Dam Views & Gardens",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Harangi+Dam+Coorg"
+            },
+            {
+                name: "Kaveri Nisargadhama",
+                tag: "Day 01 • Kushalnagar",
+                badge: "River Island",
+                desc: "A lush 64-acre bamboo and teakwood river island accessed via a hanging rope bridge, featuring deer parks and boating.",
+                highlight: "Hanging Bridge & Bamboo Grove",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Kaveri+Nisargadhama+Coorg"
+            },
+            {
+                name: "Golden Temple (Namdroling Monastery)",
+                tag: "Day 01 • Bylakuppe",
+                badge: "Cultural Landmark",
+                desc: "One of India's largest Tibetan Buddhist monasteries, renowned for towering 40-foot golden statues and intricate murals.",
+                highlight: "Golden Buddha Statues",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Namdroling+Monastery+Golden+Temple+Coorg"
+            }
+        ]
+    },
+    day2: {
+        title: "Day 02 — Madikeri & Talacauvery Circuit",
+        meta: "9 Attractions • Origin of River Cauvery, Waterfalls & Heritage",
+        places: [
+            {
+                name: "Bhagamandala (Triveni Sangam)",
+                tag: "Day 02 • Madikeri Route",
+                badge: "Sacred Confluence",
+                desc: "Holy confluence of three rivers—Cauvery, Kannike, and Sujyoti—home to the ancient Bhagandeshwara Temple.",
+                highlight: "Triveni Sangam & Temple",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Bhagamandala+Coorg"
+            },
+            {
+                name: "Talacauvery",
+                tag: "Day 02 • Brahmagiri",
+                badge: "River Origin",
+                desc: "The sacred birthplace of the River Cauvery nestled on the misty slopes of the Brahmagiri hills.",
+                highlight: "Source of River Cauvery",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Talacauvery+Coorg"
+            },
+            {
+                name: "Brahmagiri Hills",
+                tag: "Day 02 • Viewpoint",
+                badge: "Hilltop Views",
+                desc: "Sweeping mountain ridge above Talacauvery offering breathtaking 360-degree views of misty valleys and Western Ghats peaks.",
+                highlight: "Panoramic Mountain Views",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Brahmagiri+Hills+Talacauvery+Coorg"
+            },
+            {
+                name: "Abbey Falls",
+                tag: "Day 02 • Madikeri",
+                badge: "Waterfall",
+                desc: "Iconic waterfall cascading 70 feet amidst lush coffee and spice plantations, viewed from a hanging bridge right opposite.",
+                highlight: "Coffee Estate Waterfall",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Abbey+Falls+Madikeri"
+            },
+            {
+                name: "Raja's Tomb (Gaddige)",
+                tag: "Day 02 • Madikeri",
+                badge: "Heritage",
+                desc: "Indo-Saracenic style royal tombs of Kodava rulers set on a scenic hilltop overlooking Madikeri.",
+                highlight: "Royal Kodava Architecture",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Rajas+Tomb+Gaddige+Madikeri"
+            },
+            {
+                name: "Madikeri Fort",
+                tag: "Day 02 • Madikeri",
+                badge: "Historic Fort",
+                desc: "17th-century hilltop fort housing a palace, clock tower, museum, and stone elephant sculptures.",
+                highlight: "17th-Century Fort & Museum",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Madikeri+Fort+Coorg"
+            },
+            {
+                name: "Omkareshwara Temple",
+                tag: "Day 02 • Madikeri",
+                badge: "Temple",
+                desc: "Historic 1820 temple blending Islamic dome architecture and Gothic style with a sacred freshwater tank.",
+                highlight: "Unique Heritage Temple",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Omkareshwara+Temple+Madikeri"
+            },
+            {
+                name: "Raja's Seat Garden",
+                tag: "Day 02 • Opposite Hotel",
+                badge: "1 Min Walk",
+                desc: "Madikeri's most famous sunset viewpoint and musical fountain garden—located directly opposite Hotel Caveri Inn.",
+                highlight: "Sunset Point & Musical Fountain",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Rajas+Seat+Madikeri"
+            },
+            {
+                name: "Sunny Side (General Thimayya Museum)",
+                tag: "Day 02 • Madikeri",
+                badge: "War Memorial",
+                desc: "Ancestral home of General K.S. Thimayya converted into an inspiring museum featuring military artifacts and a battle tank.",
+                highlight: "General Thimayya Memorial",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=General+Thimayya+Memorial+Museum+Sunny+Side+Madikeri"
+            }
+        ]
+    },
+    day3: {
+        title: "Day 03 — South Coorg Adventure & Wildlife",
+        meta: "4 Attractions • White Water Rafting, Tea Estates & Jungle Safari",
+        places: [
+            {
+                name: "Kodagu White River Rafting",
+                tag: "Day 03 • Adventure",
+                badge: "Water Sport",
+                desc: "Thrilling white-water rafting experience along the Barapole River rapids surrounded by dense Coorg rainforest.",
+                highlight: "Barapole River Rapids",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Barapole+White+Water+Rafting+Coorg"
+            },
+            {
+                name: "Tea Estate, Shettigeri",
+                tag: "Day 03 • South Coorg",
+                badge: "Plantation Walk",
+                desc: "Rolling green tea gardens in Shettigeri offering tranquil walks and scenic photo stops amidst manicured tea slopes.",
+                highlight: "Scenic Tea Plantations",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Tea+Estate+Shettigeri+Coorg"
+            },
+            {
+                name: "Iruppu Falls",
+                tag: "Day 03 • Brahmagiri",
+                badge: "Sacred Waterfall",
+                desc: "Spectacular freshwater waterfall plunging down the Brahmagiri range near the historic Rameshwara Temple.",
+                highlight: "Cascading Forest Falls",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Iruppu+Falls+Coorg"
+            },
+            {
+                name: "Nagarahole Forest (Tiger Reserve)",
+                tag: "Day 03 • Wildlife",
+                badge: "Jungle Safari",
+                desc: "World-renowned national park and tiger reserve offering guided wildlife safaris to spot elephants, deer, bison, and tigers.",
+                highlight: "Wildlife & Jungle Safari",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Nagarahole+National+Park+Coorg"
+            }
+        ]
+    },
+    optional: {
+        title: "Optional Plans & Trekking Peaks",
+        meta: "6 Destinations • Scenic Ghats, Offbeat Waterfalls & High Peaks",
+        places: [
+            {
+                name: "Mallalli Falls",
+                tag: "Optional Plan • Somwarpet",
+                badge: "Waterfall",
+                desc: "Majestic two-tiered waterfall at the foot of the Pushpagiri hills where the Kumaradhara River plunges into a deep gorge.",
+                highlight: "Pushpagiri Foothills Waterfall",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Mallalli+Falls+Coorg"
+            },
+            {
+                name: "Chelavara Falls",
+                tag: "Optional Plan • Cheyyandane",
+                badge: "Offbeat Falls",
+                desc: "Picturesque tortoise-shaped rock waterfall tucked inside lush coffee estates near Virajpet.",
+                highlight: "Tortoise-Rock Waterfall",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Chelavara+Falls+Coorg"
+            },
+            {
+                name: "Bisle Ghat View Point",
+                tag: "Optional Plan • Ghat Road",
+                badge: "Valley Viewpoint",
+                desc: "Dramatic viewpoint overlooking three mountain ranges—Kumara Parvatha, Pushpagiri, and Dodda Betta.",
+                highlight: "Three-Peak Valley Panorama",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Bisle+Ghat+View+Point"
+            },
+            {
+                name: "Kathlekad View Point",
+                tag: "Optional Plan • Madikeri",
+                badge: "Misty Valley",
+                desc: "Quiet mountain viewpoint on the Madikeri–Bhagamandala route famous for floating clouds and dense evergreen canopies.",
+                highlight: "Cloud-Covered Valley Views",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Kathlekad+View+Point+Coorg"
+            },
+            {
+                name: "Thadiyandamol Peak",
+                tag: "Trekking Point • Highest Peak",
+                badge: "Trekking",
+                desc: "The highest mountain peak in Coorg (1,748m), offering a rewarding trek through shola forests and open grasslands.",
+                highlight: "Highest Peak in Coorg",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Tadiandamol+Peak+Coorg"
+            },
+            {
+                name: "Kotebetta Peak",
+                tag: "Trekking Point • Hattihole",
+                badge: "Trekking",
+                desc: "Coorg's third-highest peak, named for its fort-like summit, popular for sunrise treks and coffee estate trails.",
+                highlight: "Fort-Shaped Summit Trek",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Kotebetta+Peak+Coorg"
+            }
+        ]
+    }
+};
+
+function renderSightseeing(dayKey) {
+    const data = SIGHTSEEING_DATA[dayKey];
+    document.getElementById("dayBannerTitle").textContent = data.title;
+    document.getElementById("dayBannerMeta").textContent = data.meta;
+
+    const grid = document.getElementById("sightseeingGrid");
+    grid.innerHTML = data.places.map(place => `
+        <div class="sight-card">
+            <div>
+                <div class="sight-card-top">
+                    <span class="sight-day-tag">${place.tag}</span>
+                    <span class="sight-time-badge">${place.badge}</span>
+                </div>
+                <h3>${place.name}</h3>
+                <p>${place.desc}</p>
+            </div>
+            <div class="sight-card-footer">
+                <span class="sight-highlight">${place.highlight}</span>
+                <a href="${place.mapUrl}" target="_blank" rel="noopener" class="directions-link">
+                    Directions &rarr;
+                </a>
+            </div>
+        </div>
+    `).join("");
+}
+
+function filterSightseeing(dayKey, btnEl) {
+    document.querySelectorAll("#sightseeingFilters .filter-btn").forEach(btn => btn.classList.remove("active"));
+    if (btnEl) btnEl.classList.add("active");
+    renderSightseeing(dayKey);
 }
 
 /* ROOM & PROPERTY IMAGE DATA */
@@ -2526,6 +3245,7 @@ viewerEl.addEventListener("touchend", e => {
 
 renderRoomCards();
 renderDining("all");
+renderSightseeing("day1");
 
 </script>
 
