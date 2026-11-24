@@ -859,33 +859,191 @@ section {
 }
 
 /* =========================
-   DINING
+   INTERACTIVE DINING GUIDE
 ========================= */
 
 .dining {
     background: #fff;
 }
 
-.dining-box {
-    max-width: 850px;
-    margin: auto;
-    text-align: center;
-    padding: 45px;
+.must-try-strip {
     background: #f5f0e8;
-    border: 1px solid #e8dfd2;
+    border: 1px solid #e6dccd;
+    border-left: 4px solid #a17b42;
+    padding: 20px 24px;
+    margin-bottom: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
-.dining-box h3 {
+.must-try-title {
     font-family: Georgia, serif;
-    font-size: 28px;
+    font-size: 17px;
     color: #4a3020;
-    margin-bottom: 14px;
+    font-weight: bold;
 }
 
-.dining-box p {
+.must-try-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.must-try-pill {
+    background: #fff;
+    border: 1px solid #dfd3c0;
+    color: #4a3020;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.dining-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 1px solid #d9cdbd;
+    background: #faf8f3;
+    color: #4a3020;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    border-color: #a17b42;
+    color: #876332;
+}
+
+.filter-btn.active {
+    background: #4a3020;
+    color: #f2d69a;
+    border-color: #4a3020;
+}
+
+.dining-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dining-card {
+    background: #faf8f3;
+    border: 1px solid #e8e0d5;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.dining-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(70, 50, 30, 0.08);
+    border-color: #cbb595;
+}
+
+.dining-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.dining-cat-tag {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9b7844;
+}
+
+.dining-dist-badge {
+    font-size: 11px;
+    font-weight: bold;
+    background: #efe7da;
+    color: #4a3020;
+    padding: 4px 9px;
+    border-radius: 2px;
+}
+
+.dining-card h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    color: #3b2b20;
+    margin-bottom: 8px;
+}
+
+.dining-card p {
+    font-size: 13px;
     color: #6e665e;
-    font-size: 16px;
-    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.dining-card-footer {
+    padding-top: 12px;
+    border-top: 1px solid #e8dfd2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.dining-specialty {
+    font-size: 11.5px;
+    color: #777067;
+    font-style: italic;
+}
+
+.directions-link {
+    font-size: 12px;
+    font-weight: bold;
+    color: #876332;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+}
+
+.directions-link:hover {
+    color: #3b2b20;
+    text-decoration: underline;
+}
+
+.dining-concierge {
+    margin-top: 34px;
+    padding: 22px 26px;
+    background: #3b2b20;
+    color: #f5f1ea;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.dining-concierge p {
+    font-size: 14px;
+    color: #e6ddd2;
+}
+
+.dining-concierge strong {
+    color: #f2d69a;
 }
 
 /* =========================
@@ -1127,7 +1285,8 @@ footer p {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .facility-grid {
+    .facility-grid,
+    .dining-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1186,7 +1345,8 @@ footer p {
 
     .room-grid,
     .facility-grid,
-    .gallery-grid {
+    .gallery-grid,
+    .dining-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1194,10 +1354,6 @@ footer p {
     .gallery-item.large {
         grid-column: span 1;
         height: 280px;
-    }
-
-    .dining-box {
-        padding: 30px 20px;
     }
 
     .map-wrapper iframe {
@@ -1715,7 +1871,7 @@ alt="Hotel Caveri Inn interior accommodation">
 
 
 <!-- =========================
-     DINING
+     INTERACTIVE DINING GUIDE
 ========================= -->
 
 <section class="dining" id="dining">
@@ -1724,20 +1880,43 @@ alt="Hotel Caveri Inn interior accommodation">
 
 <div class="section-heading">
 
-<span>Dining</span>
+<span>Dining & Local Flavours</span>
 
 <h2>Restaurants & Cafés Nearby</h2>
-
-</div>
-
-<div class="dining-box">
-
-<h3>Explore Local Dining</h3>
 
 <p>
 Explore some of Madikeri's popular restaurants and cafés, offering local Coorg delicacies, authentic regional cuisine, freshly brewed coffee, and more, all within easy reach of Hotel Caveri Inn.
 </p>
 
+</div>
+
+<!-- Must-Try Coorg Specialties Strip -->
+<div class="must-try-strip">
+    <div class="must-try-title">Must-Try Coorg Specialties:</div>
+    <div class="must-try-pills">
+        <span class="must-try-pill">Pandi Curry &amp; Akki Roti</span>
+        <span class="must-try-pill">Bamboo Shoot Curry</span>
+        <span class="must-try-pill">Estate Filter Coffee</span>
+        <span class="must-try-pill">Noolputtu &amp; Kadambuttu</span>
+        <span class="must-try-pill">Homemade Coorg Chocolates</span>
+    </div>
+</div>
+
+<!-- Category Filter Buttons -->
+<div class="dining-filters" id="diningFilters">
+    <button class="filter-btn active" onclick="filterDining('all', this)">All Spots</button>
+    <button class="filter-btn" onclick="filterDining('coorg', this)">Authentic Coorg</button>
+    <button class="filter-btn" onclick="filterDining('cafe', this)">Coffee &amp; Cafés</button>
+    <button class="filter-btn" onclick="filterDining('veg', this)">Family &amp; Pure Veg</button>
+</div>
+
+<!-- Filtered Dining Cards -->
+<div class="dining-grid" id="diningGrid"></div>
+
+<!-- Front Desk Concierge Callout -->
+<div class="dining-concierge">
+    <p><strong>Need local food recommendations or an auto/taxi?</strong> Ask our 24-hour front desk for directions and reservations.</p>
+    <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20could%20you%20recommend%20a%20nearby%20restaurant%20or%20arrange%20an%20auto/taxi?" target="_blank" class="btn btn-primary">Ask Front Desk on WhatsApp</a>
 </div>
 
 </div>
@@ -1970,7 +2149,7 @@ Karnataka 571201, India
 
 
 <!-- =========================
-     DRAWER MENU & PHOTO VIEWER JS
+     DRAWER MENU, DINING & PHOTO VIEWER JS
 ========================= -->
 
 <script>
@@ -1993,6 +2172,96 @@ function closeDrawer() {
     document.getElementById("sideDrawer").classList.remove("open");
     document.getElementById("drawerBackdrop").classList.remove("open");
     document.body.style.overflow = "";
+}
+
+/* INTERACTIVE DINING GUIDE DATA */
+const DINING_SPOTS = [
+    {
+        name: "Tiger Tiger",
+        category: "coorg",
+        categoryLabel: "Authentic Coorg",
+        distance: "2 min walk • Raja Seat Rd",
+        desc: "Popular local dining spot right on Raja's Seat Road serving traditional Kodava curries, grilled specialties, and coastal flavors.",
+        specialty: "Kodava Curries & Grills",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Tiger+Tiger+Restaurant+Raja+Seat+Road+Madikeri"
+    },
+    {
+        name: "Coorg Cuisine",
+        category: "coorg",
+        categoryLabel: "Authentic Coorg",
+        distance: "5 min drive • Stuart Hill",
+        desc: "Renowned in Madikeri for homestyle Kodava meals including Pandi Curry, Akki Roti, Bamboo Shoot Curry, and Noolputtu.",
+        specialty: "Traditional Kodava Thali",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Coorg+Cuisine+Restaurant+Madikeri"
+    },
+    {
+        name: "Big Cup Cafe",
+        category: "cafe",
+        categoryLabel: "Coffee & Cafés",
+        distance: "6 min drive • Madikeri",
+        desc: "Cozy hillside café overlooking scenic valleys, known for freshly roasted Coorg estate coffee, burgers, waffles, and desserts.",
+        specialty: "Coorg Estate Coffee & Waffles",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Big+Cup+Cafe+Madikeri"
+    },
+    {
+        name: "Beans N Brews (Raintree)",
+        category: "cafe",
+        categoryLabel: "Coffee & Cafés",
+        distance: "4 min drive • Madikeri",
+        desc: "Relaxed coffee lounge serving aromatic filter coffee, espresso blends, fresh bakes, and evening snacks.",
+        specialty: "Jaggery Coffee & Pastries",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Beans+N+Brews+Madikeri"
+    },
+    {
+        name: "Raintree Restaurants",
+        category: "veg",
+        categoryLabel: "Family & Pure Veg",
+        distance: "4 min drive • Madikeri",
+        desc: "Family-friendly dining offering a wide menu of North Indian, South Indian, and local Coorg dishes in a comfortable setting.",
+        specialty: "Family Dining & Multi-Cuisine",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Raintree+Restaurants+Madikeri"
+    },
+    {
+        name: "Paakashala Madikeri",
+        category: "veg",
+        categoryLabel: "Family & Pure Veg",
+        distance: "5 min drive • Town Center",
+        desc: "Pure vegetarian restaurant serving crispy dosas, South Indian meals, North Indian platters, and fresh filter coffee.",
+        specialty: "Pure Veg South Indian Meals",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Paakashala+Madikeri"
+    }
+];
+
+function renderDining(filterCategory) {
+    const grid = document.getElementById("diningGrid");
+    const filtered = filterCategory === "all"
+        ? DINING_SPOTS
+        : DINING_SPOTS.filter(spot => spot.category === filterCategory);
+
+    grid.innerHTML = filtered.map(spot => `
+        <div class="dining-card">
+            <div>
+                <div class="dining-card-top">
+                    <span class="dining-cat-tag">${spot.categoryLabel}</span>
+                    <span class="dining-dist-badge">${spot.distance}</span>
+                </div>
+                <h3>${spot.name}</h3>
+                <p>${spot.desc}</p>
+            </div>
+            <div class="dining-card-footer">
+                <span class="dining-specialty">Try: ${spot.specialty}</span>
+                <a href="${spot.mapUrl}" target="_blank" rel="noopener" class="directions-link">
+                    Directions &rarr;
+                </a>
+            </div>
+        </div>
+    `).join("");
+}
+
+function filterDining(category, btnEl) {
+    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+    if (btnEl) btnEl.classList.add("active");
+    renderDining(category);
 }
 
 /* ROOM & PROPERTY IMAGE DATA */
@@ -2256,6 +2525,7 @@ viewerEl.addEventListener("touchend", e => {
 }, { passive: true });
 
 renderRoomCards();
+renderDining("all");
 
 </script>
 
