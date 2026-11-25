@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- SECURITY HEADERS (CSP, REFERRER, PERMISSIONS, SNIFFING PROTECTION) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self' https://wa.me;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
 <title>Hotel Caveri Inn | Hotel in Madikeri, Coorg</title>
-
 <meta name="description" content="Hotel Caveri Inn in Madikeri, Coorg, Karnataka, opposite Rajaseat Garden. Ideal for solo travellers, families, business visits, corporate bookings, wedding bookings, and student group bookings.">
-
-<meta name="keywords" content="Hotel Caveri Inn, Hotel Cauvery Inn, Coffee Bean Coorg, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, Coorg sightseeing itinerary, Madikeri restaurants, Coorg spices shopping">
-
+<meta name="keywords" content="Hotel Caveri Inn, Hotel Cauvery Inn, Coffee Bean Coorg, Coorg Zoom Bike, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, Coorg sightseeing itinerary, Madikeri restaurants">
 <meta name="robots" content="index, follow">
 
 <meta property="og:title" content="Hotel Caveri Inn | Madikeri, Coorg">
@@ -18,7 +20,6 @@
 <meta property="og:type" content="website">
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -47,14 +48,14 @@ img {
 }
 
 /* =========================
-   HEADER & LEFT 3-LINE MENU
+   HEADER (CENTERED BOX LOGO + LEFT 3-LINE MENU)
 ========================= */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255,255,255,0.97);
+    background: rgba(255, 255, 255, 0.98);
     border-bottom: 1px solid #e6dfd5;
     backdrop-filter: blur(10px);
 }
@@ -62,22 +63,22 @@ header {
 .navbar {
     max-width: 1240px;
     margin: auto;
-    padding: 14px 25px;
-    display: flex;
-    justify-content: space-between;
+    padding: 12px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 16px;
+    justify-content: flex-start;
 }
 
 .menu-toggle {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border: 1px solid #e2d8ca;
     background: #faf8f3;
     border-radius: 4px;
@@ -102,62 +103,54 @@ header {
     height: 2px;
     background: #4a3020;
     border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.logo-brand {
+.nav-center {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 12px;
-    cursor: pointer;
 }
 
-.logo-img {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #140c08;
-    border: 2px solid #9b7844;
-    flex-shrink: 0;
-    transition: transform 0.25s ease;
+.logo-box-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #120a07;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1.5px solid #9b7844;
+    box-shadow: 0 4px 14px rgba(36, 27, 21, 0.14);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.logo-brand:hover .logo-img {
-    transform: scale(1.04);
+.logo-box-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(36, 27, 21, 0.22);
 }
 
-.logo-text {
-    font-family: Georgia, serif;
-    font-size: 22px;
+.logo-box-img {
+    height: 46px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-right a {
+    font-size: 13px;
     font-weight: bold;
-    color: #4a3020;
-    line-height: 1.1;
-}
-
-.logo-text span {
-    display: block;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: #9b7844;
-    margin-top: 3px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 18px;
-    align-items: center;
-}
-
-.nav-links a {
-    font-size: 13.5px;
     color: #4b4037;
-    transition: 0.3s;
+    transition: 0.25s;
     white-space: nowrap;
 }
 
-.nav-links a:hover {
+.nav-right a:hover {
     color: #9b7844;
 }
 
@@ -186,12 +179,12 @@ header {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 290px;
-    max-width: 82vw;
+    width: 295px;
+    max-width: 84vw;
     z-index: 1600;
     background: #241b15;
     color: #faf8f3;
-    padding: 24px 22px;
+    padding: 22px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -209,40 +202,28 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
+    gap: 10px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.drawer-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.drawer-logo-box {
+    background: #120a07;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #9b7844;
+    display: inline-flex;
 }
 
-.drawer-brand img {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1.5px solid #f2d69a;
-}
-
-.drawer-brand strong {
-    font-family: Georgia, serif;
-    font-size: 16px;
-    color: #f2d69a;
-    display: block;
-}
-
-.drawer-brand small {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #cfc5ba;
+.drawer-logo-box img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
 }
 
 .drawer-close {
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: white;
     width: 34px;
     height: 34px;
@@ -250,6 +231,7 @@ header {
     font-size: 20px;
     cursor: pointer;
     line-height: 1;
+    flex-shrink: 0;
     transition: 0.2s;
 }
 
@@ -262,7 +244,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    margin-top: 16px;
+    margin-top: 14px;
 }
 
 .drawer-nav a {
@@ -282,7 +264,7 @@ header {
 .drawer-footer {
     padding-top: 16px;
     margin-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     font-size: 12px;
     color: #bdb4ab;
 }
@@ -305,7 +287,7 @@ header {
 
 .hero {
     position: relative;
-    min-height: 680px;
+    min-height: 660px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -354,7 +336,7 @@ header {
     font-size: clamp(38px, 6.5vw, 72px);
     line-height: 1.08;
     margin-bottom: 20px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .hero p {
@@ -362,7 +344,7 @@ header {
     margin: auto;
     font-size: 17px;
     color: #f5f3ef;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .hero-buttons {
@@ -380,6 +362,8 @@ header {
     font-size: 14px;
     font-weight: bold;
     transition: 0.3s;
+    cursor: pointer;
+    border: none;
 }
 
 .btn-primary {
@@ -392,9 +376,9 @@ header {
 }
 
 .btn-light {
-    border: 1px solid rgba(255,255,255,0.85);
+    border: 1px solid rgba(255, 255, 255, 0.85);
     color: white;
-    background: rgba(0,0,0,0.22);
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .btn-light:hover {
@@ -562,7 +546,7 @@ section {
 
 .room-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 34px rgba(70,50,30,0.13);
+    box-shadow: 0 16px 34px rgba(70, 50, 30, 0.13);
 }
 
 .room-thumb {
@@ -961,6 +945,48 @@ section {
 .dining-card.featured-cake {
     background: #fdf8f0;
     border-color: #d7be96;
+    grid-column: span 2;
+}
+
+.cake-preview-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.cake-thumb-wrap {
+    position: relative;
+    height: 82px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #e2d3bc;
+}
+
+.cake-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.cake-thumb-wrap:hover img {
+    transform: scale(1.08);
+}
+
+.cake-more-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(36, 27, 21, 0.72);
+    color: #f2d69a;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4px;
 }
 
 .dining-card-top {
@@ -1012,6 +1038,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -1019,6 +1046,13 @@ section {
     font-size: 11.5px;
     color: #777067;
     font-style: italic;
+}
+
+.cake-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
 .directions-link {
@@ -1029,6 +1063,9 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
     transition: color 0.2s ease;
 }
 
@@ -1186,26 +1223,35 @@ section {
 }
 
 /* =========================
-   SHOPPING SHOWCASE (COFFEE BEAN)
+   SHOPPING & BIKE RENTALS (COFFEE BEAN + COORG ZOOM BIKE)
 ========================= */
 
 .shopping {
     background: #fff;
 }
 
-.coffee-bean-card {
-    background: linear-gradient(135deg, #2b1e16 0%, #3e2b20 100%);
-    color: #faf8f3;
-    border-radius: 6px;
-    padding: 42px 38px;
+.partners-grid {
     display: grid;
-    grid-template-columns: 1.35fr 0.85fr;
-    gap: 36px;
-    align-items: center;
-    box-shadow: 0 18px 42px rgba(47, 38, 31, 0.16);
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
 }
 
-.own-store-badge {
+.partner-showcase-card {
+    background: linear-gradient(145deg, #2b1e16 0%, #3e2b20 100%);
+    color: #faf8f3;
+    border-radius: 6px;
+    padding: 34px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 16px 38px rgba(47, 38, 31, 0.14);
+}
+
+.partner-showcase-card.bike-card {
+    background: linear-gradient(145deg, #1f2622 0%, #2d3832 100%);
+}
+
+.partner-badge {
     display: inline-block;
     background: rgba(242, 214, 154, 0.16);
     border: 1px solid rgba(242, 214, 154, 0.45);
@@ -1213,31 +1259,41 @@ section {
     font-size: 11px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 6px 14px;
+    letter-spacing: 1.8px;
+    padding: 6px 13px;
     border-radius: 20px;
     margin-bottom: 16px;
 }
 
-.coffee-bean-info h3 {
+.partner-showcase-card h3 {
     font-family: Georgia, serif;
-    font-size: 36px;
+    font-size: 30px;
     color: #ffffff;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
-.coffee-bean-info p {
+.partner-showcase-card p {
     color: #e2d8cc;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 22px;
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin-bottom: 18px;
+}
+
+.neighbor-note {
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #f2d69a;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: #f2d69a;
+    margin-bottom: 20px;
+    border-radius: 0 4px 4px 0;
 }
 
 .store-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 9px;
-    margin-bottom: 26px;
+    gap: 8px;
+    margin-bottom: 24px;
 }
 
 .store-item-tag {
@@ -1246,58 +1302,14 @@ section {
     color: #f2d69a;
     font-size: 12px;
     font-weight: bold;
-    padding: 6px 13px;
+    padding: 5px 12px;
     border-radius: 2px;
 }
 
 .store-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
-}
-
-.coffee-bean-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(242, 214, 154, 0.25);
-    padding: 28px 24px;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.coffee-bean-box .store-monogram {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    background: #a17b42;
-    color: #fff;
-    font-family: Georgia, serif;
-    font-size: 26px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 14px;
-    border: 2px solid #f2d69a;
-}
-
-.coffee-bean-box h4 {
-    font-family: Georgia, serif;
-    font-size: 20px;
-    color: #f2d69a;
-    margin-bottom: 8px;
-}
-
-.coffee-bean-box p {
-    font-size: 13px;
-    color: #d8cec2;
-    margin-bottom: 14px;
-}
-
-.coffee-bean-box small {
-    display: block;
-    font-size: 11.5px;
-    color: #f2d69a;
-    letter-spacing: 0.5px;
+    gap: 12px;
 }
 
 /* =========================
@@ -1326,8 +1338,8 @@ section {
 
 .info-box {
     padding: 30px;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .info-box h3 {
@@ -1355,8 +1367,8 @@ section {
 }
 
 .map-wrapper {
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.04);
     overflow: hidden;
     border-radius: 4px;
 }
@@ -1526,17 +1538,228 @@ footer p {
 }
 
 /* =========================
+   AI CONCIERGE & RESERVATION CHATBOT
+========================= */
+
+.chat-launcher {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 1800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 20px;
+    border-radius: 50px;
+    background: #3b2b20;
+    color: #f2d69a;
+    border: 2px solid #a17b42;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(20, 14, 10, 0.35);
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.chat-launcher:hover {
+    transform: translateY(-3px);
+    background: #241b15;
+}
+
+.chat-launcher-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #25d366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.25);
+}
+
+.chat-widget {
+    position: fixed;
+    bottom: 84px;
+    right: 22px;
+    z-index: 1900;
+    width: 370px;
+    max-width: calc(100vw - 28px);
+    height: 520px;
+    max-height: calc(100vh - 110px);
+    background: #ffffff;
+    border: 1px solid #dfd5c7;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(20, 14, 10, 0.28);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px) scale(0.96);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+}
+
+.chat-widget.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.chat-header {
+    background: #241b15;
+    color: #faf8f3;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #a17b42;
+}
+
+.chat-header-info strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: #f2d69a;
+}
+
+.chat-header-info small {
+    font-size: 11px;
+    color: #cfc5ba;
+}
+
+.chat-close-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 14px;
+    overflow-y: auto;
+    background: #faf8f3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-msg {
+    max-width: 85%;
+    padding: 10px 13px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.48;
+    word-wrap: break-word;
+}
+
+.chat-msg.bot {
+    align-self: flex-start;
+    background: #ffffff;
+    color: #2f261f;
+    border: 1px solid #e6ddd0;
+    border-bottom-left-radius: 2px;
+}
+
+.chat-msg.user {
+    align-self: flex-end;
+    background: #4a3020;
+    color: #ffffff;
+    border-bottom-right-radius: 2px;
+}
+
+.chat-wa-action {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 9px 14px;
+    background: #25d366;
+    color: #111b21;
+    font-weight: bold;
+    font-size: 12.5px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.chat-quick-chips {
+    padding: 8px 12px;
+    background: #f5f0e8;
+    border-top: 1px solid #e6ddd0;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    flex-shrink: 0;
+}
+
+.chat-chip {
+    background: #ffffff;
+    border: 1px solid #d7c9b6;
+    color: #4a3020;
+    font-size: 11.5px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 16px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat-chip:hover {
+    background: #4a3020;
+    color: #f2d69a;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 10px;
+    background: #ffffff;
+    border-top: 1px solid #e6ddd0;
+    gap: 8px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1px solid #d9cdbd;
+    border-radius: 20px;
+    font-size: 13px;
+    outline: none;
+}
+
+.chat-input-area input:focus {
+    border-color: #a17b42;
+}
+
+.chat-send-btn {
+    padding: 9px 16px;
+    background: #a17b42;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chat-send-btn:hover {
+    background: #876332;
+}
+
+/* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 1024px) {
-    .nav-links {
+    .nav-right {
         display: none;
+    }
+    .navbar {
+        grid-template-columns: 44px 1fr 44px;
     }
 }
 
 @media (max-width: 900px) {
-
     .room-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1547,9 +1770,13 @@ footer p {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .dining-card.featured-cake {
+        grid-column: span 2;
+    }
+
     .about-grid,
     .location-grid,
-    .coffee-bean-card {
+    .partners-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1563,22 +1790,12 @@ footer p {
 }
 
 @media (max-width: 600px) {
-
     .navbar {
-        padding: 12px 15px;
+        padding: 10px 14px;
     }
 
-    .logo-img {
-        width: 44px;
-        height: 44px;
-    }
-
-    .logo-text {
-        font-size: 18px;
-    }
-
-    .logo-text span {
-        font-size: 8px;
+    .logo-box-img {
+        height: 38px;
     }
 
     .hero {
@@ -1609,18 +1826,18 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    .dining-card.featured-cake {
+        grid-column: span 1;
+    }
+
+    .cake-preview-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .gallery-item,
     .gallery-item.large {
         grid-column: span 1;
         height: 280px;
-    }
-
-    .coffee-bean-card {
-        padding: 28px 22px;
-    }
-
-    .coffee-bean-info h3 {
-        font-size: 28px;
     }
 
     .map-wrapper iframe {
@@ -1647,8 +1864,19 @@ footer p {
         width: 38px;
         height: 38px;
     }
-}
 
+    .chat-launcher {
+        bottom: 14px;
+        right: 14px;
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+
+    .chat-widget {
+        bottom: 72px;
+        right: 14px;
+    }
+}
 </style>
 </head>
 
@@ -1663,12 +1891,8 @@ footer p {
 <aside class="side-drawer" id="sideDrawer" aria-label="Site Navigation">
     <div>
         <div class="drawer-header">
-            <a href="#home" class="drawer-brand" onclick="goHome(event)">
-                <img src="New Logo Cavery INN.png" alt="Hotel Caveri Inn Logo">
-                <div>
-                    <strong>Hotel Caveri Inn</strong>
-                    <small>MADIKERI • COORG</small>
-                </div>
+            <a href="#home" class="drawer-logo-box" onclick="goHome(event)">
+                <img src="webiste logo.png" alt="Hotel Caveri Inn Coorg">
             </a>
             <button class="drawer-close" onclick="closeDrawer()" aria-label="Close menu">&times;</button>
         </div>
@@ -1681,7 +1905,7 @@ footer p {
             <a href="#gallery" onclick="closeDrawer()">Property Gallery</a>
             <a href="#dining" onclick="closeDrawer()">Restaurants & Cafés</a>
             <a href="#sightseeing" onclick="closeDrawer()">Coorg Sightseeing (Day 1–3)</a>
-            <a href="#shopping" onclick="closeDrawer()">Shopping • Coffee Bean</a>
+            <a href="#shopping" onclick="closeDrawer()">Shopping & Bike Rentals</a>
             <a href="#location" onclick="closeDrawer()">Location & Google Map</a>
             <a href="#enquire" onclick="closeDrawer()">Enquire & Book</a>
         </nav>
@@ -1689,13 +1913,13 @@ footer p {
 
     <div class="drawer-footer">
         <p>Opposite Rajaseat Garden, Stuart Hill, Madikeri</p>
-        <a href="https://wa.me/919916442929" target="_blank">WhatsApp Us</a>
+        <a href="https://wa.me/919916442929" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
     </div>
 </aside>
 
 
 <!-- =========================
-     HEADER
+     HEADER (CENTERED BOX LOGO ONLY)
 ========================= -->
 
 <header>
@@ -1707,26 +1931,21 @@ footer p {
         <span></span>
         <span></span>
     </button>
+</div>
 
-    <a href="#home" class="logo-brand" onclick="goHome(event)" title="Go to Main Page">
-        <img src="New Logo Cavery INN.png" alt="Hotel Caveri Inn Logo" class="logo-img">
-        <div class="logo-text">
-            Hotel Caveri Inn
-            <span>MADIKERI • COORG</span>
-        </div>
+<div class="nav-center">
+    <a href="#home" class="logo-box-link" onclick="goHome(event)" title="Go to Main Page">
+        <img src="webiste logo.png" alt="Hotel Caveri Inn Coorg" class="logo-box-img">
     </a>
 </div>
 
-<div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
+<div class="nav-right">
     <a href="#rooms">Rooms</a>
     <a href="#facilities">Facilities</a>
     <a href="#dining">Dining</a>
     <a href="#sightseeing">Sightseeing</a>
-    <a href="#shopping">Shopping</a>
-    <a href="#location">Location</a>
-    <a href="#enquire">Enquire</a>
+    <a href="#shopping">Shopping &amp; Bikes</a>
+    <a href="#enquire">Book</a>
 </div>
 
 </nav>
@@ -1765,11 +1984,9 @@ opposite Rajaseat Garden.
 Explore Rooms
 </a>
 
-<a href="https://wa.me/919916442929"
-target="_blank"
-class="btn btn-light">
-WhatsApp Us
-</a>
+<button type="button" onclick="openChatWithBooking()" class="btn btn-light">
+Reserve via AI Concierge
+</button>
 
 </div>
 
@@ -2034,7 +2251,7 @@ at Hotel Caveri Inn convenient and memorable.
     <div class="facility-icon">❀</div>
     <div class="facility-info">
         <h3>Authentic Coorg Spices Shopping</h3>
-        <p>Visit our in-house store Coffee Bean for fresh estate spices, coffee &amp; chocolates.</p>
+        <p>Visit Coffee Bean (next to Coorg Zoom Bike) for fresh estate spices, coffee &amp; chocolates.</p>
     </div>
 </div>
 
@@ -2050,7 +2267,7 @@ at Hotel Caveri Inn convenient and memorable.
     <div class="facility-icon">⚙</div>
     <div class="facility-info">
         <h3>Bike Rentals</h3>
-        <p>Two-wheeler rental assistance to explore Coorg at your own pace.</p>
+        <p>Two-wheeler rentals via our partner Coorg Zoom Bike (+91 9743522266).</p>
     </div>
 </div>
 
@@ -2160,7 +2377,6 @@ Explore some of Madikeri's popular restaurants and cafés, offering local Coorg 
 
 </div>
 
-<!-- Must-Try Coorg Specialties Strip -->
 <div class="must-try-strip">
     <div class="must-try-title">Must-Try Coorg Specialties:</div>
     <div class="must-try-pills">
@@ -2172,7 +2388,6 @@ Explore some of Madikeri's popular restaurants and cafés, offering local Coorg 
     </div>
 </div>
 
-<!-- Category Filter Buttons -->
 <div class="filter-bar" id="diningFilters">
     <button class="filter-btn active" onclick="filterDining('all', this)">All Spots</button>
     <button class="filter-btn" onclick="filterDining('coorg', this)">Authentic Coorg</button>
@@ -2182,13 +2397,11 @@ Explore some of Madikeri's popular restaurants and cafés, offering local Coorg 
     <button class="filter-btn" onclick="filterDining('cakes', this)">Pastries &amp; Cakes</button>
 </div>
 
-<!-- Filtered Dining Cards -->
 <div class="dining-grid" id="diningGrid"></div>
 
-<!-- Front Desk Concierge Callout -->
 <div class="dining-concierge">
     <p><strong>Need local food recommendations or an auto/taxi?</strong> Ask our 24-hour front desk for directions and reservations.</p>
-    <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20could%20you%20recommend%20a%20nearby%20restaurant%20or%20arrange%20an%20auto/taxi?" target="_blank" class="btn btn-primary">Ask Front Desk on WhatsApp</a>
+    <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20could%20you%20recommend%20a%20nearby%20restaurant%20or%20arrange%20an%20auto/taxi?" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ask Front Desk on WhatsApp</a>
 </div>
 
 </div>
@@ -2216,7 +2429,6 @@ Plan your Coorg trip effortlessly with our curated day-wise sightseeing routes s
 
 </div>
 
-<!-- Day Filter Tabs -->
 <div class="filter-bar" id="sightseeingFilters">
     <button class="filter-btn active" onclick="filterSightseeing('day1', this)">Day 01 • Kushalnagar</button>
     <button class="filter-btn" onclick="filterSightseeing('day2', this)">Day 02 • Madikeri</button>
@@ -2226,14 +2438,14 @@ Plan your Coorg trip effortlessly with our curated day-wise sightseeing routes s
 
 <div class="day-summary-banner" id="daySummaryBanner">
     <h3 id="dayBannerTitle">Day 01 — Kushalnagar Circuit</h3>
-    <span id="dayBannerMeta">5 Attractions • Elephant Camp, Monastery &amp; Reservoirs</span>
+    <span id="dayBannerMeta">5 Attractions • Elephant Camp, Monastery &amp; Scenic Reservoirs</span>
 </div>
 
 <div class="sightseeing-grid" id="sightseeingGrid"></div>
 
 <div class="dining-concierge">
     <p><strong>Want a private cab or Mandalpatti 4x4 Jeep Safari?</strong> Our Travel Desk arranges full-day sightseeing packages right from the hotel.</p>
-    <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20I%20would%20like%20to%20enquire%20about%20a%20Coorg%20sightseeing%20cab%20/%20Jeep%20safari." target="_blank" class="btn btn-primary">Book Sightseeing Cab</a>
+    <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20I%20would%20like%20to%20enquire%20about%20a%20Coorg%20sightseeing%20cab%20/%20Jeep%20safari." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Sightseeing Cab</a>
 </div>
 
 </div>
@@ -2242,7 +2454,7 @@ Plan your Coorg trip effortlessly with our curated day-wise sightseeing routes s
 
 
 <!-- =========================
-     SHOPPING SHOWCASE: COFFEE BEAN
+     SHOPPING & BIKE RENTAL PARTNER
 ========================= -->
 
 <section class="shopping" id="shopping">
@@ -2251,50 +2463,74 @@ Plan your Coorg trip effortlessly with our curated day-wise sightseeing routes s
 
 <div class="section-heading">
 
-<span>Authentic Coorg Shopping</span>
+<span>Local Shopping &amp; Rentals</span>
 
-<h2>Shop at Coffee Bean</h2>
+<h2>Coffee Bean &amp; Coorg Zoom Bike</h2>
 
 <p>
-Take the authentic flavours and aroma of Coorg back home from our very own store in Madikeri.
+Shop authentic Coorg coffee &amp; spices or rent a two-wheeler to explore the hills—both conveniently located right next to each other in Madikeri.
 </p>
 
 </div>
 
-<div class="coffee-bean-card">
+<div class="partners-grid">
 
-    <div class="coffee-bean-info">
-        <span class="own-store-badge">Owned &amp; Operated by Hotel Caveri Inn</span>
-        <h3>Coffee Bean • Madikeri</h3>
-        <p>
-            Looking for genuine estate-grown Coorg coffee, aromatic spices, or fresh homemade chocolates? Visit <strong>Coffee Bean</strong>—our own flagship store in Madikeri—for handpicked local produce at honest local prices.
-        </p>
-
-        <div class="store-items">
-            <span class="store-item-tag">Roasted Coorg Filter Coffee</span>
-            <span class="store-item-tag">Black Pepper &amp; Cardamom</span>
-            <span class="store-item-tag">Homemade Coorg Chocolates</span>
-            <span class="store-item-tag">Pure Forest Honey</span>
-            <span class="store-item-tag">Coorg Spices &amp; Oils</span>
+    <!-- COFFEE BEAN STORE -->
+    <div class="partner-showcase-card">
+        <div>
+            <span class="partner-badge">Authentic Coorg Shopping</span>
+            <h3>Coffee Bean • Madikeri</h3>
+            <p>
+                Take the authentic aroma and flavours of Coorg home! Visit <strong>Coffee Bean</strong> for freshly roasted estate coffee, pure spices, forest honey, and homemade Coorg chocolates.
+            </p>
+            <div class="neighbor-note">
+                Location Landmark: Located right next to <strong>Coorg Zoom Bike</strong>.
+            </div>
+            <div class="store-items">
+                <span class="store-item-tag">Roasted Filter Coffee</span>
+                <span class="store-item-tag">Black Pepper &amp; Cardamom</span>
+                <span class="store-item-tag">Homemade Chocolates</span>
+                <span class="store-item-tag">Pure Forest Honey</span>
+            </div>
         </div>
 
         <div class="store-actions">
-            <a href="https://maps.app.goo.gl/u6HhwxAZSvAPVYYk6" target="_blank" rel="noopener" class="btn btn-primary">
-                Get Directions to Coffee Bean &rarr;
+            <a href="https://maps.app.goo.gl/u6HhwxAZSvAPVYYk6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Coffee Bean Maps &rarr;
             </a>
-            <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20I%20would%20like%20to%20visit%20your%20Coffee%20Bean%20store%20for%20Coorg%20coffee%20and%20spices." target="_blank" class="btn btn-light">
+            <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20I%20would%20like%20to%20visit%20Coffee%20Bean%20for%20Coorg%20coffee%20and%20spices." target="_blank" rel="noopener noreferrer" class="btn btn-light">
                 Ask Front Desk
             </a>
         </div>
     </div>
 
-    <div class="coffee-bean-box">
-        <div class="store-monogram">CB</div>
-        <h4>Coffee Bean Store</h4>
-        <p>
-            Freshly ground Arabica &amp; Robusta blends, farm-direct spices, and souvenir gift packs curated by our family for hotel guests and visitors.
-        </p>
-        <small>★ Guest Favorite for Authentic Coorg Souvenirs</small>
+    <!-- COORG ZOOM BIKE -->
+    <div class="partner-showcase-card bike-card">
+        <div>
+            <span class="partner-badge">Our Bike Rental Partner</span>
+            <h3>Coorg Zoom Bike</h3>
+            <p>
+                Explore Coorg's misty roads, coffee estates, and viewpoints at your own pace with well-maintained scooters and motorbikes from our trusted bike rental partner.
+            </p>
+            <div class="neighbor-note">
+                Location Landmark: Located right next to <strong>Coffee Bean Store</strong>.
+            </div>
+            <div class="store-items">
+                <span class="store-item-tag">Scooters &amp; Bikes</span>
+                <span class="store-item-tag">Hourly &amp; Daily Rentals</span>
+                <span class="store-item-tag">Helmets Included</span>
+                <span class="store-item-tag">Call: +91 9743522266</span>
+            </div>
+        </div>
+
+        <div class="store-actions">
+            <a href="https://maps.app.goo.gl/yJUFSHY4gNHx6pwy9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Coorg Zoom Bike Maps &rarr;
+            </a>
+            <a href="tel:+919743522266" class="btn btn-light">
+                Call +91 9743522266
+            </a>
+        </div>
     </div>
 
 </div>
@@ -2392,10 +2628,10 @@ razakcoffeebean27@gmail.com
 
 <div class="info-row">
 
-<strong>Booking & Enquiries</strong>
+<strong>Nearby Partners</strong>
 
 <p>
-+91 9916442929
+Coffee Bean Store &amp; Coorg Zoom Bike (Next to each other)
 </p>
 
 </div>
@@ -2409,11 +2645,12 @@ razakcoffeebean27@gmail.com
         src="https://maps.google.com/maps?q=Hotel%20Caveri%20Inn,%20Opposite%20Rajaseat%20Garden,%20Stuart%20Hill,%20Madikeri,%20Karnataka%20571201&t=&z=16&ie=UTF8&iwloc=&output=embed"
         title="Hotel Caveri Inn Location on Google Maps"
         loading="lazy"
+        sandbox="allow-scripts allow-same-origin allow-popups"
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
     <div class="map-bar">
         <span>Opposite Rajaseat Garden, Stuart Hill, Madikeri, Karnataka 571201</span>
-        <a href="https://maps.app.goo.gl/VoNYuCe2wEsPjbxr9" target="_blank" rel="noopener" class="map-btn">
+        <a href="https://maps.app.goo.gl/VoNYuCe2wEsPjbxr9" target="_blank" rel="noopener noreferrer" class="map-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
             </svg>
@@ -2459,6 +2696,7 @@ Call Us
 <a
 href="https://wa.me/919916442929"
 target="_blank"
+rel="noopener noreferrer"
 class="contact-button">
 WhatsApp
 </a>
@@ -2478,7 +2716,7 @@ Email Us
     <a
     href="https://www.booking.com/Share-fCsfuu"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
     class="ota-btn btn-booking"
     aria-label="Book Hotel Caveri Inn on Booking.com">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -2492,7 +2730,7 @@ Email Us
     <a
     href="https://www.makemytrip.global/hotels/hotel-details/?hotelId=202501201513119113&Campaign=21406998660&_uCurrency=QAR&cc=qa&checkin=11282026&checkout=11292026&city=CTXCR&cmp=googlehoteldfinder_Old_DH_META_Paid_type%3Dbl_RateRule%3D_usernolist_aud%3D_21406998660_default_IN_localuniversal_202501201513119113&country=IN&gad_campaignid=21406998660&gad_source=0&gbraid=0AAAAACwdfVVS5udKEJXk3rmmdDMXrK-09&gclid=Cj0KCQiAiJXYBhD_ARIsAAx2AHlAQM2PSSa3IkuORWFsam2pF7GfI0e4Va7IM7BX8ZdbetWiaLgUsL8aAn55EALw_wcB&lat=12.41523&lng=75.73698&locusId=CTXCR&locusType=city&mtkeys=e2c53f8c-e490-47ec-af5b-695c2a85150c_312168_2Saturday&rank=1&redirectedBy=gl&roomCount=1&roomStayQualifier=2e0e&rsc=1e2e0e&topHtlId=202501201513119113&totalGuestCount=2&isPropSearch=T"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
     class="ota-btn btn-mmt"
     aria-label="Book Hotel Caveri Inn on MakeMyTrip">
         <span class="mmt-badge">MMT</span>
@@ -2529,10 +2767,62 @@ Karnataka 571201, India
 
 
 <!-- =========================
-     DRAWER, DINING, SIGHTSEEING & PHOTO VIEWER JS
+     AI CONCIERGE & RESERVATION CHATBOT
+========================= -->
+
+<button type="button" class="chat-launcher" onclick="toggleChatWidget()" aria-label="Open Hotel AI Assistant">
+    <span class="chat-launcher-dot"></span>
+    <span>Ask AI Concierge</span>
+</button>
+
+<div class="chat-widget" id="chatWidget" role="dialog" aria-label="Hotel Caveri Inn AI Concierge">
+    <div class="chat-header">
+        <div class="chat-header-info">
+            <strong>Hotel Caveri Inn • AI Concierge</strong>
+            <small>Instant Answers &amp; WhatsApp Reservations</small>
+        </div>
+        <button type="button" class="chat-close-btn" onclick="toggleChatWidget()" aria-label="Close chat">&times;</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages"></div>
+
+    <div class="chat-quick-chips">
+        <button type="button" class="chat-chip" onclick="startReservationFlow()">Book a Room</button>
+        <button type="button" class="chat-chip" onclick="sendQuickQuestion('What room types do you have?')">Room Types</button>
+        <button type="button" class="chat-chip" onclick="sendQuickQuestion('What are the check-in and check-out timings?')">Timings &amp; Location</button>
+        <button type="button" class="chat-chip" onclick="sendQuickQuestion('Tell me about Coorg sightseeing & Jeep safari')">Sightseeing</button>
+        <button type="button" class="chat-chip" onclick="sendQuickQuestion('Bike rentals and Coffee Bean store')">Bikes &amp; Coffee</button>
+    </div>
+
+    <form class="chat-input-area" onsubmit="handleChatSubmit(event)">
+        <input type="text" id="chatInput" placeholder="Ask anything or book a stay..." maxlength="240" autocomplete="off">
+        <button type="submit" class="chat-send-btn">Send</button>
+    </form>
+</div>
+
+
+<!-- =========================
+     APPLICATION SCRIPT (STRICT MODE + XSS SANITIZED)
 ========================= -->
 
 <script>
+"use strict";
+
+/* ANTI-CLICKJACKING FRAME BUSTER */
+if (window.top !== window.self) {
+    try {
+        window.top.location = window.self.location;
+    } catch (e) {
+        document.body.innerHTML = "";
+    }
+}
+
+/* HTML ESCAPE SANITIZER FOR USER CHAT INPUT */
+function escapeHTML(str) {
+    const div = document.createElement("div");
+    div.textContent = String(str);
+    return div.innerHTML;
+}
 
 /* RETURN TO MAIN PAGE WHEN LOGO IS TAPPED */
 function goHome(event) {
@@ -2554,9 +2844,30 @@ function closeDrawer() {
     document.body.style.overflow = "";
 }
 
+/* WHIPS & FROST CAKE PHOTOS (EXACT FILENAMES) */
+const CAKE_PHOTOS = [
+    "Whip and frost cake images/cake01.jpeg",
+    "Whip and frost cake images/cake02.jpeg",
+    "Whip and frost cake images/cake03.jpeg",
+    "Whip and frost cake images/cake04.jpeg",
+    "Whip and frost cake images/cake05.jpeg",
+    "Whip and frost cake images/cake06.jpeg",
+    "Whip and frost cake images/cake07.jpeg",
+    "Whip and frost cake images/cake08.jpeg",
+    "Whip and frost cake images/cake09.jpeg",
+    "Whip and frost cake images/cake10.jpeg",
+    "Whip and frost cake images/cake11.jpeg",
+    "Whip and frost cake images/cake12.jpeg",
+    "Whip and frost cake images/cake13.jpeg",
+    "Whip and frost cake images/cake14.jpeg",
+    "Whip and frost cake images/cake15.png",
+    "Whip and frost cake images/cake16.png",
+    "Whip and frost cake images/cake17.png",
+    "Whip and frost cake images/cake18.png"
+];
+
 /* CUSTOM DINING SPOTS */
 const DINING_SPOTS = [
-    /* Authentic Coorg */
     {
         name: "Tiger Tiger",
         category: "coorg",
@@ -2566,7 +2877,7 @@ const DINING_SPOTS = [
         specialty: "Kodava Curries & Grills",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Tiger+Tiger+Restaurant+Madikeri",
-        isInsta: false
+        isCake: false
     },
     {
         name: "Coorg Cuisine",
@@ -2577,7 +2888,7 @@ const DINING_SPOTS = [
         specialty: "Traditional Kodava Thali",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Coorg+Cuisine+Restaurant+Madikeri",
-        isInsta: false
+        isCake: false
     },
     {
         name: "Hotel Church Side",
@@ -2588,10 +2899,8 @@ const DINING_SPOTS = [
         specialty: "Local Coorg Dishes",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Church+Side+Madikeri",
-        isInsta: false
+        isCake: false
     },
-
-    /* Coffee & Cafés */
     {
         name: "Big Cup Cafe",
         category: "cafe",
@@ -2601,7 +2910,7 @@ const DINING_SPOTS = [
         specialty: "Estate Coffee & Waffles",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Big+Cup+Cafe+Madikeri",
-        isInsta: false
+        isCake: false
     },
     {
         name: "Agasthya Cafe",
@@ -2612,7 +2921,7 @@ const DINING_SPOTS = [
         specialty: "Filter Coffee & Café Bites",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Agasthya+Cafe+Madikeri",
-        isInsta: false
+        isCake: false
     },
     {
         name: "Beans n Brews Raintree",
@@ -2623,10 +2932,8 @@ const DINING_SPOTS = [
         specialty: "Coorg Brews & Bakes",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Beans+n+Brews+Raintree+Madikeri",
-        isInsta: false
+        isCake: false
     },
-
-    /* Family & Veg */
     {
         name: "Udupi Garden",
         category: "veg",
@@ -2636,7 +2943,7 @@ const DINING_SPOTS = [
         specialty: "South Indian & Veg Thali",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Udupi+Garden+Madikeri",
-        isInsta: false
+        isCake: false
     },
     {
         name: "Ambica Uphar",
@@ -2647,7 +2954,7 @@ const DINING_SPOTS = [
         specialty: "Pure Veg Breakfast & Meals",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Ambica+Uphar+Madikeri",
-        isInsta: false
+        isCake: false
     },
     {
         name: "Paakashala Madikeri",
@@ -2658,10 +2965,8 @@ const DINING_SPOTS = [
         specialty: "Pure Veg Family Dining",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Paakashala+Madikeri",
-        isInsta: false
+        isCake: false
     },
-
-    /* Family Non-Veg */
     {
         name: "Hotel Greenland",
         category: "nonveg",
@@ -2671,7 +2976,7 @@ const DINING_SPOTS = [
         specialty: "Biryanis & Non-Veg Meals",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Greenland+Madikeri",
-        isInsta: false
+        isCake: false
     },
     {
         name: "Fish Curry Rice",
@@ -2682,10 +2987,8 @@ const DINING_SPOTS = [
         specialty: "Seafood & Fish Thali",
         linkText: "Directions →",
         linkUrl: "https://www.google.com/maps/search/?api=1&query=Fish+Curry+Rice+Madikeri",
-        isInsta: false
+        isCake: false
     },
-
-    /* Pastries & Cakes */
     {
         name: "Whips & Frost",
         category: "cakes",
@@ -2695,7 +2998,7 @@ const DINING_SPOTS = [
         specialty: "Cheesecakes, Pastries & Custom Cakes",
         linkText: "Order on Instagram →",
         linkUrl: "https://www.instagram.com/whip_and_frost_?cnvx=cDdhZzV6ODdyY2Y4",
-        isInsta: true
+        isCake: true
     }
 ];
 
@@ -2705,24 +3008,64 @@ function renderDining(filterCategory) {
         ? DINING_SPOTS
         : DINING_SPOTS.filter(spot => spot.category === filterCategory);
 
-    grid.innerHTML = filtered.map(spot => `
-        <div class="dining-card ${spot.isInsta ? 'featured-cake' : ''}">
-            <div>
-                <div class="dining-card-top">
-                    <span class="dining-cat-tag">${spot.categoryLabel}</span>
-                    <span class="dining-dist-badge ${spot.isInsta ? 'free-deliv' : ''}">${spot.distance}</span>
+    grid.innerHTML = filtered.map(spot => {
+        if (spot.isCake) {
+            return `
+                <div class="dining-card featured-cake">
+                    <div>
+                        <div class="dining-card-top">
+                            <span class="dining-cat-tag">${spot.categoryLabel}</span>
+                            <span class="dining-dist-badge free-deliv">${spot.distance}</span>
+                        </div>
+                        <h3>${spot.name}</h3>
+                        <p>${spot.desc}</p>
+                        <div class="cake-preview-strip">
+                            <div class="cake-thumb-wrap" onclick="openCakeGallery(0)">
+                                <img src="${encodeURI(CAKE_PHOTOS[0])}" alt="Whips & Frost Cake 1">
+                            </div>
+                            <div class="cake-thumb-wrap" onclick="openCakeGallery(1)">
+                                <img src="${encodeURI(CAKE_PHOTOS[1])}" alt="Whips & Frost Cake 2">
+                            </div>
+                            <div class="cake-thumb-wrap" onclick="openCakeGallery(2)">
+                                <img src="${encodeURI(CAKE_PHOTOS[2])}" alt="Whips & Frost Cake 3">
+                            </div>
+                            <div class="cake-thumb-wrap" onclick="openCakeGallery(3)">
+                                <img src="${encodeURI(CAKE_PHOTOS[3])}" alt="Whips & Frost Cake 4">
+                                <div class="cake-more-overlay">+${CAKE_PHOTOS.length} Photos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dining-card-footer">
+                        <span class="dining-specialty">${spot.specialty}</span>
+                        <div class="cake-actions">
+                            <button type="button" class="directions-link" onclick="openCakeGallery(0)">View All 18 Cakes &rarr;</button>
+                            <a href="${spot.linkUrl}" target="_blank" rel="noopener noreferrer" class="insta-link">
+                                ${spot.linkText}
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <h3>${spot.name}</h3>
-                <p>${spot.desc}</p>
+            `;
+        }
+        return `
+            <div class="dining-card">
+                <div>
+                    <div class="dining-card-top">
+                        <span class="dining-cat-tag">${spot.categoryLabel}</span>
+                        <span class="dining-dist-badge">${spot.distance}</span>
+                    </div>
+                    <h3>${spot.name}</h3>
+                    <p>${spot.desc}</p>
+                </div>
+                <div class="dining-card-footer">
+                    <span class="dining-specialty">${spot.specialty}</span>
+                    <a href="${spot.linkUrl}" target="_blank" rel="noopener noreferrer" class="directions-link">
+                        ${spot.linkText}
+                    </a>
+                </div>
             </div>
-            <div class="dining-card-footer">
-                <span class="dining-specialty">${spot.specialty}</span>
-                <a href="${spot.linkUrl}" target="_blank" rel="noopener" class="${spot.isInsta ? 'insta-link' : 'directions-link'}">
-                    ${spot.linkText}
-                </a>
-            </div>
-        </div>
-    `).join("");
+        `;
+    }).join("");
 }
 
 function filterDining(category, btnEl) {
@@ -2969,7 +3312,7 @@ function renderSightseeing(dayKey) {
             </div>
             <div class="sight-card-footer">
                 <span class="sight-highlight">${place.highlight}</span>
-                <a href="${place.mapUrl}" target="_blank" rel="noopener" class="directions-link">
+                <a href="${place.mapUrl}" target="_blank" rel="noopener noreferrer" class="directions-link">
                     Directions &rarr;
                 </a>
             </div>
@@ -2983,7 +3326,7 @@ function filterSightseeing(dayKey, btnEl) {
     renderSightseeing(dayKey);
 }
 
-/* ROOM & PROPERTY IMAGE DATA */
+/* ROOM & PROPERTY IMAGE DATA (MATCHING EXACT GITHUB FOLDER NAMES) */
 const PROPERTY_PHOTOS = [
     "images/caveri-inn-exterior-day.jpeg",
     "images/caveri-inn-exterior.jpeg",
@@ -3010,16 +3353,16 @@ const ROOM_DATA = [
         title: "Standard Room",
         desc: "A convenient accommodation option for a comfortable stay in Madikeri.",
         photos: [
-            "Standard Room Interior 01.png",
-            "Standard Room Interior 02.png",
-            "Standard Room Interior 03.png",
-            "Standard Room Interior 04.png",
-            "Standard Room Interior 05.png",
-            "Standard Room Interior 06.png",
-            "Standard Room Interior 07.png",
-            "Standard Room Interior 08.png",
-            "Standard Room Interior 09.png",
-            "Standard Room Interior 10.png"
+            "StandardRoom/Standard Room Interior 01.png",
+            "StandardRoom/Standard Room Interior 02.png",
+            "StandardRoom/Standard Room Interior 03.png",
+            "StandardRoom/Standard Room Interior 04.png",
+            "StandardRoom/Standard Room Interior 05.png",
+            "StandardRoom/Standard Room Interior 06.png",
+            "StandardRoom/Standard Room Interior 07.png",
+            "StandardRoom/Standard Room Interior 08.png",
+            "StandardRoom/Standard Room Interior 09.png",
+            "StandardRoom/Standard Room Interior 10.png"
         ]
     },
     {
@@ -3169,6 +3512,10 @@ function openPropertyGallery(startIndex) {
     openPhotoList(PROPERTY_PHOTOS, startIndex);
 }
 
+function openCakeGallery(startIndex) {
+    openPhotoList(CAKE_PHOTOS, startIndex);
+}
+
 function openSinglePhoto(src) {
     openPhotoList([src], 0);
 }
@@ -3221,6 +3568,7 @@ document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") {
         closeDrawer();
         closeViewer();
+        document.getElementById("chatWidget").classList.remove("open");
         return;
     }
 
@@ -3243,10 +3591,188 @@ viewerEl.addEventListener("touchend", e => {
     }
 }, { passive: true });
 
+/* =========================
+   AI CONCIERGE & RESERVATION CHATBOT
+========================= */
+
+let chatInitialized = false;
+let bookingState = {
+    active: false,
+    step: 0,
+    guestName: "",
+    checkIn: "",
+    checkOut: "",
+    guests: "",
+    roomType: ""
+};
+
+function toggleChatWidget() {
+    const widget = document.getElementById("chatWidget");
+    widget.classList.toggle("open");
+    if (!chatInitialized) {
+        chatInitialized = true;
+        appendBotMessage(
+            "Namaste! Welcome to <strong>Hotel Caveri Inn</strong> (Opposite Rajaseat Garden, Madikeri).<br><br>I can answer questions about our 8 room categories, 18 facilities, 3-day Coorg sightseeing, restaurants, Coffee Bean store, Coorg Zoom Bike rentals—or help you send a <strong>room reservation</strong> directly to our WhatsApp!"
+        );
+    }
+}
+
+function openChatWithBooking() {
+    const widget = document.getElementById("chatWidget");
+    if (!widget.classList.contains("open")) {
+        toggleChatWidget();
+    }
+    startReservationFlow();
+}
+
+function appendBotMessage(htmlContent) {
+    const box = document.getElementById("chatMessages");
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "chat-msg bot";
+    msgDiv.innerHTML = htmlContent;
+    box.appendChild(msgDiv);
+    box.scrollTop = box.scrollHeight;
+}
+
+function appendUserMessage(plainText) {
+    const box = document.getElementById("chatMessages");
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "chat-msg user";
+    msgDiv.textContent = plainText;
+    box.appendChild(msgDiv);
+    box.scrollTop = box.scrollHeight;
+}
+
+function startReservationFlow() {
+    bookingState = {
+        active: true,
+        step: 1,
+        guestName: "",
+        checkIn: "",
+        checkOut: "",
+        guests: "",
+        roomType: ""
+    };
+    appendBotMessage("I'd be happy to prepare your room reservation for WhatsApp! Let's get a few quick details.<br><br><strong>Step 1 of 5:</strong> What is your <strong>Full Name</strong>?");
+}
+
+function processReservationStep(userText) {
+    const clean = userText.trim();
+    if (/^(cancel|stop|exit|reset)$/i.test(clean)) {
+        bookingState.active = false;
+        bookingState.step = 0;
+        appendBotMessage("Reservation cancelled. Ask me anything else about Hotel Caveri Inn or Coorg!");
+        return;
+    }
+
+    if (bookingState.step === 1) {
+        bookingState.guestName = clean;
+        bookingState.step = 2;
+        appendBotMessage(`Thank you, <strong>${escapeHTML(clean)}</strong>!<br><br><strong>Step 2 of 5:</strong> What is your <strong>Check-in Date</strong>? (e.g., 15 Dec 2026)`);
+    } else if (bookingState.step === 2) {
+        bookingState.checkIn = clean;
+        bookingState.step = 3;
+        appendBotMessage("<strong>Step 3 of 5:</strong> What is your <strong>Check-out Date</strong>? (or number of nights)");
+    } else if (bookingState.step === 3) {
+        bookingState.checkOut = clean;
+        bookingState.step = 4;
+        appendBotMessage("<strong>Step 4 of 5:</strong> How many <strong>Adults &amp; Children</strong> will be staying?");
+    } else if (bookingState.step === 4) {
+        bookingState.guests = clean;
+        bookingState.step = 5;
+        appendBotMessage("<strong>Step 5 of 5:</strong> Which <strong>Room Category</strong> do you prefer?<br><em>(Budget, Standard, Deluxe Double, Classic Triple, 05 Bedded, 06 Bedded, 07 Bedded, or 10 Bedded Dormitory)</em>");
+    } else if (bookingState.step === 5) {
+        bookingState.roomType = clean;
+        bookingState.active = false;
+        bookingState.step = 0;
+
+        const waText =
+            `Hello Hotel Caveri Inn, I would like to book a room:\n` +
+            `• Guest Name: ${bookingState.guestName}\n` +
+            `• Check-in: ${bookingState.checkIn}\n` +
+            `• Check-out: ${bookingState.checkOut}\n` +
+            `• Guests: ${bookingState.guests}\n` +
+            `• Preferred Room: ${bookingState.roomType}`;
+
+        const waUrl = `https://wa.me/919916442929?text=${encodeURIComponent(waText)}`;
+
+        appendBotMessage(
+            `Your reservation summary is ready:<br><br>` +
+            `• <strong>Name:</strong> ${escapeHTML(bookingState.guestName)}<br>` +
+            `• <strong>Check-in:</strong> ${escapeHTML(bookingState.checkIn)}<br>` +
+            `• <strong>Check-out:</strong> ${escapeHTML(bookingState.checkOut)}<br>` +
+            `• <strong>Guests:</strong> ${escapeHTML(bookingState.guests)}<br>` +
+            `• <strong>Room:</strong> ${escapeHTML(bookingState.roomType)}<br>` +
+            `<a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="chat-wa-action">Send Booking to WhatsApp &rarr;</a>`
+        );
+    }
+}
+
+function getAIKnowledgeReply(query) {
+    const q = query.toLowerCase();
+
+    if (/(book|reserve|reservation|availability|tariff|price|rate|cost)/i.test(q)) {
+        startReservationFlow();
+        return null;
+    }
+    if (/(room|bed|dormitory|family|deluxe|triple|budget|standard)/i.test(q)) {
+        return "We offer <strong>8 room categories</strong> tailored for solo travellers, families, corporate groups, weddings, and student groups:<br>• Budget Room &amp; Standard Room<br>• Deluxe Double &amp; Classic Triple Room<br>• 05, 06 &amp; 07 Bedded Family Rooms<br>• 10 Bedded Dormitory Room<br><br>Would you like me to reserve one for you?";
+    }
+    if (/(check-in|check in|check-out|check out|timing|time|address|where|location|map|contact|phone|email)/i.test(q)) {
+        return "<strong>Location:</strong> Opposite Rajaseat Garden, Stuart Hill, Madikeri, Karnataka 571201.<br><strong>Check-in:</strong> 12:00 PM | <strong>Check-out:</strong> 11:00 AM<br><strong>Phone / WhatsApp:</strong> +91 9916442929<br><strong>Email:</strong> razakcoffeebean27@gmail.com";
+    }
+    if (/(facilit|amenit|wifi|wi-fi|parking|hot water|power|laundry|doctor|housekeeping|jeep|safari)/i.test(q)) {
+        return "We provide <strong>18 facilities &amp; services</strong>: Express Check-in, 24-Hour Reception, Room Service, Travel Desk, Car Parking, Wi-Fi, Free Toiletries, Daily Housekeeping, Hot Water, Power Backup, Laundry Service, Taxi Assistance, Luggage Storage, Doctor on Call, Mandalpatti Jeep Safari Booking, Authentic Coorg Spices Shopping, Auto Taxi Service, and Bike Rentals.";
+    }
+    if (/(sightseeing|visit|places|day 1|day 2|day 3|dubare|abbey|talacauvery|mandalpatti|trek|iruppu|nagarahole|raja seat)/i.test(q)) {
+        return "We have a curated <strong>3-Day Coorg Sightseeing Guide</strong>:<br>• <strong>Day 01 (Kushalnagar):</strong> Dubare Forest, Chiklihole, Harangi Dam, Nisargadhama, Golden Temple.<br>• <strong>Day 02 (Madikeri):</strong> Bhagamandala, Talacauvery, Brahmagiri Hills, Abbey Falls, Raja's Tomb, Madikeri Fort, Omkareshwara Temple, Raja Seat &amp; Sunny Side.<br>• <strong>Day 03:</strong> White River Rafting, Shettigeri Tea Estate, Iruppu Falls &amp; Nagarahole.<br>Plus trekking to <strong>Thadiyandamol</strong> &amp; <strong>Kotebetta</strong>!";
+    }
+    if (/(food|restaurant|cafe|eat|veg|non-veg|cake|pastry|whips|frost|coffee)/i.test(q)) {
+        return "Great dining spots nearby:<br>• <strong>Authentic Coorg:</strong> Tiger Tiger, Coorg Cuisine, Hotel Church Side<br>• <strong>Cafés:</strong> Big Cup Cafe, Agasthya Cafe, Beans n Brews Raintree<br>• <strong>Veg:</strong> Udupi Garden, Ambica Uphar, Paakashala<br>• <strong>Non-Veg:</strong> Hotel Greenland, Fish Curry Rice<br>• <strong>Cakes (Free Hotel Delivery):</strong> Whips &amp; Frost (@whip_and_frost_)";
+    }
+    if (/(bike|scooter|rental|zoom|shop|spice|chocolate|coffee bean)/i.test(q)) {
+        return "• <strong>Coffee Bean Store:</strong> Shop authentic Coorg coffee, spices &amp; homemade chocolates (located right next to Coorg Zoom Bike).<br>• <strong>Coorg Zoom Bike (Bike Rental Partner):</strong> Scooters &amp; bikes for rent right next to Coffee Bean. Call <strong>+91 9743522266</strong>.";
+    }
+    if (/(booking\.com|makemytrip|mmt|ota|online)/i.test(q)) {
+        return "You can book directly via our WhatsApp concierge for instant assistance, or book online through our official <strong>Booking.com</strong> and <strong>MakeMyTrip</strong> pages in the <em>Plan Your Stay</em> section!";
+    }
+    return "I can help with room categories, check-in/out timings, 3-day Coorg sightseeing, nearby restaurants, Coffee Bean spices, Coorg Zoom Bike rentals, or starting a <strong>room booking</strong>. Just type <em>\"Book a room\"</em> anytime!";
+}
+
+function sendQuickQuestion(text) {
+    const widget = document.getElementById("chatWidget");
+    if (!widget.classList.contains("open")) {
+        toggleChatWidget();
+    }
+    appendUserMessage(text);
+    const reply = getAIKnowledgeReply(text);
+    if (reply) {
+        setTimeout(() => appendBotMessage(reply), 220);
+    }
+}
+
+function handleChatSubmit(event) {
+    event.preventDefault();
+    const input = document.getElementById("chatInput");
+    const text = input.value.trim();
+    if (!text) return;
+
+    input.value = "";
+    appendUserMessage(text);
+
+    if (bookingState.active) {
+        setTimeout(() => processReservationStep(text), 220);
+    } else {
+        const reply = getAIKnowledgeReply(text);
+        if (reply) {
+            setTimeout(() => appendBotMessage(reply), 220);
+        }
+    }
+}
+
 renderRoomCards();
 renderDining("all");
 renderSightseeing("day1");
-
 </script>
 
 </body>
