@@ -8,11 +8,11 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self' https://wa.me;">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+<meta name="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
 
 <title>Hotel Caveri Inn | Hotel in Madikeri, Coorg</title>
 <meta name="description" content="Hotel Caveri Inn in Madikeri, Coorg, Karnataka, opposite Rajaseat Garden. Ideal for solo travellers, families, business visits, corporate bookings, wedding bookings, and student group bookings.">
-<meta name="keywords" content="Hotel Caveri Inn, Hotel Cauvery Inn, Coffee Bean Coorg, Coorg Zoom Bike, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, Coorg sightseeing itinerary, Madikeri restaurants">
+<meta name="keywords" content="Hotel Caveri Inn, Hotel Cauvery Inn, Coffee Bean Coorg, hotel in Madikeri, hotel in Coorg, hotel near Rajaseat Garden, Coorg sightseeing itinerary, Madikeri restaurants">
 <meta name="robots" content="index, follow">
 
 <meta property="og:title" content="Hotel Caveri Inn | Madikeri, Coorg">
@@ -755,7 +755,7 @@ section {
 }
 
 /* =========================
-   FACILITIES (ALL 18 ITEMS)
+   FACILITIES (17 SERVICES)
 ========================= */
 
 .facilities {
@@ -1074,6 +1074,22 @@ section {
     text-decoration: underline;
 }
 
+.wa-order-link {
+    font-size: 12px;
+    font-weight: bold;
+    color: #167a3e;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.wa-order-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
 .insta-link {
     font-size: 12px;
     font-weight: bold;
@@ -1223,32 +1239,23 @@ section {
 }
 
 /* =========================
-   SHOPPING & BIKE RENTALS (COFFEE BEAN + COORG ZOOM BIKE)
+   IN-HOUSE COFFEE BEAN & SPICES STORE
 ========================= */
 
 .shopping {
     background: #fff;
 }
 
-.partners-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-}
-
-.partner-showcase-card {
-    background: linear-gradient(145deg, #2b1e16 0%, #3e2b20 100%);
+.inhouse-store-card {
+    background: linear-gradient(135deg, #2b1e16 0%, #3e2b20 100%);
     color: #faf8f3;
     border-radius: 6px;
-    padding: 34px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 16px 38px rgba(47, 38, 31, 0.14);
-}
-
-.partner-showcase-card.bike-card {
-    background: linear-gradient(145deg, #1f2622 0%, #2d3832 100%);
+    padding: 42px 38px;
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 36px;
+    align-items: center;
+    box-shadow: 0 18px 42px rgba(47, 38, 31, 0.16);
 }
 
 .partner-badge {
@@ -1265,35 +1272,34 @@ section {
     margin-bottom: 16px;
 }
 
-.partner-showcase-card h3 {
+.inhouse-store-info h3 {
     font-family: Georgia, serif;
-    font-size: 30px;
+    font-size: 34px;
     color: #ffffff;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
-.partner-showcase-card p {
+.inhouse-store-info p {
     color: #e2d8cc;
-    font-size: 14.5px;
-    line-height: 1.65;
-    margin-bottom: 18px;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
-.neighbor-note {
+.inhouse-location-note {
     background: rgba(255, 255, 255, 0.08);
     border-left: 3px solid #f2d69a;
-    padding: 10px 14px;
-    font-size: 12.5px;
+    padding: 12px 16px;
+    font-size: 13px;
     color: #f2d69a;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     border-radius: 0 4px 4px 0;
 }
 
 .store-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
+    gap: 9px;
 }
 
 .store-item-tag {
@@ -1302,14 +1308,52 @@ section {
     color: #f2d69a;
     font-size: 12px;
     font-weight: bold;
-    padding: 5px 12px;
+    padding: 6px 13px;
     border-radius: 2px;
 }
 
-.store-actions {
+.inhouse-store-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(242, 214, 154, 0.25);
+    padding: 30px 24px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.store-monogram {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #a17b42;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 26px;
+    font-weight: bold;
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    border: 2px solid #f2d69a;
+}
+
+.inhouse-store-box h4 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: #f2d69a;
+    margin-bottom: 8px;
+}
+
+.inhouse-store-box p {
+    font-size: 13px;
+    color: #d8cec2;
+    margin-bottom: 14px;
+}
+
+.inhouse-store-box small {
+    display: block;
+    font-size: 11.5px;
+    color: #f2d69a;
+    letter-spacing: 0.5px;
 }
 
 /* =========================
@@ -1538,7 +1582,7 @@ footer p {
 }
 
 /* =========================
-   AI CONCIERGE & RESERVATION CHATBOT
+   VISTA AI CONCIERGE & RESERVATION CHATBOT
 ========================= */
 
 .chat-launcher {
@@ -1776,7 +1820,7 @@ footer p {
 
     .about-grid,
     .location-grid,
-    .partners-grid {
+    .inhouse-store-card {
         grid-template-columns: 1fr;
     }
 
@@ -1840,6 +1884,14 @@ footer p {
         height: 280px;
     }
 
+    .inhouse-store-card {
+        padding: 28px 22px;
+    }
+
+    .inhouse-store-info h3 {
+        font-size: 28px;
+    }
+
     .map-wrapper iframe {
         height: 280px;
     }
@@ -1892,7 +1944,7 @@ footer p {
     <div>
         <div class="drawer-header">
             <a href="#home" class="drawer-logo-box" onclick="goHome(event)">
-                <img src="webiste logo.png" alt="Hotel Caveri Inn Coorg">
+                <img src="New website header logo.png" alt="Hotel Caveri Inn Coorg">
             </a>
             <button class="drawer-close" onclick="closeDrawer()" aria-label="Close menu">&times;</button>
         </div>
@@ -1905,7 +1957,7 @@ footer p {
             <a href="#gallery" onclick="closeDrawer()">Property Gallery</a>
             <a href="#dining" onclick="closeDrawer()">Restaurants & Cafés</a>
             <a href="#sightseeing" onclick="closeDrawer()">Coorg Sightseeing (Day 1–3)</a>
-            <a href="#shopping" onclick="closeDrawer()">Shopping & Bike Rentals</a>
+            <a href="#shopping" onclick="closeDrawer()">In-House Coffee & Spices</a>
             <a href="#location" onclick="closeDrawer()">Location & Google Map</a>
             <a href="#enquire" onclick="closeDrawer()">Enquire & Book</a>
         </nav>
@@ -1935,7 +1987,7 @@ footer p {
 
 <div class="nav-center">
     <a href="#home" class="logo-box-link" onclick="goHome(event)" title="Go to Main Page">
-        <img src="webiste logo.png" alt="Hotel Caveri Inn Coorg" class="logo-box-img">
+        <img src="New website header logo.png" alt="Hotel Caveri Inn Coorg" class="logo-box-img">
     </a>
 </div>
 
@@ -1944,7 +1996,7 @@ footer p {
     <a href="#facilities">Facilities</a>
     <a href="#dining">Dining</a>
     <a href="#sightseeing">Sightseeing</a>
-    <a href="#shopping">Shopping &amp; Bikes</a>
+    <a href="#shopping">In-House Store</a>
     <a href="#enquire">Book</a>
 </div>
 
@@ -1985,7 +2037,7 @@ Explore Rooms
 </a>
 
 <button type="button" onclick="openChatWithBooking()" class="btn btn-light">
-Reserve via AI Concierge
+Reserve with Vista
 </button>
 
 </div>
@@ -2105,7 +2157,7 @@ Tap on any room category below to preview interior photos.
 
 
 <!-- =========================
-     FACILITIES (18 SERVICES)
+     FACILITIES (17 SERVICES)
 ========================= -->
 
 <section class="facilities" id="facilities">
@@ -2251,7 +2303,7 @@ at Hotel Caveri Inn convenient and memorable.
     <div class="facility-icon">❀</div>
     <div class="facility-info">
         <h3>Authentic Coorg Spices Shopping</h3>
-        <p>Visit Coffee Bean (next to Coorg Zoom Bike) for fresh estate spices, coffee &amp; chocolates.</p>
+        <p>In-house Coffee Bean &amp; Spices store right inside Hotel Caveri Inn.</p>
     </div>
 </div>
 
@@ -2260,14 +2312,6 @@ at Hotel Caveri Inn convenient and memorable.
     <div class="facility-info">
         <h3>Auto Taxi Service</h3>
         <p>Quick local auto-rickshaw rides around Madikeri town.</p>
-    </div>
-</div>
-
-<div class="facility">
-    <div class="facility-icon">⚙</div>
-    <div class="facility-info">
-        <h3>Bike Rentals</h3>
-        <p>Two-wheeler rentals via our partner Coorg Zoom Bike (+91 9743522266).</p>
     </div>
 </div>
 
@@ -2454,7 +2498,7 @@ Plan your Coorg trip effortlessly with our curated day-wise sightseeing routes s
 
 
 <!-- =========================
-     SHOPPING & BIKE RENTAL PARTNER
+     IN-HOUSE SHOPPING: COFFEE BEAN & SPICES STORE
 ========================= -->
 
 <section class="shopping" id="shopping">
@@ -2463,74 +2507,45 @@ Plan your Coorg trip effortlessly with our curated day-wise sightseeing routes s
 
 <div class="section-heading">
 
-<span>Local Shopping &amp; Rentals</span>
+<span>In-House Shopping</span>
 
-<h2>Coffee Bean &amp; Coorg Zoom Bike</h2>
+<h2>In-House Coffee Bean &amp; Spices Store</h2>
 
 <p>
-Shop authentic Coorg coffee &amp; spices or rent a two-wheeler to explore the hills—both conveniently located right next to each other in Madikeri.
+Take the authentic aroma and flavours of Coorg home—conveniently available right inside Hotel Caveri Inn.
 </p>
 
 </div>
 
-<div class="partners-grid">
+<div class="inhouse-store-card">
 
-    <!-- COFFEE BEAN STORE -->
-    <div class="partner-showcase-card">
-        <div>
-            <span class="partner-badge">Authentic Coorg Shopping</span>
-            <h3>Coffee Bean • Madikeri</h3>
-            <p>
-                Take the authentic aroma and flavours of Coorg home! Visit <strong>Coffee Bean</strong> for freshly roasted estate coffee, pure spices, forest honey, and homemade Coorg chocolates.
-            </p>
-            <div class="neighbor-note">
-                Location Landmark: Located right next to <strong>Coorg Zoom Bike</strong>.
-            </div>
-            <div class="store-items">
-                <span class="store-item-tag">Roasted Filter Coffee</span>
-                <span class="store-item-tag">Black Pepper &amp; Cardamom</span>
-                <span class="store-item-tag">Homemade Chocolates</span>
-                <span class="store-item-tag">Pure Forest Honey</span>
-            </div>
+    <div class="inhouse-store-info">
+        <span class="partner-badge">In-House Store • Inside Hotel Caveri Inn</span>
+        <h3>Coffee Bean &amp; Spices Store</h3>
+        <p>
+            No need to travel across town for genuine Coorg souvenirs! Our <strong>In-House Coffee Bean &amp; Spices Store</strong> is located right inside <strong>Hotel Caveri Inn</strong>, offering handpicked estate-grown coffee, aromatic spices, pure forest honey, and homemade Coorg chocolates exclusively for our guests.
+        </p>
+
+        <div class="inhouse-location-note">
+            <strong>Store Location:</strong> Located right inside <strong>Hotel Caveri Inn</strong> premises (Opposite Rajaseat Garden, Stuart Hill, Madikeri). Simply ask at reception during your stay!
         </div>
 
-        <div class="store-actions">
-            <a href="https://maps.app.goo.gl/u6HhwxAZSvAPVYYk6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Coffee Bean Maps &rarr;
-            </a>
-            <a href="https://wa.me/919916442929?text=Hello%20Hotel%20Caveri%20Inn,%20I%20would%20like%20to%20visit%20Coffee%20Bean%20for%20Coorg%20coffee%20and%20spices." target="_blank" rel="noopener noreferrer" class="btn btn-light">
-                Ask Front Desk
-            </a>
+        <div class="store-items">
+            <span class="store-item-tag">Roasted Coorg Filter Coffee</span>
+            <span class="store-item-tag">Black Pepper &amp; Cardamom</span>
+            <span class="store-item-tag">Homemade Coorg Chocolates</span>
+            <span class="store-item-tag">Pure Forest Honey</span>
+            <span class="store-item-tag">Estate Spices &amp; Gift Packs</span>
         </div>
     </div>
 
-    <!-- COORG ZOOM BIKE -->
-    <div class="partner-showcase-card bike-card">
-        <div>
-            <span class="partner-badge">Our Bike Rental Partner</span>
-            <h3>Coorg Zoom Bike</h3>
-            <p>
-                Explore Coorg's misty roads, coffee estates, and viewpoints at your own pace with well-maintained scooters and motorbikes from our trusted bike rental partner.
-            </p>
-            <div class="neighbor-note">
-                Location Landmark: Located right next to <strong>Coffee Bean Store</strong>.
-            </div>
-            <div class="store-items">
-                <span class="store-item-tag">Scooters &amp; Bikes</span>
-                <span class="store-item-tag">Hourly &amp; Daily Rentals</span>
-                <span class="store-item-tag">Helmets Included</span>
-                <span class="store-item-tag">Call: +91 9743522266</span>
-            </div>
-        </div>
-
-        <div class="store-actions">
-            <a href="https://maps.app.goo.gl/yJUFSHY4gNHx6pwy9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Coorg Zoom Bike Maps &rarr;
-            </a>
-            <a href="tel:+919743522266" class="btn btn-light">
-                Call +91 9743522266
-            </a>
-        </div>
+    <div class="inhouse-store-box">
+        <div class="store-monogram">CB</div>
+        <h4>In-House Coorg Store</h4>
+        <p>
+            Freshly ground Arabica &amp; Robusta coffee blends, farm-direct spices, and local delicacies curated inside Hotel Caveri Inn.
+        </p>
+        <small>★ Available Exclusively Inside Hotel Caveri Inn</small>
     </div>
 
 </div>
@@ -2628,10 +2643,10 @@ razakcoffeebean27@gmail.com
 
 <div class="info-row">
 
-<strong>Nearby Partners</strong>
+<strong>In-House Facility</strong>
 
 <p>
-Coffee Bean Store &amp; Coorg Zoom Bike (Next to each other)
+In-House Coffee Bean &amp; Spices Store inside Hotel Caveri Inn
 </p>
 
 </div>
@@ -2767,21 +2782,21 @@ Karnataka 571201, India
 
 
 <!-- =========================
-     AI CONCIERGE & RESERVATION CHATBOT
+     VISTA AI CONCIERGE & RESERVATION CHATBOT
 ========================= -->
 
-<button type="button" class="chat-launcher" onclick="toggleChatWidget()" aria-label="Open Hotel AI Assistant">
+<button type="button" class="chat-launcher" onclick="toggleChatWidget()" aria-label="Open Vista AI Assistant">
     <span class="chat-launcher-dot"></span>
-    <span>Ask AI Concierge</span>
+    <span>Ask Vista</span>
 </button>
 
-<div class="chat-widget" id="chatWidget" role="dialog" aria-label="Hotel Caveri Inn AI Concierge">
+<div class="chat-widget" id="chatWidget" role="dialog" aria-label="Vista AI Assistant - Hotel Caveri Inn">
     <div class="chat-header">
         <div class="chat-header-info">
-            <strong>Hotel Caveri Inn • AI Concierge</strong>
+            <strong>Vista • Hotel Caveri Inn AI</strong>
             <small>Instant Answers &amp; WhatsApp Reservations</small>
         </div>
-        <button type="button" class="chat-close-btn" onclick="toggleChatWidget()" aria-label="Close chat">&times;</button>
+        <button type="button" class="chat-close-btn" onclick="toggleChatWidget()" aria-label="Close Vista">&times;</button>
     </div>
 
     <div class="chat-messages" id="chatMessages"></div>
@@ -2791,11 +2806,11 @@ Karnataka 571201, India
         <button type="button" class="chat-chip" onclick="sendQuickQuestion('What room types do you have?')">Room Types</button>
         <button type="button" class="chat-chip" onclick="sendQuickQuestion('What are the check-in and check-out timings?')">Timings &amp; Location</button>
         <button type="button" class="chat-chip" onclick="sendQuickQuestion('Tell me about Coorg sightseeing & Jeep safari')">Sightseeing</button>
-        <button type="button" class="chat-chip" onclick="sendQuickQuestion('Bike rentals and Coffee Bean store')">Bikes &amp; Coffee</button>
+        <button type="button" class="chat-chip" onclick="sendQuickQuestion('Tell me about the In-House Coffee Bean store')">In-House Store</button>
     </div>
 
     <form class="chat-input-area" onsubmit="handleChatSubmit(event)">
-        <input type="text" id="chatInput" placeholder="Ask anything or book a stay..." maxlength="240" autocomplete="off">
+        <input type="text" id="chatInput" placeholder="Ask Vista anything or book a stay..." maxlength="240" autocomplete="off">
         <button type="submit" class="chat-send-btn">Send</button>
     </form>
 </div>
@@ -2993,11 +3008,12 @@ const DINING_SPOTS = [
         name: "Whips & Frost",
         category: "cakes",
         categoryLabel: "Pastries & Cakes",
-        distance: "Free Delivery to Hotel",
+        distance: "Free Delivery • +91 9535561433",
         desc: "Madikeri's top homemade bakery loved by locals! Order fresh cheesecakes, pastries, custom birthday/anniversary cakes, and desserts with free delivery right to Hotel Caveri Inn.",
         specialty: "Cheesecakes, Pastries & Custom Cakes",
-        linkText: "Order on Instagram →",
+        linkText: "Instagram →",
         linkUrl: "https://www.instagram.com/whip_and_frost_?cnvx=cDdhZzV6ODdyY2Y4",
+        waUrl: "https://wa.me/919535561433?text=Hello%20Whips%20%26%20Frost,%20I%20am%20staying%20at%20Hotel%20Caveri%20Inn%20and%20would%20like%20to%20order%20cakes/pastries.",
         isCake: true
     }
 ];
@@ -3039,6 +3055,9 @@ function renderDining(filterCategory) {
                         <span class="dining-specialty">${spot.specialty}</span>
                         <div class="cake-actions">
                             <button type="button" class="directions-link" onclick="openCakeGallery(0)">View All 18 Cakes &rarr;</button>
+                            <a href="${spot.waUrl}" target="_blank" rel="noopener noreferrer" class="wa-order-link">
+                                WhatsApp +91 9535561433 &rarr;
+                            </a>
                             <a href="${spot.linkUrl}" target="_blank" rel="noopener noreferrer" class="insta-link">
                                 ${spot.linkText}
                             </a>
@@ -3592,7 +3611,7 @@ viewerEl.addEventListener("touchend", e => {
 }, { passive: true });
 
 /* =========================
-   AI CONCIERGE & RESERVATION CHATBOT
+   VISTA AI CONCIERGE & RESERVATION CHATBOT
 ========================= */
 
 let chatInitialized = false;
@@ -3612,7 +3631,7 @@ function toggleChatWidget() {
     if (!chatInitialized) {
         chatInitialized = true;
         appendBotMessage(
-            "Namaste! Welcome to <strong>Hotel Caveri Inn</strong> (Opposite Rajaseat Garden, Madikeri).<br><br>I can answer questions about our 8 room categories, 18 facilities, 3-day Coorg sightseeing, restaurants, Coffee Bean store, Coorg Zoom Bike rentals—or help you send a <strong>room reservation</strong> directly to our WhatsApp!"
+            "Namaste! I'm <strong>Vista</strong>, your personal assistant at <strong>Hotel Caveri Inn</strong> (Opposite Rajaseat Garden, Madikeri).<br><br>I can answer questions about our 8 room categories, 17 facilities, 3-day Coorg sightseeing, restaurants, Whips &amp; Frost cakes, our In-House Coffee Bean &amp; Spices Store—or help you send a <strong>room reservation</strong> directly to WhatsApp!"
         );
     }
 }
@@ -3661,7 +3680,7 @@ function processReservationStep(userText) {
     if (/^(cancel|stop|exit|reset)$/i.test(clean)) {
         bookingState.active = false;
         bookingState.step = 0;
-        appendBotMessage("Reservation cancelled. Ask me anything else about Hotel Caveri Inn or Coorg!");
+        appendBotMessage("Reservation cancelled. Ask Vista anything else about Hotel Caveri Inn or Coorg!");
         return;
     }
 
@@ -3722,21 +3741,21 @@ function getAIKnowledgeReply(query) {
         return "<strong>Location:</strong> Opposite Rajaseat Garden, Stuart Hill, Madikeri, Karnataka 571201.<br><strong>Check-in:</strong> 12:00 PM | <strong>Check-out:</strong> 11:00 AM<br><strong>Phone / WhatsApp:</strong> +91 9916442929<br><strong>Email:</strong> razakcoffeebean27@gmail.com";
     }
     if (/(facilit|amenit|wifi|wi-fi|parking|hot water|power|laundry|doctor|housekeeping|jeep|safari)/i.test(q)) {
-        return "We provide <strong>18 facilities &amp; services</strong>: Express Check-in, 24-Hour Reception, Room Service, Travel Desk, Car Parking, Wi-Fi, Free Toiletries, Daily Housekeeping, Hot Water, Power Backup, Laundry Service, Taxi Assistance, Luggage Storage, Doctor on Call, Mandalpatti Jeep Safari Booking, Authentic Coorg Spices Shopping, Auto Taxi Service, and Bike Rentals.";
+        return "We provide <strong>17 facilities &amp; services</strong>: Express Check-in, 24-Hour Reception, Room Service, Travel Desk, Car Parking, Wi-Fi, Free Toiletries, Daily Housekeeping, Hot Water, Power Backup, Laundry Service, Taxi Assistance, Luggage Storage, Doctor on Call, Mandalpatti Jeep Safari Booking, In-House Authentic Coorg Spices Shopping, and Auto Taxi Service.";
     }
     if (/(sightseeing|visit|places|day 1|day 2|day 3|dubare|abbey|talacauvery|mandalpatti|trek|iruppu|nagarahole|raja seat)/i.test(q)) {
         return "We have a curated <strong>3-Day Coorg Sightseeing Guide</strong>:<br>• <strong>Day 01 (Kushalnagar):</strong> Dubare Forest, Chiklihole, Harangi Dam, Nisargadhama, Golden Temple.<br>• <strong>Day 02 (Madikeri):</strong> Bhagamandala, Talacauvery, Brahmagiri Hills, Abbey Falls, Raja's Tomb, Madikeri Fort, Omkareshwara Temple, Raja Seat &amp; Sunny Side.<br>• <strong>Day 03:</strong> White River Rafting, Shettigeri Tea Estate, Iruppu Falls &amp; Nagarahole.<br>Plus trekking to <strong>Thadiyandamol</strong> &amp; <strong>Kotebetta</strong>!";
     }
     if (/(food|restaurant|cafe|eat|veg|non-veg|cake|pastry|whips|frost|coffee)/i.test(q)) {
-        return "Great dining spots nearby:<br>• <strong>Authentic Coorg:</strong> Tiger Tiger, Coorg Cuisine, Hotel Church Side<br>• <strong>Cafés:</strong> Big Cup Cafe, Agasthya Cafe, Beans n Brews Raintree<br>• <strong>Veg:</strong> Udupi Garden, Ambica Uphar, Paakashala<br>• <strong>Non-Veg:</strong> Hotel Greenland, Fish Curry Rice<br>• <strong>Cakes (Free Hotel Delivery):</strong> Whips &amp; Frost (@whip_and_frost_)";
+        return "Great dining spots nearby:<br>• <strong>Authentic Coorg:</strong> Tiger Tiger, Coorg Cuisine, Hotel Church Side<br>• <strong>Cafés:</strong> Big Cup Cafe, Agasthya Cafe, Beans n Brews Raintree<br>• <strong>Veg:</strong> Udupi Garden, Ambica Uphar, Paakashala<br>• <strong>Non-Veg:</strong> Hotel Greenland, Fish Curry Rice<br>• <strong>Cakes (Free Hotel Delivery):</strong> Whips &amp; Frost — WhatsApp <strong>+91 9535561433</strong> or Instagram (@whip_and_frost_)";
     }
-    if (/(bike|scooter|rental|zoom|shop|spice|chocolate|coffee bean)/i.test(q)) {
-        return "• <strong>Coffee Bean Store:</strong> Shop authentic Coorg coffee, spices &amp; homemade chocolates (located right next to Coorg Zoom Bike).<br>• <strong>Coorg Zoom Bike (Bike Rental Partner):</strong> Scooters &amp; bikes for rent right next to Coffee Bean. Call <strong>+91 9743522266</strong>.";
+    if (/(shop|spice|chocolate|coffee bean|store|in-house|in house)/i.test(q)) {
+        return "Our <strong>In-House Coffee Bean &amp; Spices Store</strong> is located right inside <strong>Hotel Caveri Inn</strong>! You can shop roasted Coorg filter coffee, black pepper, cardamom, pure forest honey, and homemade chocolates right at the hotel—just ask at reception.";
     }
     if (/(booking\.com|makemytrip|mmt|ota|online)/i.test(q)) {
-        return "You can book directly via our WhatsApp concierge for instant assistance, or book online through our official <strong>Booking.com</strong> and <strong>MakeMyTrip</strong> pages in the <em>Plan Your Stay</em> section!";
+        return "You can book directly via WhatsApp here with Vista for instant assistance, or book online through our official <strong>Booking.com</strong> and <strong>MakeMyTrip</strong> pages in the <em>Plan Your Stay</em> section!";
     }
-    return "I can help with room categories, check-in/out timings, 3-day Coorg sightseeing, nearby restaurants, Coffee Bean spices, Coorg Zoom Bike rentals, or starting a <strong>room booking</strong>. Just type <em>\"Book a room\"</em> anytime!";
+    return "I'm Vista! I can help with room categories, check-in/out timings, 3-day Coorg sightseeing, nearby restaurants, Whips &amp; Frost cakes (+91 9535561433), our In-House Coffee Bean &amp; Spices Store, or starting a <strong>room booking</strong>. Just type <em>\"Book a room\"</em> anytime!";
 }
 
 function sendQuickQuestion(text) {
